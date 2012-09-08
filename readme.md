@@ -4,9 +4,11 @@ Make it really easy to podcast and livestream audio.
 # Spec
 Push-to-talk audio. 
 
-1. Simple twitter authentication splash screen. 
-2. Record simple audio file (record / stop).
-3. Send to parse. 
+1. Simple twitter authentication splash screen. (Check)
+2. Record simple audio file (record / stop). 
+	- Name it.
+	- As you enter in details, it's sending in the background.
+3. Send to parse. Associate it with the logged in user.
 4. Be able to 'log in' to someone's channel
 5. Get files as they're recorded to parse and play them. 
 6. Modify record button to take files as they're recording, piece them out, and send them to parse. 
@@ -19,6 +21,8 @@ TODO:
 	- https://parse.com/apps/pulse--3/push_notifications
 	- https://parse.com/docs/ios_guide#push
 	- https://parse.com/tutorials/ios-push-notifications (practice this again)
+- As you're updating audio
+- Add settings for updating / adding email, reseting passwords, etc.
 
 
 Experimental Ideas:

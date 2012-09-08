@@ -12,7 +12,12 @@
 		9A11E0EC15FAD53E009615DC /* pulseSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0EB15FAD53E009615DC /* pulseSplash.png */; };
 		9A11E0EE15FADF85009615DC /* shatteredBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0ED15FADF85009615DC /* shatteredBG.png */; };
 		9A11E0F215FB0AF2009615DC /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F015FB0AF2009615DC /* DashboardViewController.m */; };
-		9A11E0F315FB0AF2009615DC /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0F115FB0AF2009615DC /* DashboardViewController.xib */; };
+		9A11E0F715FB1763009615DC /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F515FB1763009615DC /* RecordViewController.m */; };
+		9A11E0F815FB1763009615DC /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0F615FB1763009615DC /* RecordViewController.xib */; };
+		9A11E0FA15FB2B4F009615DC /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0F915FB2B4F009615DC /* record.png */; };
+		9A11E0FE15FB2FB3009615DC /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0FC15FB2FB3009615DC /* SettingsViewController.m */; };
+		9A11E0FF15FB2FB3009615DC /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0FD15FB2FB3009615DC /* SettingsViewController.xib */; };
+		9A11E10115FB300D009615DC /* cog.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E10015FB300D009615DC /* cog.png */; };
 		9A9E41C615FA7C960013E24D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C515FA7C960013E24D /* UIKit.framework */; };
 		9A9E41C815FA7C960013E24D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C715FA7C960013E24D /* Foundation.framework */; };
 		9A9E41CA15FA7C960013E24D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C915FA7C960013E24D /* CoreGraphics.framework */; };
@@ -40,7 +45,14 @@
 		9A11E0ED15FADF85009615DC /* shatteredBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shatteredBG.png; sourceTree = "<group>"; };
 		9A11E0EF15FB0AF2009615DC /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
 		9A11E0F015FB0AF2009615DC /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
-		9A11E0F115FB0AF2009615DC /* DashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
+		9A11E0F415FB1763009615DC /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordViewController.h; path = push/RecordViewController.h; sourceTree = "<group>"; };
+		9A11E0F515FB1763009615DC /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordViewController.m; path = push/RecordViewController.m; sourceTree = "<group>"; };
+		9A11E0F615FB1763009615DC /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecordViewController.xib; path = push/RecordViewController.xib; sourceTree = "<group>"; };
+		9A11E0F915FB2B4F009615DC /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
+		9A11E0FB15FB2FB3009615DC /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = push/SettingsViewController.h; sourceTree = "<group>"; };
+		9A11E0FC15FB2FB3009615DC /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = push/SettingsViewController.m; sourceTree = "<group>"; };
+		9A11E0FD15FB2FB3009615DC /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = push/SettingsViewController.xib; sourceTree = "<group>"; };
+		9A11E10015FB300D009615DC /* cog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog.png; sourceTree = "<group>"; };
 		9A9E41C115FA7C960013E24D /* push.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = push.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9E41C515FA7C960013E24D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A9E41C715FA7C960013E24D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,6 +104,12 @@
 		9A9E41B615FA7C960013E24D = {
 			isa = PBXGroup;
 			children = (
+				9A11E0F415FB1763009615DC /* RecordViewController.h */,
+				9A11E0F515FB1763009615DC /* RecordViewController.m */,
+				9A11E0F615FB1763009615DC /* RecordViewController.xib */,
+				9A11E0FB15FB2FB3009615DC /* SettingsViewController.h */,
+				9A11E0FC15FB2FB3009615DC /* SettingsViewController.m */,
+				9A11E0FD15FB2FB3009615DC /* SettingsViewController.xib */,
 				9A9E41CB15FA7C960013E24D /* push */,
 				9A9E41C415FA7C960013E24D /* Frameworks */,
 				9A9E41C215FA7C960013E24D /* Products */,
@@ -130,9 +148,11 @@
 		9A9E41CB15FA7C960013E24D /* push */ = {
 			isa = PBXGroup;
 			children = (
-				9A9E41FA15FA9EB80013E24D /* login */,
 				9A9E41D415FA7C960013E24D /* AppDelegate.h */,
 				9A9E41D515FA7C960013E24D /* AppDelegate.m */,
+				9A9E41FA15FA9EB80013E24D /* login */,
+				9A11E0EF15FB0AF2009615DC /* DashboardViewController.h */,
+				9A11E0F015FB0AF2009615DC /* DashboardViewController.m */,
 				9A9E41CC15FA7C960013E24D /* Supporting Files */,
 			);
 			path = push;
@@ -141,6 +161,8 @@
 		9A9E41CC15FA7C960013E24D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9A11E0F915FB2B4F009615DC /* record.png */,
+				9A11E10015FB300D009615DC /* cog.png */,
 				9A11E0EB15FAD53E009615DC /* pulseSplash.png */,
 				9A11E0ED15FADF85009615DC /* shatteredBG.png */,
 				9A11E0E915FAD500009615DC /* dustBG.png */,
@@ -157,9 +179,6 @@
 			children = (
 				9A11E0DC15FAC997009615DC /* SplashViewController.h */,
 				9A11E0DD15FAC997009615DC /* SplashViewController.m */,
-				9A11E0EF15FB0AF2009615DC /* DashboardViewController.h */,
-				9A11E0F015FB0AF2009615DC /* DashboardViewController.m */,
-				9A11E0F115FB0AF2009615DC /* DashboardViewController.xib */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -219,7 +238,10 @@
 				9A11E0EA15FAD500009615DC /* dustBG.png in Resources */,
 				9A11E0EC15FAD53E009615DC /* pulseSplash.png in Resources */,
 				9A11E0EE15FADF85009615DC /* shatteredBG.png in Resources */,
-				9A11E0F315FB0AF2009615DC /* DashboardViewController.xib in Resources */,
+				9A11E0F815FB1763009615DC /* RecordViewController.xib in Resources */,
+				9A11E0FA15FB2B4F009615DC /* record.png in Resources */,
+				9A11E0FF15FB2FB3009615DC /* SettingsViewController.xib in Resources */,
+				9A11E10115FB300D009615DC /* cog.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +256,8 @@
 				9A9E41D615FA7C960013E24D /* AppDelegate.m in Sources */,
 				9A11E0DE15FAC997009615DC /* SplashViewController.m in Sources */,
 				9A11E0F215FB0AF2009615DC /* DashboardViewController.m in Sources */,
+				9A11E0F715FB1763009615DC /* RecordViewController.m in Sources */,
+				9A11E0FE15FB2FB3009615DC /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

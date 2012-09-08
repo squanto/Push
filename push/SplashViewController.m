@@ -7,6 +7,13 @@
 //
 
 #import "SplashViewController.h"
+#import "DashboardViewController.h"
+
+@interface SplashViewController()
+
+
+
+@end
 
 @implementation SplashViewController
 
@@ -49,18 +56,12 @@
     if (![PFUser currentUser]) {
         [self.navigationController presentModalViewController:self.loginVC animated:YES];
     } else {
-        NSLog(@"Welcome, %@!", [[PFUser currentUser] username]);
         NSLog(@"Email: %@", [[PFUser currentUser] email]);
-        if (![PFTwitterUtils isLinkedWithUser:[PFUser currentUser]]) {
-            [PFTwitterUtils linkUser:[PFUser currentUser] block:^(BOOL succeeded, NSError *error) {
-                if ([PFTwitterUtils isLinkedWithUser:[PFUser currentUser]]) {
-                    NSLog(@"Woohoo, user logged in with Twitter!");
-                }
-            }];
-        } else {
-            NSLog(@"Already Linked!");
-        }
-        [self presentModalViewController:<#(UIViewController *)#> animated:<#(BOOL)#>]
+            if ([PFTwitterUtils isLinkedWithUser:[PFUser currentUser]]) {
+                [[PFUser currentUser] setUsername:[[PFTwitterUtils twitter] screenName]];
+                NSLog(@"USERNAME: %@", [[PFUser currentUser] username]);
+            }
+        [self presentModalViewController:[DashboardViewController new] animated:YES];
     }
 }
 
@@ -85,7 +86,8 @@
 
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-    [user setUsername:[[PFTwitterUtils twitter] screenName]];
+    [[PFUser currentUser] setObject:[[PFTwitterUtils twitter] screenName] forKey:@"username"];
+    [[PFUser currentUser] save];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -103,6 +105,8 @@
 // Sent to the delegate to determine whether the log in request should be submitted to the server.
 - (BOOL)logInViewController:(PFLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password {
     // Check if both fields are completed
+    [[PFUser currentUser] setObject:[[PFTwitterUtils twitter] screenName] forKey:@"twitterName"];
+    NSLog(@"Log in VC Called twitter?");
     if (username && password && username.length != 0 && password.length != 0) {
         return YES; // Begin login process
     }
@@ -118,7 +122,6 @@
 // Sent to the delegate to determine whether the sign up request should be submitted to the server.
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info {
     BOOL informationComplete = YES;
-    
     // loop through all of the submitted data
     for (id key in info) {
         NSString *field = [info objectForKey:key];
