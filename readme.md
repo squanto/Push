@@ -80,3 +80,46 @@ http://www.cocoacontrols.com/platforms/ios/controls/pull-to-refresh-tableview
 
 http://idevrecipes.com/2011/04/14/how-does-the-twitter-iphone-app-implement-side-swiping-on-a-table/
 // swipe controls on 
+
+# Monday
+
+Mirror Twitter app, but with audio. 
+
+Make every navigation controller be able to (modally) present the recordVC.
+
+
+1. Home Screen.
+
+2. Connect Screen
+
+3. Discover (Search via hashtag. Speech to text?)
+
+4. Profile View (modified table view). 
+
+
+
+# Questions for Ned
+- Abstracting Record button modal presentation thingy.
+- Loading my Tab bar items where I load them. 
+- Record VC.m, line 100-110.
+- Discover functionality. 
+	- How does search do its animation to a search view controller. 
+	- Add search to table view (??)
+- discovery VC line 40-50.
+
+
+
+
+-AVaudioPlayer can stream
+
+- Touch down action for pressing down.
+- Touch up inside for The Release Action.
+
+- Add a mutable array of people that I follow to each parse user.
+
+- Add hash tags / titles to search by for audio recordings.
+	- Automatically uses timestamp created at. Can use custom name and hashtags.
+
+Less one to one and more broadcasting. Modify.
+	- Add titles to recordings.
+		- Hold down to Record, 

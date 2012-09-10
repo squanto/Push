@@ -9,8 +9,10 @@
 #import "DashboardViewController.h"
 #import <Parse/Parse.h>
 #import "RecordViewController.h"
-#import "SettingsViewController.h"
 #import "ProfileViewController.h"
+#import "TimelineViewController.h"
+#import "DiscoverViewController.h"
+#import "ConnectViewController.h"
 
 @interface DashboardViewController ()
 
@@ -23,24 +25,58 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization- Record Button
-        UIImage *recordButtonImage = [UIImage imageNamed:@"record.png"];
-        UITabBarItem *recordItem = [[UITabBarItem alloc] initWithTitle:@"Record" image:recordButtonImage tag:0];
-        RecordViewController *recordVC = [RecordViewController new];
-        recordVC.tabBarItem = recordItem;
+        // Make This a modal view controller. 
+        // UIImage *recordButtonImage = [UIImage imageNamed:@"record.png"];
+        // UITabBarItem *recordItem = [[UITabBarItem alloc] initWithTitle:@"Record" image:recordButtonImage tag:0];
+        // RecordViewController *recordVC = [RecordViewController new];
+        // recordVC.tabBarItem = recordItem;
         
-        UIImage *settingsButtonImage = [UIImage imageNamed:@"cog_02.png"];
-        UITabBarItem *settingsItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:settingsButtonImage tag:2];
-        SettingsViewController *settingsVC = [SettingsViewController new];
-        settingsVC.tabBarItem = settingsItem;
+        UIBarButtonItem *recordButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(showRecordModally)];
+        self.navigationItem.rightBarButtonItem = recordButton;
         
+        // Timeline
+        UIImage *homeButtonImage = [UIImage imageNamed:@"house.png"];
+        UITabBarItem *homeButtonItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:homeButtonImage tag:0];
+        UINavigationController *timelineNavVC = [[UINavigationController alloc] initWithRootViewController:[TimelineViewController new]];
+        timelineNavVC.tabBarItem = homeButtonItem;
+        
+        // Connect
+        UIImage *connectButtonImage = [UIImage imageNamed:@"letter_closed.png"];
+        UITabBarItem *connectButtonItem = [[UITabBarItem alloc] initWithTitle:@"Connect" image:connectButtonImage tag:1];
+        UINavigationController *connectNavVC = [[UINavigationController alloc] initWithRootViewController:[ConnectViewController new]];
+        connectNavVC.tabBarItem = connectButtonItem;
+        
+        // Discover.
+        UIImage *globeButtonImage = [UIImage imageNamed:@"globe.png"];
+        UITabBarItem *globeButtonItem = [[UITabBarItem alloc] initWithTitle:@"Discover" image:globeButtonImage tag:2];
+        UINavigationController *discoverNavVC = [[UINavigationController alloc] initWithRootViewController:[DiscoverViewController new]];
+        discoverNavVC.tabBarItem = globeButtonItem;
+        
+        // Profile
+        // Make this the one stop shop for checking your stuff and adding settings. 
         UIImage *profileImage = [UIImage imageNamed:@"pacman.png"];
-        UITabBarItem *profileItem = [[UITabBarItem alloc] initWithTitle:@"profile" image:profileImage tag:1];
-        ProfileViewController *profileVC = [ProfileViewController new];
-        profileVC.tabBarItem = profileItem;
+        UITabBarItem *profileItem = [[UITabBarItem alloc] initWithTitle:@"Me" image:profileImage tag:1];
+        // Make a navigation controller.
+        UINavigationController *profileNavVC = [[UINavigationController alloc] initWithRootViewController:[ProfileViewController new]];
+        profileNavVC.tabBarItem = profileItem;
         
-        self.viewControllers = [NSArray arrayWithObjects:recordVC, profileVC, settingsVC, nil];
+        // Add this functionality o the profileVC
+        // UIImage *settingsButtonImage = [UIImage imageNamed:@"cog_02.png"];
+        //UITabBarItem *settingsItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:settingsButtonImage tag:2];
+        // Make a navigation controller.
+        //SettingsViewController *settingsVC = [SettingsViewController new];
+        //settingsVC.tabBarItem = settingsItem;
+        
+        self.viewControllers = [NSArray arrayWithObjects:timelineNavVC, connectNavVC, discoverNavVC, profileNavVC, nil];
     }
     return self;
+}
+
+-(void)showRecordModally
+{
+    NSLog(@"Record button Pressed");
+    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordViewController new]];
+    [self.navigationController presentModalViewController:recordNavVC animated:YES];
 }
 
 - (void)viewDidLoad

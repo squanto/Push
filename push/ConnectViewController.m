@@ -1,20 +1,19 @@
 //
-//  ProfileViewController.m
+//  ConnectViewController.m
 //  push
 //
-//  Created by hugo on 9/9/12.
+//  Created by hugo on 9/10/12.
 //  Copyright (c) 2012 HugoMelo. All rights reserved.
 //
 
-#import "ProfileViewController.h"
+#import "ConnectViewController.h"
 #import "RecordViewController.h"
-#import <Parse/Parse.h>
 
-@interface ProfileViewController ()
+@interface ConnectViewController ()
 
 @end
 
-@implementation ProfileViewController
+@implementation ConnectViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,24 +27,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Navigation
     UIBarButtonItem *recordButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(showRecordModally)];
     self.navigationItem.rightBarButtonItem = recordButton;
-    self.navigationItem.title = @"Me";
+    self.navigationItem.title = @"Connect";
 }
-
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
 
 -(void)showRecordModally
 {

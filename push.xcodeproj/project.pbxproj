@@ -14,8 +14,6 @@
 		9A11E0F215FB0AF2009615DC /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F015FB0AF2009615DC /* DashboardViewController.m */; };
 		9A11E0F715FB1763009615DC /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F515FB1763009615DC /* RecordViewController.m */; };
 		9A11E0F815FB1763009615DC /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0F615FB1763009615DC /* RecordViewController.xib */; };
-		9A11E0FE15FB2FB3009615DC /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0FC15FB2FB3009615DC /* SettingsViewController.m */; };
-		9A11E0FF15FB2FB3009615DC /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0FD15FB2FB3009615DC /* SettingsViewController.xib */; };
 		9A88906F15FD2C96005552E8 /* cog_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88906E15FD2C96005552E8 /* cog_02@2x.png */; };
 		9A88907115FD2C9F005552E8 /* cog_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907015FD2C9F005552E8 /* cog_02.png */; };
 		9A88907315FD2CA8005552E8 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907215FD2CA8005552E8 /* record.png */; };
@@ -24,6 +22,24 @@
 		9A88907915FD2D36005552E8 /* pacman.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907815FD2D36005552E8 /* pacman.png */; };
 		9A88907D15FD2D88005552E8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88907B15FD2D88005552E8 /* ProfileViewController.m */; };
 		9A88907E15FD2D88005552E8 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907C15FD2D88005552E8 /* ProfileViewController.xib */; };
+		9A88908215FE6B28005552E8 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88908015FE6B28005552E8 /* TimelineViewController.m */; };
+		9A88908315FE6B28005552E8 /* TimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A88908115FE6B28005552E8 /* TimelineViewController.xib */; };
+		9A88908515FE6C89005552E8 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88908415FE6C89005552E8 /* globe.png */; };
+		9A88908715FE6C95005552E8 /* globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88908615FE6C95005552E8 /* globe@2x.png */; };
+		9A88908915FE6DEE005552E8 /* house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88908815FE6DEE005552E8 /* house@2x.png */; };
+		9A88908B15FE6DFD005552E8 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88908A15FE6DFD005552E8 /* house.png */; };
+		9A88908F15FE6E96005552E8 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88908D15FE6E96005552E8 /* DiscoverViewController.m */; };
+		9A88909015FE6E96005552E8 /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A88908E15FE6E96005552E8 /* DiscoverViewController.xib */; };
+		9A88909215FE6F65005552E8 /* letter_closed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88909115FE6F65005552E8 /* letter_closed@2x.png */; };
+		9A88909415FE6F6F005552E8 /* letter_closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88909315FE6F6F005552E8 /* letter_closed.png */; };
+		9A88909815FE6FC9005552E8 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88909615FE6FC9005552E8 /* ConnectViewController.m */; };
+		9A88909915FE6FC9005552E8 /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A88909715FE6FC9005552E8 /* ConnectViewController.xib */; };
+		9A88909B15FE7114005552E8 /* speaker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88909A15FE7114005552E8 /* speaker@2x.png */; };
+		9A88909D15FE7124005552E8 /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88909C15FE7124005552E8 /* speaker.png */; };
+		9A8890A115FE914E005552E8 /* SearchDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88909F15FE914D005552E8 /* SearchDiscoverViewController.m */; };
+		9A8890A215FE914E005552E8 /* SearchDiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8890A015FE914E005552E8 /* SearchDiscoverViewController.xib */; };
+		9A8890A615FE915C005552E8 /* SearchConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8890A415FE915B005552E8 /* SearchConnectViewController.m */; };
+		9A8890A715FE915C005552E8 /* SearchConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8890A515FE915B005552E8 /* SearchConnectViewController.xib */; };
 		9A9E41C615FA7C960013E24D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C515FA7C960013E24D /* UIKit.framework */; };
 		9A9E41C815FA7C960013E24D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C715FA7C960013E24D /* Foundation.framework */; };
 		9A9E41CA15FA7C960013E24D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C915FA7C960013E24D /* CoreGraphics.framework */; };
@@ -54,9 +70,6 @@
 		9A11E0F415FB1763009615DC /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordViewController.h; path = push/RecordViewController.h; sourceTree = "<group>"; };
 		9A11E0F515FB1763009615DC /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordViewController.m; path = push/RecordViewController.m; sourceTree = "<group>"; };
 		9A11E0F615FB1763009615DC /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecordViewController.xib; path = push/RecordViewController.xib; sourceTree = "<group>"; };
-		9A11E0FB15FB2FB3009615DC /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = push/SettingsViewController.h; sourceTree = "<group>"; };
-		9A11E0FC15FB2FB3009615DC /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = push/SettingsViewController.m; sourceTree = "<group>"; };
-		9A11E0FD15FB2FB3009615DC /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = push/SettingsViewController.xib; sourceTree = "<group>"; };
 		9A88906E15FD2C96005552E8 /* cog_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog_02@2x.png"; sourceTree = "<group>"; };
 		9A88907015FD2C9F005552E8 /* cog_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog_02.png; sourceTree = "<group>"; };
 		9A88907215FD2CA8005552E8 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
@@ -66,6 +79,29 @@
 		9A88907A15FD2D88005552E8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = push/ProfileViewController.h; sourceTree = "<group>"; };
 		9A88907B15FD2D88005552E8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = push/ProfileViewController.m; sourceTree = "<group>"; };
 		9A88907C15FD2D88005552E8 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = push/ProfileViewController.xib; sourceTree = "<group>"; };
+		9A88907F15FE6B28005552E8 /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimelineViewController.h; path = push/TimelineViewController.h; sourceTree = "<group>"; };
+		9A88908015FE6B28005552E8 /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimelineViewController.m; path = push/TimelineViewController.m; sourceTree = "<group>"; };
+		9A88908115FE6B28005552E8 /* TimelineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimelineViewController.xib; path = push/TimelineViewController.xib; sourceTree = "<group>"; };
+		9A88908415FE6C89005552E8 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
+		9A88908615FE6C95005552E8 /* globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe@2x.png"; sourceTree = "<group>"; };
+		9A88908815FE6DEE005552E8 /* house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house@2x.png"; sourceTree = "<group>"; };
+		9A88908A15FE6DFD005552E8 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
+		9A88908C15FE6E96005552E8 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiscoverViewController.h; path = push/DiscoverViewController.h; sourceTree = "<group>"; };
+		9A88908D15FE6E96005552E8 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiscoverViewController.m; path = push/DiscoverViewController.m; sourceTree = "<group>"; };
+		9A88908E15FE6E96005552E8 /* DiscoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DiscoverViewController.xib; path = push/DiscoverViewController.xib; sourceTree = "<group>"; };
+		9A88909115FE6F65005552E8 /* letter_closed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "letter_closed@2x.png"; sourceTree = "<group>"; };
+		9A88909315FE6F6F005552E8 /* letter_closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = letter_closed.png; sourceTree = "<group>"; };
+		9A88909515FE6FC9005552E8 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectViewController.h; path = push/ConnectViewController.h; sourceTree = "<group>"; };
+		9A88909615FE6FC9005552E8 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectViewController.m; path = push/ConnectViewController.m; sourceTree = "<group>"; };
+		9A88909715FE6FC9005552E8 /* ConnectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConnectViewController.xib; path = push/ConnectViewController.xib; sourceTree = "<group>"; };
+		9A88909A15FE7114005552E8 /* speaker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speaker@2x.png"; sourceTree = "<group>"; };
+		9A88909C15FE7124005552E8 /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
+		9A88909E15FE914D005552E8 /* SearchDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchDiscoverViewController.h; path = push/SearchDiscoverViewController.h; sourceTree = "<group>"; };
+		9A88909F15FE914D005552E8 /* SearchDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchDiscoverViewController.m; path = push/SearchDiscoverViewController.m; sourceTree = "<group>"; };
+		9A8890A015FE914E005552E8 /* SearchDiscoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchDiscoverViewController.xib; path = push/SearchDiscoverViewController.xib; sourceTree = "<group>"; };
+		9A8890A315FE915B005552E8 /* SearchConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchConnectViewController.h; path = push/SearchConnectViewController.h; sourceTree = "<group>"; };
+		9A8890A415FE915B005552E8 /* SearchConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchConnectViewController.m; path = push/SearchConnectViewController.m; sourceTree = "<group>"; };
+		9A8890A515FE915B005552E8 /* SearchConnectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchConnectViewController.xib; path = push/SearchConnectViewController.xib; sourceTree = "<group>"; };
 		9A9E41C115FA7C960013E24D /* push.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = push.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9E41C515FA7C960013E24D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A9E41C715FA7C960013E24D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -114,18 +150,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A8890A815FE9165005552E8 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				9A88909E15FE914D005552E8 /* SearchDiscoverViewController.h */,
+				9A88909F15FE914D005552E8 /* SearchDiscoverViewController.m */,
+				9A8890A015FE914E005552E8 /* SearchDiscoverViewController.xib */,
+				9A8890A315FE915B005552E8 /* SearchConnectViewController.h */,
+				9A8890A415FE915B005552E8 /* SearchConnectViewController.m */,
+				9A8890A515FE915B005552E8 /* SearchConnectViewController.xib */,
+			);
+			name = search;
+			sourceTree = "<group>";
+		};
 		9A9E41B615FA7C960013E24D = {
 			isa = PBXGroup;
 			children = (
 				9A11E0F415FB1763009615DC /* RecordViewController.h */,
 				9A11E0F515FB1763009615DC /* RecordViewController.m */,
 				9A11E0F615FB1763009615DC /* RecordViewController.xib */,
-				9A11E0FB15FB2FB3009615DC /* SettingsViewController.h */,
-				9A11E0FC15FB2FB3009615DC /* SettingsViewController.m */,
-				9A11E0FD15FB2FB3009615DC /* SettingsViewController.xib */,
+				9A88907F15FE6B28005552E8 /* TimelineViewController.h */,
+				9A88908015FE6B28005552E8 /* TimelineViewController.m */,
+				9A88908115FE6B28005552E8 /* TimelineViewController.xib */,
 				9A88907A15FD2D88005552E8 /* ProfileViewController.h */,
 				9A88907B15FD2D88005552E8 /* ProfileViewController.m */,
 				9A88907C15FD2D88005552E8 /* ProfileViewController.xib */,
+				9A88908C15FE6E96005552E8 /* DiscoverViewController.h */,
+				9A88908D15FE6E96005552E8 /* DiscoverViewController.m */,
+				9A88908E15FE6E96005552E8 /* DiscoverViewController.xib */,
+				9A8890A815FE9165005552E8 /* search */,
+				9A88909515FE6FC9005552E8 /* ConnectViewController.h */,
+				9A88909615FE6FC9005552E8 /* ConnectViewController.m */,
+				9A88909715FE6FC9005552E8 /* ConnectViewController.xib */,
 				9A9E41CB15FA7C960013E24D /* push */,
 				9A9E41C415FA7C960013E24D /* Frameworks */,
 				9A9E41C215FA7C960013E24D /* Products */,
@@ -177,6 +233,14 @@
 		9A9E41CC15FA7C960013E24D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9A88909C15FE7124005552E8 /* speaker.png */,
+				9A88909A15FE7114005552E8 /* speaker@2x.png */,
+				9A88909315FE6F6F005552E8 /* letter_closed.png */,
+				9A88909115FE6F65005552E8 /* letter_closed@2x.png */,
+				9A88908A15FE6DFD005552E8 /* house.png */,
+				9A88908815FE6DEE005552E8 /* house@2x.png */,
+				9A88908415FE6C89005552E8 /* globe.png */,
+				9A88908615FE6C95005552E8 /* globe@2x.png */,
 				9A88907815FD2D36005552E8 /* pacman.png */,
 				9A88907615FD2D27005552E8 /* pacman@2x.png */,
 				9A88907215FD2CA8005552E8 /* record.png */,
@@ -259,7 +323,6 @@
 				9A11E0EC15FAD53E009615DC /* pulseSplash.png in Resources */,
 				9A11E0EE15FADF85009615DC /* shatteredBG.png in Resources */,
 				9A11E0F815FB1763009615DC /* RecordViewController.xib in Resources */,
-				9A11E0FF15FB2FB3009615DC /* SettingsViewController.xib in Resources */,
 				9A88906F15FD2C96005552E8 /* cog_02@2x.png in Resources */,
 				9A88907115FD2C9F005552E8 /* cog_02.png in Resources */,
 				9A88907315FD2CA8005552E8 /* record.png in Resources */,
@@ -267,6 +330,19 @@
 				9A88907715FD2D27005552E8 /* pacman@2x.png in Resources */,
 				9A88907915FD2D36005552E8 /* pacman.png in Resources */,
 				9A88907E15FD2D88005552E8 /* ProfileViewController.xib in Resources */,
+				9A88908315FE6B28005552E8 /* TimelineViewController.xib in Resources */,
+				9A88908515FE6C89005552E8 /* globe.png in Resources */,
+				9A88908715FE6C95005552E8 /* globe@2x.png in Resources */,
+				9A88908915FE6DEE005552E8 /* house@2x.png in Resources */,
+				9A88908B15FE6DFD005552E8 /* house.png in Resources */,
+				9A88909015FE6E96005552E8 /* DiscoverViewController.xib in Resources */,
+				9A88909215FE6F65005552E8 /* letter_closed@2x.png in Resources */,
+				9A88909415FE6F6F005552E8 /* letter_closed.png in Resources */,
+				9A88909915FE6FC9005552E8 /* ConnectViewController.xib in Resources */,
+				9A88909B15FE7114005552E8 /* speaker@2x.png in Resources */,
+				9A88909D15FE7124005552E8 /* speaker.png in Resources */,
+				9A8890A215FE914E005552E8 /* SearchDiscoverViewController.xib in Resources */,
+				9A8890A715FE915C005552E8 /* SearchConnectViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,8 +358,12 @@
 				9A11E0DE15FAC997009615DC /* SplashViewController.m in Sources */,
 				9A11E0F215FB0AF2009615DC /* DashboardViewController.m in Sources */,
 				9A11E0F715FB1763009615DC /* RecordViewController.m in Sources */,
-				9A11E0FE15FB2FB3009615DC /* SettingsViewController.m in Sources */,
 				9A88907D15FD2D88005552E8 /* ProfileViewController.m in Sources */,
+				9A88908215FE6B28005552E8 /* TimelineViewController.m in Sources */,
+				9A88908F15FE6E96005552E8 /* DiscoverViewController.m in Sources */,
+				9A88909815FE6FC9005552E8 /* ConnectViewController.m in Sources */,
+				9A8890A115FE914E005552E8 /* SearchDiscoverViewController.m in Sources */,
+				9A8890A615FE915C005552E8 /* SearchConnectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

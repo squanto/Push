@@ -1,18 +1,18 @@
 //
-//  SettingsViewController.m
+//  SearchConnectViewController.m
 //  push
 //
-//  Created by hugo on 9/8/12.
+//  Created by hugo on 9/10/12.
 //  Copyright (c) 2012 HugoMelo. All rights reserved.
 //
 
-#import "SettingsViewController.h"
+#import "SearchConnectViewController.h"
 
-@interface SettingsViewController ()
+@interface SearchConnectViewController ()
 
 @end
 
-@implementation SettingsViewController
+@implementation SearchConnectViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

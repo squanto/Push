@@ -37,6 +37,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Navigation Things
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelNavVC)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    self.navigationItem.title = @"Broadcast";
+    
+    
+    // Recording things
     NSURL* documentDir = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     
     self.audioURL = [documentDir URLByAppendingPathComponent:@"audio.wav"];
@@ -67,6 +74,11 @@
 }
 
 
+-(void)cancelNavVC
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 
 
 
@@ -90,6 +102,8 @@
         PFObject *audioObject = [PFObject objectWithClassName:@"audioObject"];
         [audioObject setObject:audioFile forKey:@"audioFile"];
         [audioObject setObject:[[PFUser currentUser] username] forKey:@"user"];
+        [audioObject save];
+        [audioObject setObject:[audioObject objectForKey:@"createdAt"] forKey:@"title"];
         [audioObject save];
         
         // https://www.parse.com/questions/saving-a-pfobject-with-a-pffile-in-it-without-re-uploading-the-file
