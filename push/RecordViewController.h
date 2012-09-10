@@ -10,4 +10,6 @@
 
 @interface RecordViewController : UIViewController
 
+@property (strong) NSURL *audioURL;
+
 @end

@@ -14,10 +14,16 @@
 		9A11E0F215FB0AF2009615DC /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F015FB0AF2009615DC /* DashboardViewController.m */; };
 		9A11E0F715FB1763009615DC /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F515FB1763009615DC /* RecordViewController.m */; };
 		9A11E0F815FB1763009615DC /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0F615FB1763009615DC /* RecordViewController.xib */; };
-		9A11E0FA15FB2B4F009615DC /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0F915FB2B4F009615DC /* record.png */; };
 		9A11E0FE15FB2FB3009615DC /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0FC15FB2FB3009615DC /* SettingsViewController.m */; };
 		9A11E0FF15FB2FB3009615DC /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0FD15FB2FB3009615DC /* SettingsViewController.xib */; };
-		9A11E10115FB300D009615DC /* cog.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E10015FB300D009615DC /* cog.png */; };
+		9A88906F15FD2C96005552E8 /* cog_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88906E15FD2C96005552E8 /* cog_02@2x.png */; };
+		9A88907115FD2C9F005552E8 /* cog_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907015FD2C9F005552E8 /* cog_02.png */; };
+		9A88907315FD2CA8005552E8 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907215FD2CA8005552E8 /* record.png */; };
+		9A88907515FD2CB6005552E8 /* record@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907415FD2CB6005552E8 /* record@2x.png */; };
+		9A88907715FD2D27005552E8 /* pacman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907615FD2D27005552E8 /* pacman@2x.png */; };
+		9A88907915FD2D36005552E8 /* pacman.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907815FD2D36005552E8 /* pacman.png */; };
+		9A88907D15FD2D88005552E8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88907B15FD2D88005552E8 /* ProfileViewController.m */; };
+		9A88907E15FD2D88005552E8 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907C15FD2D88005552E8 /* ProfileViewController.xib */; };
 		9A9E41C615FA7C960013E24D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C515FA7C960013E24D /* UIKit.framework */; };
 		9A9E41C815FA7C960013E24D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C715FA7C960013E24D /* Foundation.framework */; };
 		9A9E41CA15FA7C960013E24D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C915FA7C960013E24D /* CoreGraphics.framework */; };
@@ -48,11 +54,18 @@
 		9A11E0F415FB1763009615DC /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordViewController.h; path = push/RecordViewController.h; sourceTree = "<group>"; };
 		9A11E0F515FB1763009615DC /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordViewController.m; path = push/RecordViewController.m; sourceTree = "<group>"; };
 		9A11E0F615FB1763009615DC /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecordViewController.xib; path = push/RecordViewController.xib; sourceTree = "<group>"; };
-		9A11E0F915FB2B4F009615DC /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
 		9A11E0FB15FB2FB3009615DC /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = push/SettingsViewController.h; sourceTree = "<group>"; };
 		9A11E0FC15FB2FB3009615DC /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = push/SettingsViewController.m; sourceTree = "<group>"; };
 		9A11E0FD15FB2FB3009615DC /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = push/SettingsViewController.xib; sourceTree = "<group>"; };
-		9A11E10015FB300D009615DC /* cog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog.png; sourceTree = "<group>"; };
+		9A88906E15FD2C96005552E8 /* cog_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog_02@2x.png"; sourceTree = "<group>"; };
+		9A88907015FD2C9F005552E8 /* cog_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog_02.png; sourceTree = "<group>"; };
+		9A88907215FD2CA8005552E8 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
+		9A88907415FD2CB6005552E8 /* record@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record@2x.png"; sourceTree = "<group>"; };
+		9A88907615FD2D27005552E8 /* pacman@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pacman@2x.png"; sourceTree = "<group>"; };
+		9A88907815FD2D36005552E8 /* pacman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pacman.png; sourceTree = "<group>"; };
+		9A88907A15FD2D88005552E8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = push/ProfileViewController.h; sourceTree = "<group>"; };
+		9A88907B15FD2D88005552E8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = push/ProfileViewController.m; sourceTree = "<group>"; };
+		9A88907C15FD2D88005552E8 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = push/ProfileViewController.xib; sourceTree = "<group>"; };
 		9A9E41C115FA7C960013E24D /* push.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = push.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9E41C515FA7C960013E24D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A9E41C715FA7C960013E24D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +123,9 @@
 				9A11E0FB15FB2FB3009615DC /* SettingsViewController.h */,
 				9A11E0FC15FB2FB3009615DC /* SettingsViewController.m */,
 				9A11E0FD15FB2FB3009615DC /* SettingsViewController.xib */,
+				9A88907A15FD2D88005552E8 /* ProfileViewController.h */,
+				9A88907B15FD2D88005552E8 /* ProfileViewController.m */,
+				9A88907C15FD2D88005552E8 /* ProfileViewController.xib */,
 				9A9E41CB15FA7C960013E24D /* push */,
 				9A9E41C415FA7C960013E24D /* Frameworks */,
 				9A9E41C215FA7C960013E24D /* Products */,
@@ -161,8 +177,12 @@
 		9A9E41CC15FA7C960013E24D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9A11E0F915FB2B4F009615DC /* record.png */,
-				9A11E10015FB300D009615DC /* cog.png */,
+				9A88907815FD2D36005552E8 /* pacman.png */,
+				9A88907615FD2D27005552E8 /* pacman@2x.png */,
+				9A88907215FD2CA8005552E8 /* record.png */,
+				9A88907415FD2CB6005552E8 /* record@2x.png */,
+				9A88906E15FD2C96005552E8 /* cog_02@2x.png */,
+				9A88907015FD2C9F005552E8 /* cog_02.png */,
 				9A11E0EB15FAD53E009615DC /* pulseSplash.png */,
 				9A11E0ED15FADF85009615DC /* shatteredBG.png */,
 				9A11E0E915FAD500009615DC /* dustBG.png */,
@@ -239,9 +259,14 @@
 				9A11E0EC15FAD53E009615DC /* pulseSplash.png in Resources */,
 				9A11E0EE15FADF85009615DC /* shatteredBG.png in Resources */,
 				9A11E0F815FB1763009615DC /* RecordViewController.xib in Resources */,
-				9A11E0FA15FB2B4F009615DC /* record.png in Resources */,
 				9A11E0FF15FB2FB3009615DC /* SettingsViewController.xib in Resources */,
-				9A11E10115FB300D009615DC /* cog.png in Resources */,
+				9A88906F15FD2C96005552E8 /* cog_02@2x.png in Resources */,
+				9A88907115FD2C9F005552E8 /* cog_02.png in Resources */,
+				9A88907315FD2CA8005552E8 /* record.png in Resources */,
+				9A88907515FD2CB6005552E8 /* record@2x.png in Resources */,
+				9A88907715FD2D27005552E8 /* pacman@2x.png in Resources */,
+				9A88907915FD2D36005552E8 /* pacman.png in Resources */,
+				9A88907E15FD2D88005552E8 /* ProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +283,7 @@
 				9A11E0F215FB0AF2009615DC /* DashboardViewController.m in Sources */,
 				9A11E0F715FB1763009615DC /* RecordViewController.m in Sources */,
 				9A11E0FE15FB2FB3009615DC /* SettingsViewController.m in Sources */,
+				9A88907D15FD2D88005552E8 /* ProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

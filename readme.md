@@ -23,7 +23,7 @@ TODO:
 	- https://parse.com/tutorials/ios-push-notifications (practice this again)
 - As you're updating audio
 - Add settings for updating / adding email, reseting passwords, etc.
-
+- Make retina difference for tab bar iems (http://app-bits.com/free-icons.html)
 
 Experimental Ideas:
 
@@ -59,4 +59,24 @@ ViewWillAppear
 	For making thing load.
 	
 	
+- Add email confirmation / authdata
+- Remove email signup. Only sign up through twitter. 
+- Fix images for retina display. 
+- Be able to see a table view of all your recordings. 
 	
+
+// like voxer. but more asynchronous. More boradcast-y, less one-to-one.
+
+
+Add find people to follow, startup guide, etc. to sidescrolling splash screen.
+
+http://www.cocoacontrols.com/platforms/ios/controls/jtrevealsidebar
+
+http://www.cocoacontrols.com/platforms/ios/controls/center-button-in-tab-bar
+// add this center button to the record functionality (look at anypic source code?).
+
+http://www.cocoacontrols.com/platforms/ios/controls/pull-to-refresh-tableview
+
+
+http://idevrecipes.com/2011/04/14/how-does-the-twitter-iphone-app-implement-side-swiping-on-a-table/
+// swipe controls on 

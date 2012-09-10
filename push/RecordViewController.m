@@ -8,6 +8,7 @@
 
 #import "RecordViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <Parse/Parse.h>
 
 @interface RecordViewController ()<AVAudioPlayerDelegate, AVAudioRecorderDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
@@ -38,7 +39,7 @@
     [super viewDidLoad];
     NSURL* documentDir = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     
-    NSURL* audioURL = [documentDir URLByAppendingPathComponent:@"audio.wav"];
+    self.audioURL = [documentDir URLByAppendingPathComponent:@"audio.wav"];
     
     NSDictionary* options = @{
     AVFormatIDKey : [NSNumber numberWithInt:kAudioFormatLinearPCM],
@@ -46,9 +47,9 @@
     AVNumberOfChannelsKey : [NSNumber numberWithInt:2]
     };
     
-    self.recorder = [[AVAudioRecorder alloc] initWithURL:audioURL settings:options error:nil];
+    self.recorder = [[AVAudioRecorder alloc] initWithURL:self.audioURL settings:options error:nil];
     self.recorder.delegate = self;
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.audioURL error:nil];
     self.player.delegate = self;
 }
 
@@ -67,6 +68,10 @@
 
 
 
+
+
+
+
 - (IBAction)recordButtonPressed
 {
     if (!self.recorder.recording) {
@@ -74,8 +79,24 @@
             [self playButtonPressed];
         }
         [self.recorder record];
+        NSLog(@"RECORDING !!");
     } else {
         [self.recorder stop];
+        // Give this a unique id every time.
+        // Allow a to user text field (via twitter handles).
+        PFFile *audioFile = [PFFile fileWithName:@"audio.wav" contentsAtPath:[self.audioURL path]];
+        [audioFile save];
+        
+        PFObject *audioObject = [PFObject objectWithClassName:@"audioObject"];
+        [audioObject setObject:audioFile forKey:@"audioFile"];
+        [audioObject setObject:[[PFUser currentUser] username] forKey:@"user"];
+        [audioObject save];
+        
+        // https://www.parse.com/questions/saving-a-pfobject-with-a-pffile-in-it-without-re-uploading-the-file
+        // https://parse.com/docs/ios/api/Classes/PFObject.html
+        // https://parse.com/docs/ios_guide
+        NSLog(@"Sent To PArse!");
+        
     }
 //    [self resetRecordingTitles];
 }
@@ -90,14 +111,17 @@
     } else {
         [self.player stop];
     }
-//    [self resetPlayingTitles];
 }
 
+
+// Remove this button. 
 - (IBAction)sendButtonPressed
 {
     
 }
 
+
+// Make these things work.
 -(void)resetPlayingTitles {
     if (self.player.playing) {
         [self.playButton setTitle:@"End Playing" forState:UIControlStateNormal];

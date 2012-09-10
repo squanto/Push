@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "RecordViewController.h"
 #import "SettingsViewController.h"
+#import "ProfileViewController.h"
 
 @interface DashboardViewController ()
 
@@ -27,12 +28,17 @@
         RecordViewController *recordVC = [RecordViewController new];
         recordVC.tabBarItem = recordItem;
         
-        UIImage *settingsButtonImage = [UIImage imageNamed:@"cog.png"];
-        UITabBarItem *settingsItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:settingsButtonImage tag:1];
+        UIImage *settingsButtonImage = [UIImage imageNamed:@"cog_02.png"];
+        UITabBarItem *settingsItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:settingsButtonImage tag:2];
         SettingsViewController *settingsVC = [SettingsViewController new];
         settingsVC.tabBarItem = settingsItem;
         
-        self.viewControllers = [NSArray arrayWithObjects:recordVC, settingsVC, nil];
+        UIImage *profileImage = [UIImage imageNamed:@"pacman.png"];
+        UITabBarItem *profileItem = [[UITabBarItem alloc] initWithTitle:@"profile" image:profileImage tag:1];
+        ProfileViewController *profileVC = [ProfileViewController new];
+        profileVC.tabBarItem = profileItem;
+        
+        self.viewControllers = [NSArray arrayWithObjects:recordVC, profileVC, settingsVC, nil];
     }
     return self;
 }
