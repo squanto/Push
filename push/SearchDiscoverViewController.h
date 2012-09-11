@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface SearchDiscoverViewController : UIViewController
+@interface SearchDiscoverViewController : PFQueryTableViewController
 
 @property (strong, nonatomic) UISearchBar *searchBar;
 

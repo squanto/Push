@@ -10,4 +10,6 @@
 
 @interface DiscoverViewController : UIViewController
 
+@property (strong) UITableView *discoveryTable;
+
 @end

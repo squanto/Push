@@ -8,29 +8,24 @@
 
 #import "SearchDiscoverViewController.h"
 #import "DiscoverViewController.h"
+#import "SearchDiscoveryResultsViewController.h"
 
 @interface SearchDiscoverViewController ()<UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UITableView *recentSearchesTable;
 
 @end
 
 @implementation SearchDiscoverViewController
-@synthesize recentSearchesTable;
 @synthesize searchBar;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
-        self.recentSearchesTable = [UITableView new];
-        self.recentSearchesTable.dataSource = self;
-        self.recentSearchesTable.delegate = self;
-        
-        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-        self.searchBar.delegate = self;
-        self.searchBar.showsCancelButton = YES;
-        [self.view addSubview:self.searchBar];
+        self.className = @"userSearches";
+        self.pullToRefreshEnabled = NO;
+        self.paginationEnabled = NO;
+        self.objectsPerPage = 20;
+        self.tableView.frame = CGRectMake(0, 0, 320, 430);
     }
     return self;
 }
@@ -38,11 +33,49 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(-5.0, 0.0, 320.0, 44.0)];
+    self.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.searchBar.delegate = self;
+    self.searchBar.showsCancelButton = YES;
+    [self.view addSubview:self.searchBar];
+    UIView *searchBarView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 310.0, 44.0)];
+    searchBarView.autoresizingMask = 0;
+    [searchBarView addSubview:searchBar];
+    self.navigationItem.titleView = searchBarView;
 }
+
 -(void)viewDidAppear:(BOOL)animated
 {
     [self.searchBar becomeFirstResponder];
 }
+
+- (PFQuery *)queryForTable {
+    PFQuery *query = [PFQuery queryWithClassName:self.className];
+    [query whereKey:@"user" equalTo:[[PFUser currentUser] username]];
+    [query orderByDescending:@"createdAt"];
+    
+    return query;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView
+        cellForRowAtIndexPath:(NSIndexPath *)indexPath
+                       object:(PFObject *)object
+{
+    NSString *cellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    cell.textLabel.text = [object objectForKey:@"searchText"];
+    
+    return cell;
+}
+
+//- (PFObject *)objectAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    // Modify this to fix search results later on.
+//}
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
@@ -51,24 +84,50 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    // Save a copy in parse.
+    NSLog(@"%@", self.searchBar.text);
+    PFObject *search = [PFObject objectWithClassName:@"userSearches"];
+    [search setObject:[[PFUser currentUser] username] forKey:@"user"];
+    [search setObject:self.searchBar.text forKey:@"searchText"];
+    [search saveInBackground];
+    
+    [self pushToResultsVCWithSearchText:self.searchBar.text];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Pushed From  a table view!!");
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    [self pushToResultsVCWithSearchText:cell.textLabel.text];
+}
+
+
+-(void)pushToResultsVCWithSearchText:(NSString *)queryText
+{
+    // Make the Results VC and present it.
+    SearchDiscoveryResultsViewController *resultsVC = [SearchDiscoveryResultsViewController new];
+    resultsVC.searchText = queryText;
+    NSLog(@"About To Push!");
+    [self.searchBar endEditing:YES];
+    [self.navigationController pushViewController:resultsVC animated:YES];
+}
+
+
+
+
+
+
 - (void)viewDidUnload
 {
     [self setSearchBar:nil];
-    [self setRecentSearchesTable:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
-
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    NSLog(@"%@", self.searchBar.text);
-}
-
 @end

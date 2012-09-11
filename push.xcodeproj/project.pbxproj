@@ -14,6 +14,10 @@
 		9A11E0F215FB0AF2009615DC /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F015FB0AF2009615DC /* DashboardViewController.m */; };
 		9A11E0F715FB1763009615DC /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F515FB1763009615DC /* RecordViewController.m */; };
 		9A11E0F815FB1763009615DC /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0F615FB1763009615DC /* RecordViewController.xib */; };
+		9A2F778B15FFCFCF004E0D1E /* noisy_grid@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F778915FFCFCF004E0D1E /* noisy_grid@2X.png */; };
+		9A2F778C15FFCFCF004E0D1E /* noisy_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F778A15FFCFCF004E0D1E /* noisy_grid.png */; };
+		9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */; };
+		9A2F779215FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */; };
 		9A88906F15FD2C96005552E8 /* cog_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88906E15FD2C96005552E8 /* cog_02@2x.png */; };
 		9A88907115FD2C9F005552E8 /* cog_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907015FD2C9F005552E8 /* cog_02.png */; };
 		9A88907315FD2CA8005552E8 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907215FD2CA8005552E8 /* record.png */; };
@@ -72,6 +76,11 @@
 		9A11E0F415FB1763009615DC /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordViewController.h; path = push/RecordViewController.h; sourceTree = "<group>"; };
 		9A11E0F515FB1763009615DC /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordViewController.m; path = push/RecordViewController.m; sourceTree = "<group>"; };
 		9A11E0F615FB1763009615DC /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecordViewController.xib; path = push/RecordViewController.xib; sourceTree = "<group>"; };
+		9A2F778915FFCFCF004E0D1E /* noisy_grid@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noisy_grid@2X.png"; sourceTree = "<group>"; };
+		9A2F778A15FFCFCF004E0D1E /* noisy_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noisy_grid.png; sourceTree = "<group>"; };
+		9A2F778E15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchDiscoveryResultsViewController.h; path = push/SearchDiscoveryResultsViewController.h; sourceTree = "<group>"; };
+		9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchDiscoveryResultsViewController.m; path = push/SearchDiscoveryResultsViewController.m; sourceTree = "<group>"; };
+		9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchDiscoveryResultsViewController.xib; path = push/SearchDiscoveryResultsViewController.xib; sourceTree = "<group>"; };
 		9A88906E15FD2C96005552E8 /* cog_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog_02@2x.png"; sourceTree = "<group>"; };
 		9A88907015FD2C9F005552E8 /* cog_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog_02.png; sourceTree = "<group>"; };
 		9A88907215FD2CA8005552E8 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
@@ -161,6 +170,9 @@
 				9A88909E15FE914D005552E8 /* SearchDiscoverViewController.h */,
 				9A88909F15FE914D005552E8 /* SearchDiscoverViewController.m */,
 				9A8890A015FE914E005552E8 /* SearchDiscoverViewController.xib */,
+				9A2F778E15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.h */,
+				9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */,
+				9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */,
 				9A8890A315FE915B005552E8 /* SearchConnectViewController.h */,
 				9A8890A415FE915B005552E8 /* SearchConnectViewController.m */,
 				9A8890A515FE915B005552E8 /* SearchConnectViewController.xib */,
@@ -249,6 +261,8 @@
 		9A9E41CC15FA7C960013E24D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9A2F778915FFCFCF004E0D1E /* noisy_grid@2X.png */,
+				9A2F778A15FFCFCF004E0D1E /* noisy_grid.png */,
 				9A88909C15FE7124005552E8 /* speaker.png */,
 				9A88909A15FE7114005552E8 /* speaker@2x.png */,
 				9A88909315FE6F6F005552E8 /* letter_closed.png */,
@@ -360,6 +374,9 @@
 				9A8890A215FE914E005552E8 /* SearchDiscoverViewController.xib in Resources */,
 				9A8890A715FE915C005552E8 /* SearchConnectViewController.xib in Resources */,
 				9A8890AD15FEA443005552E8 /* RecordMetaDataViewController.xib in Resources */,
+				9A2F778B15FFCFCF004E0D1E /* noisy_grid@2X.png in Resources */,
+				9A2F778C15FFCFCF004E0D1E /* noisy_grid.png in Resources */,
+				9A2F779215FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +399,7 @@
 				9A8890A115FE914E005552E8 /* SearchDiscoverViewController.m in Sources */,
 				9A8890A615FE915C005552E8 /* SearchConnectViewController.m in Sources */,
 				9A8890AC15FEA443005552E8 /* RecordMetaDataViewController.m in Sources */,
+				9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

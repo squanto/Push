@@ -22,7 +22,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
     }
     return self;
 }
@@ -34,13 +33,24 @@
     self.navigationItem.rightBarButtonItem = recordButton;
     self.navigationItem.title = @"Discover";
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
+    
+    // Table customizing.
+    CGRect tableFrame = CGRectMake(0, 0, 320, 480);
+    self.discoveryTable = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStyleGrouped];
+    self.discoveryTable.backgroundColor = self.view.backgroundColor;
+    [self.view addSubview:self.discoveryTable];
+    
+    
+    // Search Bar customization
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-//    self.searchBar.showsCancelButton = YES;
     self.searchBar.placeholder = @"Friends, #hashtags";
+    self.searchBar.barStyle = UIBarStyleBlack;
+    self.searchBar.backgroundImage = [UIImage imageNamed:@"noisy_grid.png"];
+    self.searchBar.translucent = YES;
     self.searchBar.delegate = self;
     [self.view addSubview:self.searchBar];
 }
-
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
@@ -57,9 +67,9 @@
 {
     NSLog(@"Began Editing!");
     [self.view endEditing:YES];
-    SearchDiscoverViewController *searchDiscoveryVC = [SearchDiscoverViewController new];
+    UINavigationController *searchDiscoveryVC = [[UINavigationController alloc] initWithRootViewController: [SearchDiscoverViewController new]];
     searchDiscoveryVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    searchDiscoveryVC.modalPresentationStyle = UIModalPresentationCurrentContext;
+    searchDiscoveryVC.navigationBarHidden = NO;
     [self.navigationController presentModalViewController:searchDiscoveryVC animated:YES];
 }
 

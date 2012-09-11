@@ -64,6 +64,7 @@ Make every navigation controller be able to (modally) present the recordVC.
 
 - Make the discovery search bar modally present a new view controller. 
 
+
 # Wednesday
 
 # Thursday
@@ -96,6 +97,7 @@ Make every navigation controller be able to (modally) present the recordVC.
 
 -http://stackoverflow.com/questions/409259/having-a-uitextfield-in-a-uitableviewcell (??)
 - Swipe the table to the left for options on recordings (??).
+- How to organize recent searches (as it's own table in Parse with User => search => timestamp)(??).
 
 ## Notes
 1. Appplication controller
@@ -190,3 +192,14 @@ http://www.cocoacontrols.com/platforms/ios/controls/mbprogresshud
 - http://cocoawithlove.com/2011/06/process-of-writing-ios-application.html
 
 
+### Signup
+Make this custom (Don't use parse auto login). Make this a table view of different cells (like adding a new contact). When you click on the photo, it modally presents options (to import from twitter, choose a photo, take a photo, or cancel).
+1. Username (with @)
+2. full name
+3. Email
+4. Password
+5. Photo 
+
+OR
+
+Twitter / facebook.
