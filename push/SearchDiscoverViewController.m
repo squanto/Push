@@ -26,6 +26,10 @@
         self.recentSearchesTable = [UITableView new];
         self.recentSearchesTable.dataSource = self;
         self.recentSearchesTable.delegate = self;
+        
+        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+        self.searchBar.delegate = self;
+        self.searchBar.showsCancelButton = YES;
         [self.view addSubview:self.searchBar];
     }
     return self;
@@ -35,11 +39,16 @@
 {
     [super viewDidLoad];
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self.searchBar becomeFirstResponder];
+}
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     NSLog(@"Cancel Button PRessed");
-//    [self.presentingViewController.navigationController popToViewController:self.presentingViewController animated:YES];    
+    [self.searchBar resignFirstResponder];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)viewDidUnload

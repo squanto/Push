@@ -119,12 +119,13 @@
         //sets audio file as a field of audio object.
         [audioObject setObject:audioFile forKey:@"audioFile"];
         [audioObject setObject:[[PFUser currentUser] username] forKey:@"user"];
-        [audioObject setObject:[NSDate date] forKey:@"title"];
+        [audioObject setObject:[[NSDate date] description] forKey:@"title"];
         [audioObject saveInBackground];
         NSLog(@"Sent To Parse!");
     }];
     metaDataVC.audioURL = self.audioURL;
     metaDataVC.audioObject = audioObject;
+    metaDataVC.audioObjectID = [audioObject objectId];
     [self.navigationController pushViewController:metaDataVC animated:YES];
 }
 

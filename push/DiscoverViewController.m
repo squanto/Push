@@ -35,7 +35,7 @@
     self.navigationItem.title = @"Discover";
     
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-    self.searchBar.showsCancelButton = YES;
+//    self.searchBar.showsCancelButton = YES;
     self.searchBar.placeholder = @"Friends, #hashtags";
     self.searchBar.delegate = self;
     [self.view addSubview:self.searchBar];
@@ -52,6 +52,23 @@
     // Present a new view controller via navigation here..
     
 }
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    NSLog(@"Began Editing!");
+    [self.view endEditing:YES];
+    SearchDiscoverViewController *searchDiscoveryVC = [SearchDiscoverViewController new];
+    searchDiscoveryVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    searchDiscoveryVC.modalPresentationStyle = UIModalPresentationCurrentContext;
+    [self.navigationController presentModalViewController:searchDiscoveryVC animated:YES];
+}
+
+// A Very Useful snippet:
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    NSLog(@"Touch Registered!s");
+//    [self.view endEditing:YES];
+//}
 
 
 - (void)viewDidUnload

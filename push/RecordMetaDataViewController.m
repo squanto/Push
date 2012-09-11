@@ -78,7 +78,6 @@
 
 - (IBAction)broadcastButtonPressed
 {
-    // Take the metadata from the text fields and add them to the audioObject
     [self broadcast];
 }
 
@@ -91,18 +90,26 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+    if (textField == self.friendTagField) {
+        [self broadcast];
+        NSLog(@"You pressed return on the friend tag field!");
+        [self dismissModalViewControllerAnimated:YES];
+        return YES;
+    }
+    NSLog(@"You pressed return on something else!");
     return YES;
 }
 
 -(void)broadcast
 {
-    [self.audioObject addObject:self.titleField.text forKey:@"title"];
-    [self.audioObject addObject:self.friendTagField.text forKey:@"friendsTagged"];
-    [self.audioObject addObject:self.hashTagField.text forKey:@"hashTags"];
-    [self.audioObject addObject:[NSString stringWithFormat:@"%c", self.geoTagOption.on] forKey:@"geotag"];
+    // Set object instead of add object....
+    NSMutableArray *friends = [[self.friendTagField.text componentsSeparatedByString:@","] copy];
+    [self.audioObject setObject:self.titleField.text forKey:@"title"];
+    [self.audioObject addObject:friends forKey:@"friendsTagged"];
+    [self.audioObject setObject:self.hashTagField.text forKey:@"hashTags"];
+    [self.audioObject setObject:[NSString stringWithFormat:@"%@", self.geoTagOption.description] forKey:@"geotag"];
     [self.audioObject saveInBackground];
     NSLog(@"Finish Broadcast Upload");
-    //[self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 @end

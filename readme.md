@@ -1,68 +1,39 @@
 # Goal
-Make it really easy to podcast and livestream audio.
+Make it really easy to podcast / livestream audio.
 
 # Spec
 Push-to-talk audio. 
 
-1. Simple twitter authentication splash screen. (Check)
-2. Record simple audio file (record / stop). 
-	- Name it.
-	- As you enter in details, it's sending in the background.
-3. Send to parse. Associate it with the logged in user.
+Mirror the Twitter iOS app, but with audio instead. Diverge accordingly.  
+
+1. Modify login to copy twitter's web login.
+	- Remove twitter auth(??), add email auth and auto-parse verification. 
+2. Make it hold to record + send to parse in the background as I send metadata (Instagram interview style). (check)
+	- Send to parse. Associate it with the logged in user. (check)
 4. Be able to 'log in' to someone's channel
+	- Create a table (Follow Table), with a following user and followed user. 
 5. Get files as they're recorded to parse and play them. 
+
 6. Modify record button to take files as they're recording, piece them out, and send them to parse. 
-7. It automatically scans and 'follows' people you already follow on twitter. ( or gives you the option?)
-8. Interact with the Javascript Web App. (Learn javascript with parse?)
+
+7. There's a setting to connect your twitter and let it scan for people you follow to follow here (two simple pfqueries + custom twitter auth).
+	- It automatically scans and 'follows' people you already follow on twitter. ( or gives you the option?)
+	- Add them as a tabl view (http://24.media.tumblr.com/tumblr_m2qlr7H9Yk1qzff5uo2_1280.png).
+	- https://parse.com/docs/ios_guide#twitter-users (this)
+
+8. Interact with the Javascript(backbone/ember) Web App. (Learn javascript with parse?)
+	- Start off with the landing screen. Check out: (http://www.blip.me/broadcast/).
 
 
-TODO:
-- Learn about push notifications
-	- https://parse.com/apps/pulse--3/push_notifications
-	- https://parse.com/docs/ios_guide#push
-	- https://parse.com/tutorials/ios-push-notifications (practice this again)
-- As you're updating audio
+# TODO:
 - Add settings for updating / adding email, reseting passwords, etc.
-- Make retina difference for tab bar iems (http://app-bits.com/free-icons.html)
-
-Experimental Ideas:
-
-- Exit Strategy: Make it eventually stream live audio (compete with ustream / soundcloud?). Make it a really easy mobile podcasting / live streaming tool 
-and sell it for 99 cents.
-- Free iOS version. Paid version that integrates with a rails/javascript web app: Profiles, podcasting, analytics, featured tracks, customization, etc.
-
-- Add Geolocation for sound streaming.
-- Cocktail party audio streaming.
-- Cool Parse Examples: https://parse.com/samples
-- Cool open source examples: http://maniacdev.com/2010/06/35-open-source-iphone-app-store-apps-updated-with-10-new-apps/
-
-- Totally different App: Soundtracking Your life: Easily share / promote artists you love.
-- Totally different App: Merge StackOverflow and Wikipedia (add point functionality to longform knowledge graphs and tutorials). (Incentivize people to create/share free, open source tutorials).
-- Totally different App: Running app that integrates with your music (trainer type deal).
-- http://attila.tumblr.com/post/21180235691/ios-tutorial-creating-a-chat-room-using-parse-com
-- http://cocoawithlove.com/2011/06/process-of-writing-ios-application.html
-
-
-1. Appplication controller
-init with nib name is the designated initializer. Alloc init calls init with nib name. (When created with code). When view controller loads with view, it loads with nib.
 	
-View controller will come on screen. Needs to load up view.
-	Goes to nib by default. 
-	ViewWillLoad happens before this.
-	Loadview - Set up here for doing programmatically
-	
-viewDidLoad
-	After it loads up, outlets are connected. 
-	ViewdidLoad once it's been loaded. Set yourself as data source and delegate. Post view loading setup.
-	
-ViewWillAppear
-	For making thing load.
-	
-	
+1. Make pretty.
+- Fix images / icons for retina display (check)
+- Fix Splash logo for retina display
+- Add Page control the first time you sign up.
+
 - Add email confirmation / authdata
-- Remove email signup. Only sign up through twitter. 
-- Fix images for retina display. 
-- Be able to see a table view of all your recordings. 
 	
 
 // like voxer. but more asynchronous. More boradcast-y, less one-to-one.
@@ -70,35 +41,46 @@ ViewWillAppear
 
 Add find people to follow, startup guide, etc. to sidescrolling splash screen.
 
-http://www.cocoacontrols.com/platforms/ios/controls/jtrevealsidebar
-
 http://www.cocoacontrols.com/platforms/ios/controls/center-button-in-tab-bar
 // add this center button to the record functionality (look at anypic source code?).
 
 http://www.cocoacontrols.com/platforms/ios/controls/pull-to-refresh-tableview
-
 
 http://idevrecipes.com/2011/04/14/how-does-the-twitter-iphone-app-implement-side-swiping-on-a-table/
 // swipe controls on 
 
 # Monday
 
-Mirror Twitter app, but with audio. 
-
 Make every navigation controller be able to (modally) present the recordVC.
-
-
 1. Home Screen.
-
 2. Connect Screen
-
 3. Discover (Search via hashtag. Speech to text?)
-
 4. Profile View (modified table view). 
 
 
+# Tuesday
 
-# Questions for Ned
+- Be able to see a table view of all your recordings. (Parse auto-pull-to-refresh-and-query).
+
+- Make the discovery search bar modally present a new view controller. 
+
+# Wednesday
+
+# Thursday
+- http://www.iosdevnotes.com/tag/uipagecontrol/, add 
+
+# Friday
+
+# Saturday
+
+# Sunday
+
+# Monday
+- Submit To the App Store
+
+# Ned Notes
+## Questins
+- Record, stop, and send? or hold to record?
 - How best to add options to a recording. 
 - Loading my Tab bar items where I load them. 
 - Record VC.m, line 100-110.
@@ -112,13 +94,30 @@ Make every navigation controller be able to (modally) present the recordVC.
 - Parse one to many relationships. 
 - Parse many to many relationships (hashtags).
 
+-http://stackoverflow.com/questions/409259/having-a-uitextfield-in-a-uitableviewcell (??)
+- Swipe the table to the left for options on recordings (??).
+
+## Notes
+1. Appplication controller
+init with nib name is the designated initializer. Alloc init calls init with nib name. (When created with code). When view controller loads with view, it loads with nib.
+	
+2. View controller will come on screen. Needs to load up view.
+	Goes to nib by default. 
+	ViewWillLoad happens before this.
+	Loadview - Set up here for doing programmatically
+	
+3. viewDidLoad
+	After it loads up, outlets are connected. 
+	ViewdidLoad once it's been loaded. Set yourself as data source and delegate. Post view loading setup.
+	
+4. ViewWillAppear
+	For making thing load.
+
 1. Audio File (data)
 2. Audio object (link)
 	- Each one has a user
 
 PFQuery wherekey (user) is equal to…
-
-Create a table (Follow Table), with a following user and followed user. 
 
 
 1. Create the audio object. 
@@ -131,6 +130,7 @@ Create a table (Follow Table), with a following user and followed user.
 
 - Make a profile table view
 
+- Make My Meta-Data VC Use a table view (http://stackoverflow.com/questions/409259/having-a-uitextfield-in-a-uitableviewcell).
 
 -AVaudioPlayer can stream
 
@@ -144,7 +144,6 @@ Create a table (Follow Table), with a following user and followed user.
 
 Less one to one and more broadcasting. Modify.
 	- Add titles to recordings.
-		- Hold down to Record, 
 
 
 Add (page control) sign up page when the program first loads. the first time the user logs in.
@@ -154,3 +153,40 @@ Add a relations table. On one side, you have
 
 
 Add the rails app that connects with Parse.
+
+
+
+# Similiar Products in the Market
+- Soundcloud
+- Twitter
+- Blip.me
+- Voxer
+
+# Experimental Ideas:
+
+- Exit Strategy: Make it eventually stream live audio (compete with ustream / soundcloud?). Make it a really easy mobile podcasting / live streaming tool 
+and sell it for 99 cents.
+- Free iOS version. Paid version for podcasters (?)
+	- that integrates with a rails/javascript web app: Profiles, podcasting, analytics, featured tracks, customization, etc.
+
+- Add Geolocation for sound streaming.
+	- Part of the discovery, add local rooms (listen to all boradcasts from SOMA).
+- Cocktail party audio streaming.
+- Cool Parse Examples: https://parse.com/samples
+- Cool open source examples: http://maniacdev.com/2010/06/35-open-source-iphone-app-store-apps-updated-with-10-new-apps/
+
+# Left Field
+
+http://www.cocoacontrols.com/platforms/ios/controls/svsegmentedcontrol
+
+
+http://www.cocoacontrols.com/platforms/ios/controls/mbprogresshud
+
+
+- Totally different App: Soundtracking Your life: Easily share / promote artists you love.
+- Totally different App: Merge StackOverflow and Wikipedia (add point functionality to longform knowledge graphs and tutorials). (Incentivize people to create/share free, open source tutorials).
+- Totally different App: Running app that integrates with your music (trainer type deal).
+- http://attila.tumblr.com/post/21180235691/ios-tutorial-creating-a-chat-room-using-parse-com
+- http://cocoawithlove.com/2011/06/process-of-writing-ios-application.html
+
+
