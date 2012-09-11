@@ -49,35 +49,6 @@ http://www.cocoacontrols.com/platforms/ios/controls/pull-to-refresh-tableview
 http://idevrecipes.com/2011/04/14/how-does-the-twitter-iphone-app-implement-side-swiping-on-a-table/
 // swipe controls on 
 
-# Monday
-
-Make every navigation controller be able to (modally) present the recordVC.
-1. Home Screen.
-2. Connect Screen
-3. Discover (Search via hashtag. Speech to text?)
-4. Profile View (modified table view). 
-
-
-# Tuesday
-
-- Be able to see a table view of all your recordings. (Parse auto-pull-to-refresh-and-query).
-
-- Make the discovery search bar modally present a new view controller. 
-
-
-# Wednesday
-
-# Thursday
-- http://www.iosdevnotes.com/tag/uipagecontrol/, add 
-
-# Friday
-
-# Saturday
-
-# Sunday
-
-# Monday
-- Submit To the App Store
 
 # Ned Notes
 ## Questins
@@ -203,3 +174,36 @@ Make this custom (Don't use parse auto login). Make this a table view of differe
 OR
 
 Twitter / facebook.
+
+
+# Progress Map
+## Monday
+
+- Make every navigation controller be able to (modally) present the recordVC. (check)
+	1. Home Screen.
+	2. Connect Screen
+	3. Discover (Search via hashtag. Speech to text?)
+	4. Profile View (modified table view). 
+
+
+## Tuesday
+
+- Be able to see a table view of all your recordings. (Parse auto-pull-to-refresh-and-query).
+
+- Make the discovery search bar modally present a new view controller. (check)
+
+- Be able to search for, discover, and follow new users. 
+
+## Wednesday
+
+## Thursday
+- http://www.iosdevnotes.com/tag/uipagecontrol/, add 
+
+## Friday
+
+## Saturday
+
+## Sunday
+
+# Monday
+- Submit To the App Store
