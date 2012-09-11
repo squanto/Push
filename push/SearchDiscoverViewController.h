@@ -10,7 +10,6 @@
 
 @interface SearchDiscoverViewController : UIViewController
 
-@property (strong) UIViewController *rootVC;
 @property (strong, nonatomic) UISearchBar *searchBar;
 
 @end

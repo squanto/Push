@@ -99,15 +99,37 @@ Make every navigation controller be able to (modally) present the recordVC.
 
 
 # Questions for Ned
-- Abstracting Record button modal presentation thingy.
+- How best to add options to a recording. 
 - Loading my Tab bar items where I load them. 
 - Record VC.m, line 100-110.
-- Discover functionality. 
+- Discover functionality. (?!?)
 	- How does search do its animation to a search view controller. 
 	- Add search to table view (??)
+	- Add Diretions for geotagged sounds (like a virtual tour throughout a city).
 - discovery VC line 40-50.
+- Sliding UITableView while first responder is selected. 
+- Sending the file in the background as users update metadata (??)
+- Parse one to many relationships. 
+- Parse many to many relationships (hashtags).
+
+1. Audio File (data)
+2. Audio object (link)
+	- Each one has a user
+
+PFQuery wherekey (user) is equal to…
+
+Create a table (Follow Table), with a following user and followed user. 
 
 
+1. Create the audio object. 
+2. Start saving the audio file
+25. When you're done saving, please set the audio object's file in the audio file
+3. Happening at the same time as 2.5. Create the meta data VC. 
+4. Set the audio Object in the metadata vc. 
+5. Let meta data do its thing
+6. Update audioobject when save is pressed. 
+
+- Make a profile table view
 
 
 -AVaudioPlayer can stream
@@ -123,3 +145,12 @@ Make every navigation controller be able to (modally) present the recordVC.
 Less one to one and more broadcasting. Modify.
 	- Add titles to recordings.
 		- Hold down to Record, 
+
+
+Add (page control) sign up page when the program first loads. the first time the user logs in.
+http://www.edumobile.org/iphone/iphone-programming-tutorials/pagecontrol-example-in-iphone/
+
+Add a relations table. On one side, you have 
+
+
+Add the rails app that connects with Parse.

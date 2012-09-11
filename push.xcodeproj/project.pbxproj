@@ -40,6 +40,8 @@
 		9A8890A215FE914E005552E8 /* SearchDiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8890A015FE914E005552E8 /* SearchDiscoverViewController.xib */; };
 		9A8890A615FE915C005552E8 /* SearchConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8890A415FE915B005552E8 /* SearchConnectViewController.m */; };
 		9A8890A715FE915C005552E8 /* SearchConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8890A515FE915B005552E8 /* SearchConnectViewController.xib */; };
+		9A8890AC15FEA443005552E8 /* RecordMetaDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8890AA15FEA443005552E8 /* RecordMetaDataViewController.m */; };
+		9A8890AD15FEA443005552E8 /* RecordMetaDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8890AB15FEA443005552E8 /* RecordMetaDataViewController.xib */; };
 		9A9E41C615FA7C960013E24D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C515FA7C960013E24D /* UIKit.framework */; };
 		9A9E41C815FA7C960013E24D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C715FA7C960013E24D /* Foundation.framework */; };
 		9A9E41CA15FA7C960013E24D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C915FA7C960013E24D /* CoreGraphics.framework */; };
@@ -102,6 +104,9 @@
 		9A8890A315FE915B005552E8 /* SearchConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchConnectViewController.h; path = push/SearchConnectViewController.h; sourceTree = "<group>"; };
 		9A8890A415FE915B005552E8 /* SearchConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchConnectViewController.m; path = push/SearchConnectViewController.m; sourceTree = "<group>"; };
 		9A8890A515FE915B005552E8 /* SearchConnectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchConnectViewController.xib; path = push/SearchConnectViewController.xib; sourceTree = "<group>"; };
+		9A8890A915FEA442005552E8 /* RecordMetaDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordMetaDataViewController.h; path = push/RecordMetaDataViewController.h; sourceTree = "<group>"; };
+		9A8890AA15FEA443005552E8 /* RecordMetaDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordMetaDataViewController.m; path = push/RecordMetaDataViewController.m; sourceTree = "<group>"; };
+		9A8890AB15FEA443005552E8 /* RecordMetaDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecordMetaDataViewController.xib; path = push/RecordMetaDataViewController.xib; sourceTree = "<group>"; };
 		9A9E41C115FA7C960013E24D /* push.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = push.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9E41C515FA7C960013E24D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A9E41C715FA7C960013E24D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -163,12 +168,23 @@
 			name = search;
 			sourceTree = "<group>";
 		};
-		9A9E41B615FA7C960013E24D = {
+		9A8890AE15FEA448005552E8 /* record */ = {
 			isa = PBXGroup;
 			children = (
 				9A11E0F415FB1763009615DC /* RecordViewController.h */,
 				9A11E0F515FB1763009615DC /* RecordViewController.m */,
 				9A11E0F615FB1763009615DC /* RecordViewController.xib */,
+				9A8890A915FEA442005552E8 /* RecordMetaDataViewController.h */,
+				9A8890AA15FEA443005552E8 /* RecordMetaDataViewController.m */,
+				9A8890AB15FEA443005552E8 /* RecordMetaDataViewController.xib */,
+			);
+			name = record;
+			sourceTree = "<group>";
+		};
+		9A9E41B615FA7C960013E24D = {
+			isa = PBXGroup;
+			children = (
+				9A8890AE15FEA448005552E8 /* record */,
 				9A88907F15FE6B28005552E8 /* TimelineViewController.h */,
 				9A88908015FE6B28005552E8 /* TimelineViewController.m */,
 				9A88908115FE6B28005552E8 /* TimelineViewController.xib */,
@@ -343,6 +359,7 @@
 				9A88909D15FE7124005552E8 /* speaker.png in Resources */,
 				9A8890A215FE914E005552E8 /* SearchDiscoverViewController.xib in Resources */,
 				9A8890A715FE915C005552E8 /* SearchConnectViewController.xib in Resources */,
+				9A8890AD15FEA443005552E8 /* RecordMetaDataViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +381,7 @@
 				9A88909815FE6FC9005552E8 /* ConnectViewController.m in Sources */,
 				9A8890A115FE914E005552E8 /* SearchDiscoverViewController.m in Sources */,
 				9A8890A615FE915C005552E8 /* SearchConnectViewController.m in Sources */,
+				9A8890AC15FEA443005552E8 /* RecordMetaDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

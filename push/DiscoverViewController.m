@@ -10,9 +10,9 @@
 #import "RecordViewController.h"
 #import "SearchDiscoverViewController.h"
 
-@interface DiscoverViewController ()<UISearchBarDelegate>
+@interface DiscoverViewController ()<UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (strong) IBOutlet UISearchBar *searchBar;
+@property (strong) UISearchBar *searchBar;
 
 @end
 
@@ -22,7 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -34,19 +34,23 @@
     self.navigationItem.rightBarButtonItem = recordButton;
     self.navigationItem.title = @"Discover";
     
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
-    self.searchBar.placeholder = @"Find friends, search #hashtags";
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    self.searchBar.showsCancelButton = YES;
+    self.searchBar.placeholder = @"Friends, #hashtags";
     self.searchBar.delegate = self;
     [self.view addSubview:self.searchBar];
 }
 
--(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    SearchDiscoverViewController *searchDiscoveryVC = [SearchDiscoverViewController new];
-    searchDiscoveryVC.rootVC = self;
-    searchDiscoveryVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    searchDiscoveryVC.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self.navigationController presentModalViewController:searchDiscoveryVC animated:YES];
+    NSString *textToSearch = searchBar.text;
+    NSLog(@"Text To Search: %@", textToSearch);
+    [self.searchBar resignFirstResponder];
+    
+    // Update the custom table view. Make asyncronous calls to parse from here.
+    // Present a new view controller via navigation here..
+    
 }
 
 

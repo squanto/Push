@@ -7,17 +7,17 @@
 //
 
 #import "RecordViewController.h"
+#import "RecordMetaDataViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Parse/Parse.h>
 
-@interface RecordViewController ()<AVAudioPlayerDelegate, AVAudioRecorderDelegate>
+@interface RecordViewController ()<AVAudioRecorderDelegate>
+
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
-@property (weak, nonatomic) IBOutlet UIButton *recordButton;
 
 @property (strong) AVAudioRecorder *recorder;
-@property (strong) AVAudioPlayer *player;
 
 @end
 
@@ -56,8 +56,6 @@
     
     self.recorder = [[AVAudioRecorder alloc] initWithURL:self.audioURL settings:options error:nil];
     self.recorder.delegate = self;
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.audioURL error:nil];
-    self.player.delegate = self;
 }
 
 - (void)viewDidUnload
@@ -81,51 +79,24 @@
 
 
 
+- (IBAction)recordTouchDown:(id)sender
+{
+    NSLog(@"REcording!!");
+    [self.recorder record];
+}
 
 
 
 - (IBAction)recordButtonPressed
 {
     if (!self.recorder.recording) {
-        if (self.player.playing) {
-            [self playButtonPressed];
-        }
         [self.recorder record];
         NSLog(@"RECORDING !!");
     } else {
         [self.recorder stop];
-        // Give this a unique id every time.
-        // Allow a to user text field (via twitter handles).
-        PFFile *audioFile = [PFFile fileWithName:@"audio.wav" contentsAtPath:[self.audioURL path]];
-        [audioFile save];
-        
-        PFObject *audioObject = [PFObject objectWithClassName:@"audioObject"];
-        [audioObject setObject:audioFile forKey:@"audioFile"];
-        [audioObject setObject:[[PFUser currentUser] username] forKey:@"user"];
-        [audioObject save];
-        [audioObject setObject:[audioObject objectForKey:@"createdAt"] forKey:@"title"];
-        [audioObject save];
-        
-        // https://www.parse.com/questions/saving-a-pfobject-with-a-pffile-in-it-without-re-uploading-the-file
-        // https://parse.com/docs/ios/api/Classes/PFObject.html
-        // https://parse.com/docs/ios_guide
-        NSLog(@"Sent To PArse!");
-        
     }
-//    [self resetRecordingTitles];
 }
 
-- (IBAction)playButtonPressed
-{
-    if (!self.player.playing) {
-        if (self.recorder.recording) {
-            [self recordButtonPressed];
-        }
-        [self.player play];
-    } else {
-        [self.player stop];
-    }
-}
 
 
 // Remove this button. 
@@ -134,36 +105,27 @@
     
 }
 
-
-// Make these things work.
--(void)resetPlayingTitles {
-    if (self.player.playing) {
-        [self.playButton setTitle:@"End Playing" forState:UIControlStateNormal];
-        [self.playButton setTitle:@"End Playing" forState:UIControlStateHighlighted];
-    } else {
-        [self.playButton setTitle:@"Begin Playing" forState:UIControlStateNormal];
-        [self.playButton setTitle:@"Begin Playing" forState:UIControlStateHighlighted];
-    }
-}
-
--(void)resetRecordingTitles {
-    if (self.recorder.recording) {
-        [self.recordButton setTitle:@"End Recording" forState:UIControlStateNormal];
-        [self.recordButton setTitle:@"End Recording" forState:UIControlStateHighlighted];
-    } else {
-        [self.recordButton setTitle:@"Begin Recording" forState:UIControlStateNormal];
-        [self.recordButton setTitle:@"Begin Recording" forState:UIControlStateHighlighted];
-    }
-}
-
--(void)audioPlayerDidFinishPlaying:(AVAudioPlayer*)player
-                      successfully:(BOOL)flag {
-//    [self resetPlayingTitles];
-}
-
 -(void)audioRecorderDidFinishRecording:(AVAudioRecorder*)recorder
                           successfully:(BOOL)flag {
-//    [self resetRecordingTitles];
+
+    // Give this a unique id every time.
+    // Allow a to user text field (via twitter handles).
+    RecordMetaDataViewController *metaDataVC = [RecordMetaDataViewController new];
+
+    PFObject *audioObject = [PFObject objectWithClassName:@"audioObject"];
+    PFFile *audioFile = [PFFile fileWithName:@"audio.wav" contentsAtPath:[self.audioURL path]];
+    
+    [audioFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        //sets audio file as a field of audio object.
+        [audioObject setObject:audioFile forKey:@"audioFile"];
+        [audioObject setObject:[[PFUser currentUser] username] forKey:@"user"];
+        [audioObject setObject:[NSDate date] forKey:@"title"];
+        [audioObject saveInBackground];
+        NSLog(@"Sent To Parse!");
+    }];
+    metaDataVC.audioURL = self.audioURL;
+    metaDataVC.audioObject = audioObject;
+    [self.navigationController pushViewController:metaDataVC animated:YES];
 }
 
 
