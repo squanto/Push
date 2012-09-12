@@ -18,6 +18,8 @@
 		9A2F778C15FFCFCF004E0D1E /* noisy_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F778A15FFCFCF004E0D1E /* noisy_grid.png */; };
 		9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */; };
 		9A2F779215FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */; };
+		9A2F779616000D6A004E0D1E /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F779416000D6A004E0D1E /* StreamViewController.m */; };
+		9A2F779716000D6A004E0D1E /* StreamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F779516000D6A004E0D1E /* StreamViewController.xib */; };
 		9A88906F15FD2C96005552E8 /* cog_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88906E15FD2C96005552E8 /* cog_02@2x.png */; };
 		9A88907115FD2C9F005552E8 /* cog_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907015FD2C9F005552E8 /* cog_02.png */; };
 		9A88907315FD2CA8005552E8 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907215FD2CA8005552E8 /* record.png */; };
@@ -81,6 +83,9 @@
 		9A2F778E15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchDiscoveryResultsViewController.h; path = push/SearchDiscoveryResultsViewController.h; sourceTree = "<group>"; };
 		9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchDiscoveryResultsViewController.m; path = push/SearchDiscoveryResultsViewController.m; sourceTree = "<group>"; };
 		9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchDiscoveryResultsViewController.xib; path = push/SearchDiscoveryResultsViewController.xib; sourceTree = "<group>"; };
+		9A2F779316000D69004E0D1E /* StreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StreamViewController.h; path = push/StreamViewController.h; sourceTree = "<group>"; };
+		9A2F779416000D6A004E0D1E /* StreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StreamViewController.m; path = push/StreamViewController.m; sourceTree = "<group>"; };
+		9A2F779516000D6A004E0D1E /* StreamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StreamViewController.xib; path = push/StreamViewController.xib; sourceTree = "<group>"; };
 		9A88906E15FD2C96005552E8 /* cog_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog_02@2x.png"; sourceTree = "<group>"; };
 		9A88907015FD2C9F005552E8 /* cog_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog_02.png; sourceTree = "<group>"; };
 		9A88907215FD2CA8005552E8 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
@@ -203,6 +208,9 @@
 				9A88907A15FD2D88005552E8 /* ProfileViewController.h */,
 				9A88907B15FD2D88005552E8 /* ProfileViewController.m */,
 				9A88907C15FD2D88005552E8 /* ProfileViewController.xib */,
+				9A2F779316000D69004E0D1E /* StreamViewController.h */,
+				9A2F779416000D6A004E0D1E /* StreamViewController.m */,
+				9A2F779516000D6A004E0D1E /* StreamViewController.xib */,
 				9A88908C15FE6E96005552E8 /* DiscoverViewController.h */,
 				9A88908D15FE6E96005552E8 /* DiscoverViewController.m */,
 				9A88908E15FE6E96005552E8 /* DiscoverViewController.xib */,
@@ -377,6 +385,7 @@
 				9A2F778B15FFCFCF004E0D1E /* noisy_grid@2X.png in Resources */,
 				9A2F778C15FFCFCF004E0D1E /* noisy_grid.png in Resources */,
 				9A2F779215FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib in Resources */,
+				9A2F779716000D6A004E0D1E /* StreamViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +409,7 @@
 				9A8890A615FE915C005552E8 /* SearchConnectViewController.m in Sources */,
 				9A8890AC15FEA443005552E8 /* RecordMetaDataViewController.m in Sources */,
 				9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */,
+				9A2F779616000D6A004E0D1E /* StreamViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

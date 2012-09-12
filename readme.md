@@ -69,6 +69,7 @@ http://idevrecipes.com/2011/04/14/how-does-the-twitter-iphone-app-implement-side
 -http://stackoverflow.com/questions/409259/having-a-uitextfield-in-a-uitableviewcell (??)
 - Swipe the table to the left for options on recordings (??).
 - How to organize recent searches (as it's own table in Parse with User => search => timestamp)(??).
+- Search Discovery View Controller. 
 
 ## Notes
 1. Appplication controller
@@ -174,6 +175,7 @@ Make this custom (Don't use parse auto login). Make this a table view of differe
 OR
 
 Twitter / facebook.
+http://developer.apple.com/library/ios/#documentation/Twitter/Reference/TwitterFrameworkReference/_index.html
 
 
 # Progress Map

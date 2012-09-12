@@ -25,6 +25,7 @@
         self.pullToRefreshEnabled = NO;
         self.paginationEnabled = NO;
         self.objectsPerPage = 20;
+        self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
         self.tableView.frame = CGRectMake(0, 0, 320, 430);
     }
     return self;
@@ -91,7 +92,7 @@
     NSLog(@"%@", self.searchBar.text);
     PFObject *search = [PFObject objectWithClassName:@"userSearches"];
     [search setObject:[[PFUser currentUser] username] forKey:@"user"];
-    [search setObject:self.searchBar.text forKey:@"searchText"];
+    [search setObject:[self.searchBar.text lowercaseString] forKey:@"searchText"];
     [search saveInBackground];
     
     [self pushToResultsVCWithSearchText:self.searchBar.text];
@@ -109,7 +110,7 @@
 {
     // Make the Results VC and present it.
     SearchDiscoveryResultsViewController *resultsVC = [SearchDiscoveryResultsViewController new];
-    resultsVC.searchText = queryText;
+    resultsVC.searchText = [queryText lowercaseString];
     NSLog(@"About To Push!");
     [self.searchBar endEditing:YES];
     [self.navigationController pushViewController:resultsVC animated:YES];

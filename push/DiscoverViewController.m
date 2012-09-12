@@ -67,7 +67,7 @@
 {
     NSLog(@"Began Editing!");
     [self.view endEditing:YES];
-    UINavigationController *searchDiscoveryVC = [[UINavigationController alloc] initWithRootViewController: [SearchDiscoverViewController new]];
+    UINavigationController *searchDiscoveryVC = [[UINavigationController alloc] initWithRootViewController: [[SearchDiscoverViewController alloc] initWithStyle:UITableViewStyleGrouped]];
     searchDiscoveryVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     searchDiscoveryVC.navigationBarHidden = NO;
     [self.navigationController presentModalViewController:searchDiscoveryVC animated:YES];

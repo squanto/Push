@@ -13,6 +13,7 @@
 @interface SearchDiscoveryResultsViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong) UITableView *resultsTable;
+@property (strong) NSArray *searchResults;
 
 @end
 
@@ -37,27 +38,41 @@
     self.resultsTable.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
     self.resultsTable.delegate = self;
     self.resultsTable.dataSource = self;
+    [self.view addSubview:self.resultsTable];
     
     // Adding the record button
     UIBarButtonItem *recordButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(showRecordModally)];
     self.navigationItem.rightBarButtonItem = recordButton;
     self.navigationItem.title = @"Discover";
+    
+    // Blast off!
+    [self searchQuery];
 }
 
--(NSArray *)searchQuery
+-(void)searchQuery
 {
     NSLog(@"Resluts Query made!");
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    [query whereKey:@"username" containsString:self.searchText];
-    return [query findObjects];
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"username" equalTo:self.searchText];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.searchResults = [[NSArray alloc] initWithArray:objects];
+        } else {
+            NSLog(@"Error error: %@", [error userInfo]);
+        }
+         [self.resultsTable reloadData];
+    }];
+}
+
+-(int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"TABLE COUNT! %u", self.searchResults.count);
+    return self.searchResults.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *searchResults = [self searchQuery];
     UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
-    
+    cell.textLabel.text = [[self.searchResults objectAtIndex:indexPath.row] username];
     return cell;
 }
 
