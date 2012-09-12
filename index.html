@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Push by squanto</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Push</h1>
+        <p>Audio Twitter</p>
+
+        <p class="view"><a href="https://github.com/squanto/Push">View the Project on GitHub <small>squanto/Push</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/squanto/Push/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/squanto/Push/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/squanto/Push">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Goal</h1>
+
+<p>Make it really easy to podcast / livestream audio.</p>
+
+<p>To do this, I'm following the path of different use cases for the app, and building features in the order that users would experience them.</p>
+
+<h1>Spec</h1>
+
+<p>Push-to-talk audio. </p>
+
+<p>Mirror the Twitter iOS app, but with audio instead. Diverge accordingly.  </p>
+
+<ol>
+<li>Modify login to copy twitter's web login.
+
+<ul>
+<li>Remove twitter auth(??), add email auth and auto-parse verification. </li>
+</ul>
+</li>
+<li>Make it hold to record + send to parse in the background as I send metadata (Instagram interview style). (check)
+
+<ul>
+<li>Send to parse. Associate it with the logged in user. (check)</li>
+</ul>
+</li>
+<li>Be able to 'log in' to someone's channel
+
+<ul>
+<li>Create a table (Follow Table), with a following user and followed user. </li>
+</ul>
+</li>
+<li><p>Get files as they're recorded to parse and play them. </p></li>
+<li><p>Modify record button to take files as they're recording, piece them out, and send them to parse. </p></li>
+<li>
+<p>There's a setting to connect your twitter and let it scan for people you follow to follow here (two simple pfqueries + custom twitter auth).</p>
+
+<ul>
+<li>It automatically scans and 'follows' people you already follow on twitter. ( or gives you the option?)</li>
+<li>Add them as a tabl view (<a href="http://24.media.tumblr.com/tumblr_m2qlr7H9Yk1qzff5uo2_1280.png">http://24.media.tumblr.com/tumblr_m2qlr7H9Yk1qzff5uo2_1280.png</a>).</li>
+<li>
+<a href="https://parse.com/docs/ios_guide#twitter-users">https://parse.com/docs/ios_guide#twitter-users</a> (this)</li>
+</ul>
+</li>
+<li>
+<p>Interact with the Javascript(backbone/ember) Web App. (Learn javascript with parse?)</p>
+
+<ul>
+<li>Start off with the landing screen. Check out: (<a href="http://www.blip.me/broadcast/">http://www.blip.me/broadcast/</a>).</li>
+</ul>
+</li>
+</ol><h1>TODO:</h1>
+
+<ul>
+<li><p>Add github pages project page (with minimal theme: <a href="https://github.com/orderedlist/minimal">https://github.com/orderedlist/minimal</a>)</p></li>
+<li><p>Add some iOS boilerplate (<a href="https://github.com/gimenete/iOS-boilerplate/tree/master/IOSBoilerplate">https://github.com/gimenete/iOS-boilerplate/tree/master/IOSBoilerplate</a>)</p></li>
+<li><p>Add settings for updating / adding email, reseting passwords, etc.</p></li>
+</ul><ol>
+<li>Make pretty.</li>
+<li>Fix images / icons for retina display (check)</li>
+<li>Fix Splash logo for retina display</li>
+<li>Add Page control the first time you sign up.</li>
+</ol><ul>
+<li>Add email confirmation / authdata</li>
+</ul><p>Add find people to follow, startup guide, etc. to sidescrolling splash screen.</p>
+
+<p><a href="http://www.cocoacontrols.com/platforms/ios/controls/center-button-in-tab-bar">http://www.cocoacontrols.com/platforms/ios/controls/center-button-in-tab-bar</a>
+// add this center button to the record functionality (look at anypic source code?).</p>
+
+<p><a href="http://www.cocoacontrols.com/platforms/ios/controls/pull-to-refresh-tableview">http://www.cocoacontrols.com/platforms/ios/controls/pull-to-refresh-tableview</a></p>
+
+<p><a href="http://idevrecipes.com/2011/04/14/how-does-the-twitter-iphone-app-implement-side-swiping-on-a-table/">http://idevrecipes.com/2011/04/14/how-does-the-twitter-iphone-app-implement-side-swiping-on-a-table/</a>
+// swipe controls on </p>
+
+<h1>Ned Notes</h1>
+
+<h2>Questins</h2>
+
+<ul>
+<li>Record, stop, and send? or hold to record?</li>
+<li>How best to add options to a recording. </li>
+<li>Loading my Tab bar items where I load them. </li>
+<li>Record VC.m, line 100-110.</li>
+<li>Discover functionality. (?!?)
+
+<ul>
+<li>How does search do its animation to a search view controller. </li>
+<li>Add search to table view (??)</li>
+<li>Add Diretions for geotagged sounds (like a virtual tour throughout a city).</li>
+</ul>
+</li>
+<li>discovery VC line 40-50.</li>
+<li>Sliding UITableView while first responder is selected. </li>
+<li>Sending the file in the background as users update metadata (??)</li>
+<li>Parse one to many relationships. </li>
+<li>Parse many to many relationships (hashtags).</li>
+</ul><p>-<a href="http://stackoverflow.com/questions/409259/having-a-uitextfield-in-a-uitableviewcell">http://stackoverflow.com/questions/409259/having-a-uitextfield-in-a-uitableviewcell</a> (??)</p>
+
+<ul>
+<li>Swipe the table to the left for options on recordings (??).</li>
+<li>How to organize recent searches (as it's own table in Parse with User =&gt; search =&gt; timestamp)(??).</li>
+<li><p>Search Discovery View Controller. </p></li>
+<li><p>Use core animation to swap the view of each tableviewcell. There's probably two views layered on top of each other, with a view animation, set the opacity to 0, and when it comes back, it can respond to touch events. </p></li>
+<li><p>Quick dialog for forms with tables with text fields</p></li>
+</ul><h2>Notes</h2>
+
+<ol>
+<li><p>Appplication controller
+init with nib name is the designated initializer. Alloc init calls init with nib name. (When created with code). When view controller loads with view, it loads with nib.</p></li>
+<li><p>View controller will come on screen. Needs to load up view.
+Goes to nib by default. 
+ViewWillLoad happens before this.
+Loadview - Set up here for doing programmatically</p></li>
+<li><p>viewDidLoad
+After it loads up, outlets are connected. 
+ViewdidLoad once it's been loaded. Set yourself as data source and delegate. Post view loading setup.</p></li>
+<li><p>ViewWillAppear
+For making thing load.</p></li>
+<li><p>Audio File (data)</p></li>
+<li>
+<p>Audio object (link)</p>
+
+<ul>
+<li>Each one has a user</li>
+</ul>
+</li>
+</ol><p>PFQuery wherekey (user) is equal to…</p>
+
+<ol>
+<li>Create the audio object. </li>
+<li>Start saving the audio file</li>
+<li>When you're done saving, please set the audio object's file in the audio file</li>
+<li>Happening at the same time as 2.5. Create the meta data VC. </li>
+<li>Set the audio Object in the metadata vc. </li>
+<li>Let meta data do its thing</li>
+<li>Update audioobject when save is pressed. </li>
+</ol><ul>
+<li><p>Make a profile table view</p></li>
+<li><p>Make My Meta-Data VC Use a table view (<a href="http://stackoverflow.com/questions/409259/having-a-uitextfield-in-a-uitableviewcell">http://stackoverflow.com/questions/409259/having-a-uitextfield-in-a-uitableviewcell</a>).</p></li>
+</ul><p>-AVaudioPlayer can stream</p>
+
+<ul>
+<li>Touch down action for pressing down.</li>
+<li><p>Touch up inside for The Release Action.</p></li>
+<li><p>Add a mutable array of people that I follow to each parse user.</p></li>
+<li>
+<p>Add hash tags / titles to search by for audio recordings.</p>
+
+<ul>
+<li>Automatically uses timestamp created at. Can use custom name and hashtags.</li>
+</ul>
+</li>
+</ul><p>Less one to one and more broadcasting. Modify.
+    - Add titles to recordings.</p>
+
+<p>Add (page control) sign up page when the program first loads. the first time the user logs in.
+<a href="http://www.edumobile.org/iphone/iphone-programming-tutorials/pagecontrol-example-in-iphone/">http://www.edumobile.org/iphone/iphone-programming-tutorials/pagecontrol-example-in-iphone/</a></p>
+
+<p>Add a relations table. On one side, you have </p>
+
+<p>Add the rails app that connects with Parse.</p>
+
+<h1>Similiar Products in the Market</h1>
+
+<ul>
+<li>Soundcloud</li>
+<li><p>Twitter</p></li>
+<li><p>Blip.me</p></li>
+<li><p>Voxer
+(Less one to one though. More one to many).</p></li>
+</ul><h1>Experimental Ideas:</h1>
+
+<ul>
+<li>Exit Strategy: Make it eventually stream live audio (compete with ustream / soundcloud?). Make it a really easy mobile podcasting / live streaming tool 
+and sell it for 99 cents.</li>
+<li>
+<p>Free iOS version. Paid version for podcasters (?)</p>
+
+<ul>
+<li>that integrates with a rails/javascript web app: Profiles, podcasting, analytics, featured tracks, customization, etc.</li>
+</ul>
+</li>
+<li>
+<p>Add Geolocation for sound streaming.</p>
+
+<ul>
+<li>Part of the discovery, add local rooms (listen to all boradcasts from SOMA).</li>
+</ul>
+</li>
+<li><p>Cocktail party audio streaming.</p></li>
+<li><p>Cool Parse Examples: <a href="https://parse.com/samples">https://parse.com/samples</a></p></li>
+<li><p>Cool open source examples: <a href="http://maniacdev.com/2010/06/35-open-source-iphone-app-store-apps-updated-with-10-new-apps/">http://maniacdev.com/2010/06/35-open-source-iphone-app-store-apps-updated-with-10-new-apps/</a></p></li>
+</ul><h1>Left Field</h1>
+
+<p><a href="http://www.cocoacontrols.com/platforms/ios/controls/svsegmentedcontrol">http://www.cocoacontrols.com/platforms/ios/controls/svsegmentedcontrol</a></p>
+
+<p><a href="http://www.cocoacontrols.com/platforms/ios/controls/mbprogresshud">http://www.cocoacontrols.com/platforms/ios/controls/mbprogresshud</a></p>
+
+<ul>
+<li>Totally different App: Soundtracking Your life: Easily share / promote artists you love.</li>
+<li>Totally different App: Merge StackOverflow and Wikipedia (add point functionality to longform knowledge graphs and tutorials). (Incentivize people to create/share free, open source tutorials).</li>
+<li>Totally different App: Running app that integrates with your music (trainer type deal).</li>
+<li><a href="http://attila.tumblr.com/post/21180235691/ios-tutorial-creating-a-chat-room-using-parse-com">http://attila.tumblr.com/post/21180235691/ios-tutorial-creating-a-chat-room-using-parse-com</a></li>
+<li><a href="http://cocoawithlove.com/2011/06/process-of-writing-ios-application.html">http://cocoawithlove.com/2011/06/process-of-writing-ios-application.html</a></li>
+</ul><h3>Signup</h3>
+
+<p>Make this custom (Don't use parse auto login). Make this a table view of different cells (like adding a new contact). When you click on the photo, it modally presents options (to import from twitter, choose a photo, take a photo, or cancel).
+1. Username (with @)
+2. full name
+3. Email
+4. Password
+5. Photo </p>
+
+<p><a href="http://escoz.com/open-source/quickdialog">http://escoz.com/open-source/quickdialog</a></p>
+
+<p>OR</p>
+
+<p>Connecting Twitter / facebook.
+<a href="http://developer.apple.com/library/ios/#documentation/Twitter/Reference/TwitterFrameworkReference/_index.html">http://developer.apple.com/library/ios/#documentation/Twitter/Reference/TwitterFrameworkReference/_index.html</a></p>
+
+<h1>Progress Map</h1>
+
+<h2>Monday</h2>
+
+<ul>
+<li>Make every navigation controller be able to (modally) present the recordVC. (check)
+
+<ol>
+<li>Home Screen.</li>
+<li>Connect Screen</li>
+<li>Discover (Search via hashtag. Speech to text?)</li>
+<li>Profile View (modified table view). </li>
+</ol>
+</li>
+</ul><h2>Tuesday</h2>
+
+<ul>
+<li><p>Be able to see a table view of all your recordings. (Parse auto-pull-to-refresh-and-query).</p></li>
+<li><p>Make the discovery search bar modally present a new view controller. (check)</p></li>
+<li><p>Be able to search for, discover, and follow new users. </p></li>
+</ul><h2>Wednesday</h2>
+
+<h2>Thursday</h2>
+
+<ul>
+<li>
+<a href="http://www.iosdevnotes.com/tag/uipagecontrol/">http://www.iosdevnotes.com/tag/uipagecontrol/</a>, add </li>
+</ul><h2>Friday</h2>
+
+<h2>Saturday</h2>
+
+<h2>Sunday</h2>
+
+<h2>Monday</h2>
+
+<ul>
+<li>Submit To the App Store</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/squanto">squanto</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker(" UA-34341959-4");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
