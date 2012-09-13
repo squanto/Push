@@ -21,7 +21,6 @@
     // Parse interaction.
     [Parse setApplicationId:@"inPkVs6Fy4x5KTNWJga3CXmPpKaqLTSVbqtj6cSF"
                   clientKey:@"ZuKAel15FVbwIMIB6MrdfJFS1K4GUireH3BD25Ue"];
-    [PFTwitterUtils initializeWithConsumerKey:@"YiSWa8Np6OGdwBjIFIaRTw" consumerSecret:@"KYa1bQ7E6CQEz3TIVrlbGpgNiK2CIGQpOZMFxnMg"];
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
                                                     UIRemoteNotificationTypeAlert|
                                                     UIRemoteNotificationTypeSound];

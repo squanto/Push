@@ -1,6 +1,8 @@
 # Goal
 Make it really easy to podcast / livestream audio.
 
+
+To do this, I'm following the path of different use cases for the app, and building features in the order that users would experience them.
 # Spec
 Push-to-talk audio. 
 
@@ -26,6 +28,10 @@ Mirror the Twitter iOS app, but with audio instead. Diverge accordingly.
 
 
 # TODO:
+- Add github pages project page (with minimal theme: https://github.com/orderedlist/minimal)
+
+- Add some iOS boilerplate (https://github.com/gimenete/iOS-boilerplate/tree/master/IOSBoilerplate)
+
 - Add settings for updating / adding email, reseting passwords, etc.
 	
 1. Make pretty.
@@ -34,9 +40,6 @@ Mirror the Twitter iOS app, but with audio instead. Diverge accordingly.
 - Add Page control the first time you sign up.
 
 - Add email confirmation / authdata
-	
-
-// like voxer. but more asynchronous. More boradcast-y, less one-to-one.
 
 
 Add find people to follow, startup guide, etc. to sidescrolling splash screen.
@@ -70,6 +73,11 @@ http://idevrecipes.com/2011/04/14/how-does-the-twitter-iphone-app-implement-side
 - Swipe the table to the left for options on recordings (??).
 - How to organize recent searches (as it's own table in Parse with User => search => timestamp)(??).
 - Search Discovery View Controller. 
+
+- Use core animation to swap the view of each tableviewcell. There's probably two views layered on top of each other, with a view animation, set the opacity to 0, and when it comes back, it can respond to touch events. 
+
+- Updating a user profile with a profile photo.
+
 
 ## Notes
 1. Appplication controller
@@ -133,8 +141,10 @@ Add the rails app that connects with Parse.
 # Similiar Products in the Market
 - Soundcloud
 - Twitter
+
 - Blip.me
 - Voxer
+(Less one to one though. More one to many).
 
 # Experimental Ideas:
 
@@ -164,19 +174,8 @@ http://www.cocoacontrols.com/platforms/ios/controls/mbprogresshud
 - http://cocoawithlove.com/2011/06/process-of-writing-ios-application.html
 
 
-### Signup
-Make this custom (Don't use parse auto login). Make this a table view of different cells (like adding a new contact). When you click on the photo, it modally presents options (to import from twitter, choose a photo, take a photo, or cancel).
-1. Username (with @)
-2. full name
-3. Email
-4. Password
-5. Photo 
 
-OR
-
-Twitter / facebook.
-http://developer.apple.com/library/ios/#documentation/Twitter/Reference/TwitterFrameworkReference/_index.html
-
+- http://www.iosdevnotes.com/tag/uipagecontrol/, add 
 
 # Progress Map
 ## Monday
@@ -192,14 +191,34 @@ http://developer.apple.com/library/ios/#documentation/Twitter/Reference/TwitterF
 
 - Be able to see a table view of all your recordings. (Parse auto-pull-to-refresh-and-query).
 
-- Make the discovery search bar modally present a new view controller. (check)
+- Discovery Tab Navigation: Make the discovery search bar modally present a new view controller. (check)
 
-- Be able to search for, discover, and follow new users. 
 
 ## Wednesday
+- Be able to search for, discover, and follow new users. 
+
+- Use quick dialog to make a new login / signup view controller. Clear users and restart with that. 
+### Signup
+Make this custom (Don't use parse auto login). Make this a table view of different cells (like adding a new contact). When you click on the photo, it modally presents options (to import from twitter, choose a photo, take a photo, import one from twitter, or cancel).
+1. Username (with @)
+2. full name
+3. Email
+4. Password
+5. Photo 
+
+http://escoz.com/open-source/quickdialog
+
+OR
+
+Connecting Twitter / facebook.
+http://developer.apple.com/library/ios/#documentation/Twitter/Reference/TwitterFrameworkReference/_index.html
+
+
+- Make a custom table view controller (and custom cells). 
+
+Actually, roll back all of those changes, add parse, and find a way to add a photo picker as an additional field in the signup view controller. 
 
 ## Thursday
-- http://www.iosdevnotes.com/tag/uipagecontrol/, add 
 
 ## Friday
 
@@ -207,5 +226,5 @@ http://developer.apple.com/library/ios/#documentation/Twitter/Reference/TwitterF
 
 ## Sunday
 
-# Monday
+## Monday
 - Submit To the App Store

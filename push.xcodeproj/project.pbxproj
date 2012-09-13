@@ -65,6 +65,7 @@
 		9A9E41EF15FA81D60013E24D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41E515FA81D60013E24D /* Security.framework */; };
 		9A9E41F015FA81D60013E24D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41E615FA81D60013E24D /* StoreKit.framework */; };
 		9A9E41F115FA81D60013E24D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41E715FA81D60013E24D /* SystemConfiguration.framework */; };
+		9AEAE6871601346B009DD14F /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEAE6861601346B009DD14F /* SignupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +143,8 @@
 		9A9E41E515FA81D60013E24D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9A9E41E615FA81D60013E24D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9A9E41E715FA81D60013E24D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9AEAE6851601346B009DD14F /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		9AEAE6861601346B009DD14F /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +304,8 @@
 			children = (
 				9A11E0DC15FAC997009615DC /* SplashViewController.h */,
 				9A11E0DD15FAC997009615DC /* SplashViewController.m */,
+				9AEAE6851601346B009DD14F /* SignupViewController.h */,
+				9AEAE6861601346B009DD14F /* SignupViewController.m */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				9A8890AC15FEA443005552E8 /* RecordMetaDataViewController.m in Sources */,
 				9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */,
 				9A2F779616000D6A004E0D1E /* StreamViewController.m in Sources */,
+				9AEAE6871601346B009DD14F /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

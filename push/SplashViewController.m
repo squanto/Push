@@ -8,6 +8,7 @@
 
 #import "SplashViewController.h"
 #import "DashboardViewController.h"
+#import "SignupViewController.h"
 
 @interface SplashViewController()
 
@@ -42,10 +43,13 @@
     
     // Parse Login Screen
     self.loginVC = [PFLogInViewController new];
-    self.loginVC.fields = PFLogInFieldsDefault | PFLogInFieldsTwitter;
+    self.loginVC.fields = PFLogInFieldsDefault;
     self.loginVC.delegate = self;
     self.loginVC.logInView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pulseSplash.png"]];
     self.logoFrame = self.loginVC.logInView.logo.frame;
+    
+    [self.loginVC setSignUpController:[SignupViewController new]];
+    self.loginVC.signUpController.fields = PFSignUpFieldsDefault;
     self.loginVC.signUpController.signUpView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pulseSplash.png"]];
 //    [self.navigationController presentModalViewController:self.loginVC animated:YES];
 }
@@ -56,11 +60,8 @@
     if (![PFUser currentUser]) {
         [self.navigationController presentModalViewController:self.loginVC animated:YES];
     } else {
-        NSLog(@"Email: %@", [[PFUser currentUser] email]);
-            if ([PFTwitterUtils isLinkedWithUser:[PFUser currentUser]]) {
-                [[PFUser currentUser] setUsername:[[PFTwitterUtils twitter] screenName]];
-                NSLog(@"USERNAME: %@", [[PFUser currentUser] username]);
-            }
+        NSLog(@"Successfully Signed In: %@", [[PFUser currentUser] email]);
+        NSLog(@"USERNAME: %@", [[PFUser currentUser] username]);
         [self presentModalViewController:[DashboardViewController new] animated:YES];
     }
 }
@@ -102,10 +103,11 @@
 }
 
 
+
 // Sent to the delegate to determine whether the log in request should be submitted to the server.
 - (BOOL)logInViewController:(PFLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password {
     // Check if both fields are completed
-    [[PFUser currentUser] setObject:[[PFTwitterUtils twitter] screenName] forKey:@"twitterName"];
+//    [[PFUser currentUser] setObject:[[PFTwitterUtils twitter] screenName] forKey:@"twitterName"];
     NSLog(@"Log in VC Called twitter?");
     if (username && password && username.length != 0 && password.length != 0) {
         return YES; // Begin login process
@@ -117,46 +119,6 @@
                       cancelButtonTitle:@"ok"
                       otherButtonTitles:nil] show];
     return NO; // Interrupt login process
-}
-
-// Sent to the delegate to determine whether the sign up request should be submitted to the server.
-- (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info {
-    BOOL informationComplete = YES;
-    // loop through all of the submitted data
-    for (id key in info) {
-        NSString *field = [info objectForKey:key];
-        if (!field || field.length == 0) { // check completion
-            informationComplete = NO;
-            break;
-        }
-    }
-    
-    // Display an alert if a field wasn't completed
-    if (!informationComplete) {
-        [[[UIAlertView alloc] initWithTitle:@"Missing Information"
-                                    message:@"Make sure you fill out all of the information!"
-                                   delegate:nil
-                          cancelButtonTitle:@"ok"
-                          otherButtonTitles:nil] show];
-    }
-    
-    return informationComplete;
-}
-
-
-// Sent to the delegate when a PFUser is signed up.
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
-    [self dismissModalViewControllerAnimated:YES]; // Dismiss the PFSignUpViewController
-}
-
-// Sent to the delegate when the sign up attempt fails.
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didFailToSignUpWithError:(NSError *)error {
-    NSLog(@"Failed to sign up...");
-}
-
-// Sent to the delegate when the sign up screen is dismissed.
-- (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
-    NSLog(@"User dismissed the signUpViewController");
 }
 
 @end

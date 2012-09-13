@@ -10,12 +10,11 @@
 #import <QuartzCore/QuartzCore.h>
 #import <Parse/Parse.h>
 
-@interface SplashViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface SplashViewController : UIViewController <PFLogInViewControllerDelegate>
 
 @property (strong) UIImageView *pulseView;
 
 @property (strong) PFLogInViewController *loginVC;
-@property (strong) PFSignUpViewController *signUpVC;
 
 @property CGRect logoFrame;
 
