@@ -12,11 +12,7 @@
 
 @interface RecordMetaDataViewController ()<UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *titleField;
-@property (strong, nonatomic) IBOutlet UITextField *hashTagField;
 @property (strong, nonatomic) IBOutlet UITextField *friendTagField;
-@property (strong, nonatomic) IBOutlet UISwitch *geoTagOption;
-
-
 
 @property (strong) AVAudioPlayer *player;
 
@@ -24,9 +20,7 @@
 
 @implementation RecordMetaDataViewController
 @synthesize titleField = _titleField;
-@synthesize hashTagField = _hashTagField;
 @synthesize friendTagField = _friendTagField;
-@synthesize geoTagOption = _geoTagOption;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,24 +35,12 @@
 {
     [super viewDidLoad];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.audioURL error:nil];
+    
+    
+    self.titleField.delegate = self;
     self.friendTagField.delegate = self;
 }
 
-- (void)viewDidUnload
-{
-    [self setTitleField:nil];
-    [self setHashTagField:nil];
-    [self setFriendTagField:nil];
-    [self setGeoTagOption:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
 
 
 // Make it all have default values though.
@@ -78,38 +60,37 @@
 
 - (IBAction)broadcastButtonPressed
 {
-    [self broadcast];
-}
-
-
--(void)audioPlayerDidFinishPlaying:(AVAudioPlayer*)player
-                      successfully:(BOOL)flag {
-    
-}
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    if (textField == self.friendTagField) {
-        [self broadcast];
-        NSLog(@"You pressed return on the friend tag field!");
-        [self dismissModalViewControllerAnimated:YES];
-        return YES;
-    }
-    NSLog(@"You pressed return on something else!");
-    return YES;
-}
-
--(void)broadcast
-{
     // Set object instead of add object....
     NSMutableArray *friends = [[self.friendTagField.text componentsSeparatedByString:@","] copy];
     [self.audioObject setObject:self.titleField.text forKey:@"title"];
     [self.audioObject addObject:friends forKey:@"friendsTagged"];
-    [self.audioObject setObject:self.hashTagField.text forKey:@"hashTags"];
-    [self.audioObject setObject:[NSString stringWithFormat:@"%@", self.geoTagOption.description] forKey:@"geotag"];
     [self.audioObject saveInBackground];
     NSLog(@"Finish Broadcast Upload");
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
+-(void)audioPlayerDidFinishPlaying:(AVAudioPlayer*)player successfully:(BOOL)flag
+{
+    NSLog(@"Finished Playing Successfully!");
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];    
+    return YES;
+}
+
+
+- (void)viewDidUnload
+{
+    [self setTitleField:nil];
+    [self setFriendTagField:nil];
+    [super viewDidUnload];
+}
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 @end

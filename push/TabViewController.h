@@ -6,8 +6,10 @@
 //  Copyright (c) 2012 HugoMelo. All rights reserved.
 //
 
+// This really just sets up the table view..
+
 #import <UIKit/UIKit.h>
 
-@interface DashboardViewController : UITabBarController
+@interface TabViewController : UITabBarController
 
 @end

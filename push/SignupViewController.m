@@ -8,6 +8,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <QuartzCore/QuartzCore.h>
 #import "SignupViewController.h"
+#import "TabViewController.h"
 
 @interface SignupViewController ()<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,PFSignUpViewControllerDelegate>
 
@@ -24,7 +25,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -45,16 +45,13 @@
     self.profileImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:self.profileImageView];
     
-    // Hacked!
-//    self.signUpView.additionalField.placeholder = @"Choose a Photo!";
-//    self.signUpView.additionalField.frame = CGRectMake(0, 30, 100, 100);
-//    
-//    self.signUpView.additionalField.layer.shadowOpacity = 0.0;
-//    self.signUpView.additionalField.textColor = [UIColor blackColor];
-//    self.signUpView.additionalField.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
     
-    // Setting up the photo picker action sheet
-    self.photoPickerActionSheet =[[UIActionSheet alloc] initWithTitle:@"Choose a photo" delegate:self cancelButtonTitle:@"cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take New Photo", @"Chose From Library", @"Import From Twitter", nil];
+    // Setting up the action sheet.
+    self.photoPickerActionSheet =[[UIActionSheet alloc] initWithTitle:@"Choose a photo"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Take New Photo", @"Chose From Library", nil];
 }
 
 -(void)viewDidLayoutSubviews
@@ -65,17 +62,13 @@
 
 -(void)choosePhotoButtonPressed
 {
-    NSLog(@"Choose Photo Button Pressed!");
-    // Present a modal controller
     [self.photoPickerActionSheet showInView:self.view];
 }
 
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"Clicked button at index: %d", buttonIndex);
     if (buttonIndex == 0) {
-        NSLog(@"Time To take a new photo!");
         UIImagePickerController *imagePicker = [UIImagePickerController new];
         imagePicker.sourceType = UIImagePickerControllerCameraDeviceFront;
         imagePicker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeImage];
@@ -83,8 +76,8 @@
         imagePicker.allowsEditing = YES;
         imagePicker.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
         [self presentModalViewController:imagePicker animated:YES];
+        
     } else if (buttonIndex == 1) {
-        NSLog(@"Time to choose from the library of photos!");
         UIImagePickerController* imagePicker = [UIImagePickerController new];
         imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         imagePicker.mediaTypes = [NSArray arrayWithObject:(NSString*)kUTTypeImage];
@@ -93,30 +86,15 @@
         
         imagePicker.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
         [self presentModalViewController:imagePicker animated:YES];
-    } else if (buttonIndex == 2) {
-        NSLog(@"Time to import from twitter!");
-        // Import and use twitter.
         
     }
 }
-
--(void)actionSheetCancel:(UIActionSheet *)actionSheet
-{
-    // It automatically dismisses itself.
-    NSLog(@"Cancel Button Pressed!");
-}
-
 
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     self.profileImage = [info objectForKey:UIImagePickerControllerEditedImage];
-    
-//    self.profileImageView.image = self.profileImage;
-//    self.profileImageView.frame = CGRectMake(110, 310, 100, 50);
     [self.choosePhotoButton setImage:self.profileImage forState:UIControlStateNormal];
-//    self.choosePhotoButton.alpha = 0.0;
-//    [self.choosePhotoButton removeFromSuperview];
     [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -138,12 +116,10 @@
         }
     }
     
-    // Check for a profile image.
     if (!self.profileImage) {
         informationComplete = NO;
     }
     
-    // Display an alert if a field wasn't completed
     if (!informationComplete) {
         [[[UIAlertView alloc] initWithTitle:@"Missing Information"
                                     message:@"Make sure you fill out all of the information!"
@@ -159,24 +135,29 @@
 // Sent to the delegate when a PFUser is signed up.
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
-    //Add photo imformation here??
-    // Check that it exists again..
-    // Make a user images table... (gets the user photo based on their username...
-    //        PFObject *userPhotoMap = [PFObject objectWithClassName:@"userPhotoMap"];
-    //        [userPhotoMap setObject:userPhoto forKey:@"userPhoto"];
-    //        NSLog(@"Starting to save pic!");
-    //        [userPhotoMap saveInBackground];
+    NSLog(@"Self.profileimageview.image == %@", self.profileImage);
+    NSData *imageData = UIImageJPEGRepresentation(self.profileImage, 0.7);
+    PFFile *imageFile = [PFFile fileWithName:@"profilePic.jpeg" data:imageData];
     
-    PFFile *userPhoto = [PFFile fileWithName:@"profilePic.jpeg"
-                                        data:UIImageJPEGRepresentation(self.profileImageView.image, 0.7)];
-    PFQuery *query = [PFUser query];
-    [query whereKey:@"objectId" equalTo:user.objectId];
-    PFObject *userObject = [query getFirstObject];
-    [userObject setObject:userPhoto forKey:@"profilePicture"];
-    [userObject saveInBackground];
-
-    // ??
-    [self dismissModalViewControllerAnimated:YES]; // Dismiss the PFSignUpViewController
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            // The association magic.
+            PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
+            [userPhoto setObject:imageFile forKey:@"imageFile"];
+            [userPhoto setObject:user forKey:@"userId"];
+            [userPhoto setObject:user.username forKey:@"user"];
+            [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (error) {
+                    NSLog(@"Error: %@, %@", error, [error userInfo]);
+                } else {
+                    NSLog(@"NO Error uploading USER PHOTO!! %u", succeeded);
+                }
+            }];
+        } else {
+            NSLog(@"Error %@, %@", error, [error userInfo]);
+        }
+    }];
+    [self presentViewController:[TabViewController new] animated:YES completion:nil];
 }
 
 // Sent to the delegate when the sign up attempt fails.

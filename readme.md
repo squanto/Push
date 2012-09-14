@@ -23,14 +23,12 @@ Mirror the Twitter iOS app, but with audio instead. Diverge accordingly.
 	- Add them as a tabl view (http://24.media.tumblr.com/tumblr_m2qlr7H9Yk1qzff5uo2_1280.png).
 	- https://parse.com/docs/ios_guide#twitter-users (this)
 
-8. Interact with the Javascript(backbone/ember) Web App. (Learn javascript with parse?)
+8. Interact with the (backbone.js / rails) Web App. (Learn javascript with parse?)
 	- Start off with the landing screen. Check out: (http://www.blip.me/broadcast/).
 
 
 # TODO:
-- Add github pages project page (with minimal theme: https://github.com/orderedlist/minimal)
-
-- Add some iOS boilerplate (https://github.com/gimenete/iOS-boilerplate/tree/master/IOSBoilerplate)
+- Add github pages project page (with minimal theme: https://github.com/orderedlist/minimal) (Check)
 
 - Add settings for updating / adding email, reseting passwords, etc.
 	
@@ -52,6 +50,8 @@ http://www.cocoacontrols.com/platforms/ios/controls/pull-to-refresh-tableview
 http://idevrecipes.com/2011/04/14/how-does-the-twitter-iphone-app-implement-side-swiping-on-a-table/
 // swipe controls on 
 
+- Go back and make sure all delegate declarations are in teh view did load function.
+- I'll probably have to abstract the view within the me view controller to be able to use all of the same elements with other people's profiles. 
 
 # Ned Notes
 ## Questins
@@ -77,31 +77,17 @@ http://idevrecipes.com/2011/04/14/how-does-the-twitter-iphone-app-implement-side
 - Use core animation to swap the view of each tableviewcell. There's probably two views layered on top of each other, with a view animation, set the opacity to 0, and when it comes back, it can respond to touch events. 
 
 - Updating a user profile with a profile photo.
+Line 162, Signup view controller. 
 
+- How to totally turn off being able to rotate an application.
+
+- How to safely rename a file (DashboardViewController => TabBar Controller)?
+
+- How to make a custom table view with custom cells for 
 
 ## Notes
-1. Appplication controller
-init with nib name is the designated initializer. Alloc init calls init with nib name. (When created with code). When view controller loads with view, it loads with nib.
-	
-2. View controller will come on screen. Needs to load up view.
-	Goes to nib by default. 
-	ViewWillLoad happens before this.
-	Loadview - Set up here for doing programmatically
-	
-3. viewDidLoad
-	After it loads up, outlets are connected. 
-	ViewdidLoad once it's been loaded. Set yourself as data source and delegate. Post view loading setup.
-	
-4. ViewWillAppear
-	For making thing load.
 
-1. Audio File (data)
-2. Audio object (link)
-	- Each one has a user
-
-PFQuery wherekey (user) is equal to…
-
-
+### Asynchronous Background Saving.
 1. Create the audio object. 
 2. Start saving the audio file
 25. When you're done saving, please set the audio object's file in the audio file
@@ -159,6 +145,18 @@ and sell it for 99 cents.
 - Cool Parse Examples: https://parse.com/samples
 - Cool open source examples: http://maniacdev.com/2010/06/35-open-source-iphone-app-store-apps-updated-with-10-new-apps/
 
+- https://parse.com/tutorials/geolocations . That for geolocation.
+
+- OMNIAUTH !!!
+- https://github.com/mgates/omniauth-parse
+- Github
+- Twitter
+etc.
+
+
+- Add back hash tags later
+- Add geotags later. 
+
 # Left Field
 
 http://www.cocoacontrols.com/platforms/ios/controls/svsegmentedcontrol
@@ -178,7 +176,6 @@ http://www.cocoacontrols.com/platforms/ios/controls/mbprogresshud
 - http://www.iosdevnotes.com/tag/uipagecontrol/, add 
 
 # Progress Map
-## Monday
 
 - Make every navigation controller be able to (modally) present the recordVC. (check)
 	1. Home Screen.
@@ -186,15 +183,10 @@ http://www.cocoacontrols.com/platforms/ios/controls/mbprogresshud
 	3. Discover (Search via hashtag. Speech to text?)
 	4. Profile View (modified table view). 
 
-
-## Tuesday
-
 - Be able to see a table view of all your recordings. (Parse auto-pull-to-refresh-and-query).
 
 - Discovery Tab Navigation: Make the discovery search bar modally present a new view controller. (check)
 
-
-## Wednesday
 - Be able to search for, discover, and follow new users. 
 
 - Use quick dialog to make a new login / signup view controller. Clear users and restart with that. 
@@ -213,18 +205,12 @@ OR
 Connecting Twitter / facebook.
 http://developer.apple.com/library/ios/#documentation/Twitter/Reference/TwitterFrameworkReference/_index.html
 
+OR 
+- Customize the PFSignup controller to mirror blip, and ignore twitter + facebook (make it a setting to be able to integrate all of these). (Check!)
 
 - Make a custom table view controller (and custom cells). 
-
 Actually, roll back all of those changes, add parse, and find a way to add a photo picker as an additional field in the signup view controller. 
+- Today. Custom table views.! PFqueryTableViewControlers!
 
-## Thursday
-
-## Friday
-
-## Saturday
-
-## Sunday
-
-## Monday
+- Add email verification and a welcome email. 
 - Submit To the App Store

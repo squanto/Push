@@ -11,15 +11,13 @@
 		9A11E0EA15FAD500009615DC /* dustBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0E915FAD500009615DC /* dustBG.png */; };
 		9A11E0EC15FAD53E009615DC /* pulseSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0EB15FAD53E009615DC /* pulseSplash.png */; };
 		9A11E0EE15FADF85009615DC /* shatteredBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0ED15FADF85009615DC /* shatteredBG.png */; };
-		9A11E0F215FB0AF2009615DC /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F015FB0AF2009615DC /* DashboardViewController.m */; };
+		9A11E0F215FB0AF2009615DC /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F015FB0AF2009615DC /* TabViewController.m */; };
 		9A11E0F715FB1763009615DC /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F515FB1763009615DC /* RecordViewController.m */; };
 		9A11E0F815FB1763009615DC /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0F615FB1763009615DC /* RecordViewController.xib */; };
 		9A2F778B15FFCFCF004E0D1E /* noisy_grid@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F778915FFCFCF004E0D1E /* noisy_grid@2X.png */; };
 		9A2F778C15FFCFCF004E0D1E /* noisy_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F778A15FFCFCF004E0D1E /* noisy_grid.png */; };
 		9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */; };
 		9A2F779215FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */; };
-		9A2F779616000D6A004E0D1E /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F779416000D6A004E0D1E /* StreamViewController.m */; };
-		9A2F779716000D6A004E0D1E /* StreamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F779516000D6A004E0D1E /* StreamViewController.xib */; };
 		9A88906F15FD2C96005552E8 /* cog_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88906E15FD2C96005552E8 /* cog_02@2x.png */; };
 		9A88907115FD2C9F005552E8 /* cog_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907015FD2C9F005552E8 /* cog_02.png */; };
 		9A88907315FD2CA8005552E8 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907215FD2CA8005552E8 /* record.png */; };
@@ -65,6 +63,7 @@
 		9A9E41EF15FA81D60013E24D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41E515FA81D60013E24D /* Security.framework */; };
 		9A9E41F015FA81D60013E24D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41E615FA81D60013E24D /* StoreKit.framework */; };
 		9A9E41F115FA81D60013E24D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41E715FA81D60013E24D /* SystemConfiguration.framework */; };
+		9AB612B11602715800ACA478 /* AudioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB612B01602715800ACA478 /* AudioCell.m */; };
 		9AEAE6871601346B009DD14F /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEAE6861601346B009DD14F /* SignupViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -74,8 +73,8 @@
 		9A11E0E915FAD500009615DC /* dustBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dustBG.png; sourceTree = "<group>"; };
 		9A11E0EB15FAD53E009615DC /* pulseSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulseSplash.png; sourceTree = "<group>"; };
 		9A11E0ED15FADF85009615DC /* shatteredBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shatteredBG.png; sourceTree = "<group>"; };
-		9A11E0EF15FB0AF2009615DC /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
-		9A11E0F015FB0AF2009615DC /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
+		9A11E0EF15FB0AF2009615DC /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
+		9A11E0F015FB0AF2009615DC /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
 		9A11E0F415FB1763009615DC /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordViewController.h; path = push/RecordViewController.h; sourceTree = "<group>"; };
 		9A11E0F515FB1763009615DC /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordViewController.m; path = push/RecordViewController.m; sourceTree = "<group>"; };
 		9A11E0F615FB1763009615DC /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecordViewController.xib; path = push/RecordViewController.xib; sourceTree = "<group>"; };
@@ -84,9 +83,6 @@
 		9A2F778E15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchDiscoveryResultsViewController.h; path = push/SearchDiscoveryResultsViewController.h; sourceTree = "<group>"; };
 		9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchDiscoveryResultsViewController.m; path = push/SearchDiscoveryResultsViewController.m; sourceTree = "<group>"; };
 		9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchDiscoveryResultsViewController.xib; path = push/SearchDiscoveryResultsViewController.xib; sourceTree = "<group>"; };
-		9A2F779316000D69004E0D1E /* StreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StreamViewController.h; path = push/StreamViewController.h; sourceTree = "<group>"; };
-		9A2F779416000D6A004E0D1E /* StreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StreamViewController.m; path = push/StreamViewController.m; sourceTree = "<group>"; };
-		9A2F779516000D6A004E0D1E /* StreamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StreamViewController.xib; path = push/StreamViewController.xib; sourceTree = "<group>"; };
 		9A88906E15FD2C96005552E8 /* cog_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog_02@2x.png"; sourceTree = "<group>"; };
 		9A88907015FD2C9F005552E8 /* cog_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog_02.png; sourceTree = "<group>"; };
 		9A88907215FD2CA8005552E8 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
@@ -143,6 +139,8 @@
 		9A9E41E515FA81D60013E24D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9A9E41E615FA81D60013E24D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9A9E41E715FA81D60013E24D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9AB612AF1602715800ACA478 /* AudioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioCell.h; path = push/AudioCell.h; sourceTree = "<group>"; };
+		9AB612B01602715800ACA478 /* AudioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioCell.m; path = push/AudioCell.m; sourceTree = "<group>"; };
 		9AEAE6851601346B009DD14F /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		9AEAE6861601346B009DD14F /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,23 +202,11 @@
 		9A9E41B615FA7C960013E24D = {
 			isa = PBXGroup;
 			children = (
+				9AB612AF1602715800ACA478 /* AudioCell.h */,
+				9AB612B01602715800ACA478 /* AudioCell.m */,
 				9A8890AE15FEA448005552E8 /* record */,
-				9A88907F15FE6B28005552E8 /* TimelineViewController.h */,
-				9A88908015FE6B28005552E8 /* TimelineViewController.m */,
-				9A88908115FE6B28005552E8 /* TimelineViewController.xib */,
-				9A88907A15FD2D88005552E8 /* ProfileViewController.h */,
-				9A88907B15FD2D88005552E8 /* ProfileViewController.m */,
-				9A88907C15FD2D88005552E8 /* ProfileViewController.xib */,
-				9A2F779316000D69004E0D1E /* StreamViewController.h */,
-				9A2F779416000D6A004E0D1E /* StreamViewController.m */,
-				9A2F779516000D6A004E0D1E /* StreamViewController.xib */,
-				9A88908C15FE6E96005552E8 /* DiscoverViewController.h */,
-				9A88908D15FE6E96005552E8 /* DiscoverViewController.m */,
-				9A88908E15FE6E96005552E8 /* DiscoverViewController.xib */,
+				9AB612DC16028AEE00ACA478 /* tabs */,
 				9A8890A815FE9165005552E8 /* search */,
-				9A88909515FE6FC9005552E8 /* ConnectViewController.h */,
-				9A88909615FE6FC9005552E8 /* ConnectViewController.m */,
-				9A88909715FE6FC9005552E8 /* ConnectViewController.xib */,
 				9A9E41CB15FA7C960013E24D /* push */,
 				9A9E41C415FA7C960013E24D /* Frameworks */,
 				9A9E41C215FA7C960013E24D /* Products */,
@@ -262,8 +248,8 @@
 				9A9E41D415FA7C960013E24D /* AppDelegate.h */,
 				9A9E41D515FA7C960013E24D /* AppDelegate.m */,
 				9A9E41FA15FA9EB80013E24D /* login */,
-				9A11E0EF15FB0AF2009615DC /* DashboardViewController.h */,
-				9A11E0F015FB0AF2009615DC /* DashboardViewController.m */,
+				9A11E0EF15FB0AF2009615DC /* TabViewController.h */,
+				9A11E0F015FB0AF2009615DC /* TabViewController.m */,
 				9A9E41CC15FA7C960013E24D /* Supporting Files */,
 			);
 			path = push;
@@ -308,6 +294,25 @@
 				9AEAE6861601346B009DD14F /* SignupViewController.m */,
 			);
 			name = login;
+			sourceTree = "<group>";
+		};
+		9AB612DC16028AEE00ACA478 /* tabs */ = {
+			isa = PBXGroup;
+			children = (
+				9A88907F15FE6B28005552E8 /* TimelineViewController.h */,
+				9A88908015FE6B28005552E8 /* TimelineViewController.m */,
+				9A88908115FE6B28005552E8 /* TimelineViewController.xib */,
+				9A88909515FE6FC9005552E8 /* ConnectViewController.h */,
+				9A88909615FE6FC9005552E8 /* ConnectViewController.m */,
+				9A88909715FE6FC9005552E8 /* ConnectViewController.xib */,
+				9A88908C15FE6E96005552E8 /* DiscoverViewController.h */,
+				9A88908D15FE6E96005552E8 /* DiscoverViewController.m */,
+				9A88908E15FE6E96005552E8 /* DiscoverViewController.xib */,
+				9A88907A15FD2D88005552E8 /* ProfileViewController.h */,
+				9A88907B15FD2D88005552E8 /* ProfileViewController.m */,
+				9A88907C15FD2D88005552E8 /* ProfileViewController.xib */,
+			);
+			name = tabs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,7 +395,6 @@
 				9A2F778B15FFCFCF004E0D1E /* noisy_grid@2X.png in Resources */,
 				9A2F778C15FFCFCF004E0D1E /* noisy_grid.png in Resources */,
 				9A2F779215FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib in Resources */,
-				9A2F779716000D6A004E0D1E /* StreamViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,7 +408,7 @@
 				9A9E41D215FA7C960013E24D /* main.m in Sources */,
 				9A9E41D615FA7C960013E24D /* AppDelegate.m in Sources */,
 				9A11E0DE15FAC997009615DC /* SplashViewController.m in Sources */,
-				9A11E0F215FB0AF2009615DC /* DashboardViewController.m in Sources */,
+				9A11E0F215FB0AF2009615DC /* TabViewController.m in Sources */,
 				9A11E0F715FB1763009615DC /* RecordViewController.m in Sources */,
 				9A88907D15FD2D88005552E8 /* ProfileViewController.m in Sources */,
 				9A88908215FE6B28005552E8 /* TimelineViewController.m in Sources */,
@@ -414,8 +418,8 @@
 				9A8890A615FE915C005552E8 /* SearchConnectViewController.m in Sources */,
 				9A8890AC15FEA443005552E8 /* RecordMetaDataViewController.m in Sources */,
 				9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */,
-				9A2F779616000D6A004E0D1E /* StreamViewController.m in Sources */,
 				9AEAE6871601346B009DD14F /* SignupViewController.m in Sources */,
+				9AB612B11602715800ACA478 /* AudioCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

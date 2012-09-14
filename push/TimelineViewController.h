@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-
-// Add a pf query table view controller here.
-// Add https://github.com/ParsePlatform/Anypic/blob/master/Anypic-iOS/Anypic/PAPPhotoCell.h
-// cells to each one. When you click on one, it takes you to the view of that audio.
-@interface TimelineViewController : UIViewController
+@interface TimelineViewController : PFQueryTableViewController
 
 @end

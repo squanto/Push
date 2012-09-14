@@ -7,7 +7,7 @@
 //
 
 #import "SplashViewController.h"
-#import "DashboardViewController.h"
+#import "TabViewController.h"
 #import "SignupViewController.h"
 
 @interface SplashViewController()
@@ -62,7 +62,7 @@
     } else {
         NSLog(@"Successfully Signed In: %@", [[PFUser currentUser] email]);
         NSLog(@"USERNAME: %@", [[PFUser currentUser] username]);
-        [self presentModalViewController:[DashboardViewController new] animated:YES];
+        [self presentModalViewController:[TabViewController new] animated:YES];
     }
 }
 

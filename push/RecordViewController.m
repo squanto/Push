@@ -81,7 +81,7 @@
 
 - (IBAction)recordTouchDown:(id)sender
 {
-    NSLog(@"REcording!!");
+    NSLog(@"REcording touch down!!");
     [self.recorder record];
 }
 
@@ -91,7 +91,7 @@
 {
     if (!self.recorder.recording) {
         [self.recorder record];
-        NSLog(@"RECORDING !!");
+        NSLog(@"RECORDING presesed !!");
     } else {
         [self.recorder stop];
     }

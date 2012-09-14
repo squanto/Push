@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 HugoMelo. All rights reserved.
 //
 
-#import "DashboardViewController.h"
+#import "TabViewController.h"
 #import <Parse/Parse.h>
 #import "RecordViewController.h"
 #import "ProfileViewController.h"
@@ -14,23 +14,16 @@
 #import "DiscoverViewController.h"
 #import "ConnectViewController.h"
 
-@interface DashboardViewController ()
+@interface TabViewController ()
 
 @end
 
-@implementation DashboardViewController
+@implementation TabViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization- Record Button
-        // Make This a modal view controller. 
-        // UIImage *recordButtonImage = [UIImage imageNamed:@"record.png"];
-        // UITabBarItem *recordItem = [[UITabBarItem alloc] initWithTitle:@"Record" image:recordButtonImage tag:0];
-        // RecordViewController *recordVC = [RecordViewController new];
-        // recordVC.tabBarItem = recordItem;
-        
         UIBarButtonItem *recordButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(showRecordModally)];
         self.navigationItem.rightBarButtonItem = recordButton;
         
