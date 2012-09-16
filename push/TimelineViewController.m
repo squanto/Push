@@ -24,7 +24,7 @@
 {
     self = [super initWithStyle:style className:aClassName];
     if (self) {
-        //customize
+        //customize For Parse
         self.className = @"audioObject";
         self.paginationEnabled = YES;
         self.objectsPerPage = 10;
@@ -42,7 +42,7 @@
     // Appearance
     self.navigationItem.title = @"Home";
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
-    
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
     // The right way to load de;legate / data source
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -142,24 +142,28 @@
 
 
 
-/*
+
  // Override to customize the look of the cell that allows the user to load the next page of objects.
  // The default implementation is a UITableViewCellStyleDefault cell with simple labels.
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath {
- static NSString *CellIdentifier = @"NextPage";
- 
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
- 
- if (cell == nil) {
- cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
- }
- 
- cell.selectionStyle = UITableViewCellSelectionStyleNone;
- cell.textLabel.text = @"Load more...";
- 
- return cell;
- }
- */
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"NextPage";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    // ??
+    cell.textLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dustBG.png"]];
+    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dustBG.png"]];
+    
+    cell.textLabel.textAlignment = UITextAlignmentCenter;
+    cell.textLabel.text = @"Load More";
+    
+    return cell;
+}
 
 
 

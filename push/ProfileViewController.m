@@ -12,7 +12,7 @@
 
 @interface ProfileViewController ()
 
-@property (strong) PFImageView *profileImageView;
+@property (strong) UIImageView *profileImageView;
 
 @end
 
@@ -31,22 +31,26 @@
 {
     [super viewDidLoad];
     // Query for the user's profile picture
-    [[PFUser currentUser] refreshInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        if (!error) {
-            self.profileImageView = [PFImageView new];
-            self.profileImageView.image = [UIImage imageNamed:@"shatteredBG.png"];
-            self.profileImageView.frame = CGRectMake(20, 20, 100, 100);
-            PFFile *imageFile = [object objectForKey:@"profilePicture"];
-            self.profileImageView.file = imageFile;
-            [self.profileImageView loadInBackground:^(UIImage *image, NSError *error) {
-                self.profileImageView.image = image;
-                NSLog(@"IMAGE DATA: %@", UIImageJPEGRepresentation(image, 0.7));
-                [self.view addSubview:self.profileImageView];
-            }];
-        } else {
-            NSLog(@"Error: %@, %@", error, [error userInfo]);
-        }
-    }];
+    
+    
+    
+    
+//    [[PFUser currentUser] refreshInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+//        if (!error) {
+//            self.profileImageView = [PFImageView new];
+//            self.profileImageView.image = [UIImage imageNamed:@"shatteredBG.png"];
+//            self.profileImageView.frame = CGRectMake(20, 20, 100, 100);
+//            PFFile *imageFile = [object objectForKey:@"profilePicture"];
+//            self.profileImageView.file = imageFile;
+//            [self.profileImageView loadInBackground:^(UIImage *image, NSError *error) {
+//                self.profileImageView.image = image;
+//                NSLog(@"IMAGE DATA: %@", UIImageJPEGRepresentation(image, 0.7));
+//                [self.view addSubview:self.profileImageView];
+//            }];
+//        } else {
+//            NSLog(@"Error: %@, %@", error, [error userInfo]);
+//        }
+//    }];
 //    UIImage *profileImage = [UIImage imageWithData:[[[PFUser currentUser] objectForKey:@"profilePicture"] getData]];
 //    PFQuery *profileImageQuery = [PFUser query];
 //    [profileImageQuery getObjectWithId:[PFUser currentUser].objectId];
@@ -58,16 +62,24 @@
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
     
-    // Record Navigation
+    // Record Navigationx
     UIBarButtonItem *recordButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(showRecordModally)];
     self.navigationItem.rightBarButtonItem = recordButton;
     self.navigationItem.title = @"Me";
-
+//    
+    self.profileImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 100, 100)];
+    PFObject *userPhotoObject = [[PFUser currentUser] objectForKey:@"userPhoto"];
     
-//    PFQuery *profilePictureQuery = [PFUser query];
-//    [profilePictureQuery whereKey:@"username" equalTo:[object objectForKey:@"user"]];
-//
-//    cell.imageView.image = [UIImage imageWithData:[[[profilePictureQuery getFirstObject] objectForKey:@"profilePicture"] getData]];
+    // :)   
+    dispatch_async(dispatch_get_current_queue(), ^{
+        NSLog(@"Dispatch MADE!!!!!");
+        [userPhotoObject fetchIfNeeded];
+        PFFile *photoFile = [userPhotoObject objectForKey:@"imageFile"];
+        NSData *photoData = [photoFile getData];
+        UIImage *photo = [UIImage imageWithData:photoData];
+        self.profileImageView.image = photo;
+        [self.view addSubview:self.profileImageView];
+    });
 }
 
 

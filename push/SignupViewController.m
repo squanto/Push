@@ -144,13 +144,19 @@
             // The association magic.
             PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
             [userPhoto setObject:imageFile forKey:@"imageFile"];
-            [userPhoto setObject:user forKey:@"userId"];
-            [userPhoto setObject:user.username forKey:@"user"];
+            [userPhoto setObject:user.objectId forKey:@"user"];
+            [userPhoto setObject:user.username forKey:@"username"];
             [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (error) {
-                    NSLog(@"Error: %@, %@", error, [error userInfo]);
+                if (!error) {
+                    // These lines do bad things.
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [[PFUser currentUser] setObject:userPhoto forKey:@"userPhoto"];
+                        [[PFUser currentUser] saveInBackground];
+                        NSLog(@"Current User %@", [PFUser currentUser]);
+                        NSLog(@"Great success!! User phot0 object and User photo file saved!");
+                    });
                 } else {
-                    NSLog(@"NO Error uploading USER PHOTO!! %u", succeeded);
+                    NSLog(@"Error: %@, %@", error, [error userInfo]);
                 }
             }];
         } else {
