@@ -8,7 +8,8 @@
 	- Can respond with other audio
 
 ## Connect View Controller
-- Make a Table view of custom(?) cells. It lists users you connect one on one.
+
+- (Modally) Make a Table view of custom(?) cells. It lists users you connect one on one.
 	- When you click the compose button, it takes you to a special record view controller of all the users you follow (start off with picking one to one).
 	- When you click a user, it takes you to the conversation view of that user (Navigation controller style)
 	- You can reply with audio messages

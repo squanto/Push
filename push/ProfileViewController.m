@@ -7,7 +7,9 @@
 //
 
 #import "ProfileViewController.h"
+#import "ProfileBroadcastsViewController.h"
 #import "RecordViewController.h"
+#import "SplashViewController.h"
 #import <Parse/Parse.h>
 #import "PulseStore.h"
 
@@ -22,6 +24,8 @@
 @property (strong) UIButton *followButton;
 @property (strong) UIButton *followingUsersButton;
 @property (strong) UIButton *followedUsersButton;
+@property (strong) UIButton *logOutButton;
+@property (strong) UIButton *broadcastsButton;
 
 @property (strong) UITableViewController *followingTableVC;
 @property (strong) UITableViewController *followedTableVC;
@@ -45,8 +49,10 @@
     self.profileImageView.frame = CGRectMake(20, 20, 100, 100);
     self.usernameLabel.frame = CGRectMake(130, 20, 190, 50);
     self.followButton.frame = CGRectMake(20, 130, 100, 60);
-    self.followingUsersButton.frame = CGRectMake(20, 220, 150, 60);
-    self.followedUsersButton.frame = CGRectMake(20, 300, 150, 60);
+    self.followingUsersButton.frame = CGRectMake(20, 220, 130, 60);
+    self.followedUsersButton.frame = CGRectMake(20, 300, 130, 60);
+    self.logOutButton.frame = CGRectMake(40, 380, 100, 50);
+    self.broadcastsButton.frame = CGRectMake(170, 220, 120, 60);
 }
 
 - (void)viewDidLoad
@@ -88,6 +94,12 @@
     self.usernameLabel.backgroundColor = self.view.backgroundColor;
     self.usernameLabel.text =  [self.user username];
     [self.view addSubview:self.usernameLabel];
+    
+    // Broadcast Button Setup
+    self.broadcastsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.broadcastsButton addTarget:self action:@selector(broadcastsButtonPressed) forControlEvents:UIControlEventTouchDown];
+    [self.broadcastsButton setTitle:@"Broadcasts" forState:UIControlStateNormal];
+    [self.view addSubview:self.broadcastsButton];
 
     // But I really really want to check these things EVERY time the view appears
     // Setting up the follow button
@@ -103,6 +115,17 @@
             [self.followButton setTitle:@"Follow" forState:UIControlStateNormal];
         }
         [self.view addSubview:self.followButton];
+    }
+    
+    // User - Specific
+    if ([self.user.username isEqualToString:[[PFUser currentUser] username]]) {
+        // Log out button setup
+        self.logOutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [self.logOutButton addTarget:self action:@selector(logOutButtonPressed) forControlEvents:UIControlEventTouchDown];
+        [self.logOutButton setTitle:@"log out" forState:UIControlStateNormal];
+        [self.view addSubview:self.logOutButton];
+        
+        // 
     }
 }
 
@@ -184,6 +207,20 @@
     }
 }
 
+-(void)broadcastsButtonPressed
+{
+    NSLog(@"Broadcasts Button Pressed!");
+    ProfileBroadcastsViewController *broadcastsVC = [[ProfileBroadcastsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    broadcastsVC.user = self.user;
+    [self.navigationController pushViewController:broadcastsVC animated:YES];
+}
+
+-(void)logOutButtonPressed
+{
+    NSLog(@"Log Out Button Pressed!");
+    [PFUser logOut];
+    [self.navigationController presentViewController:[SplashViewController new] animated:YES completion:nil];
+}
 
 /************
  

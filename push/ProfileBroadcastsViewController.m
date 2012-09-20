@@ -1,22 +1,21 @@
 //
-//  TimelineViewController.m
+//  ProfileBroadcastsViewController.m
 //  push
 //
-//  Created by hugo on 9/10/12.
+//  Created by hugo on 9/20/12.
 //  Copyright (c) 2012 HugoMelo. All rights reserved.
 //
-#import <AVFoundation/AVFoundation.h>
-#import "TimelineViewController.h"
-#import "RecordViewController.h"
-#import "AudioCell.h"
 
-@interface TimelineViewController ()<AVAudioPlayerDelegate, UITableViewDataSource, UITableViewDelegate>
+#import "ProfileBroadcastsViewController.h"
+#import <AVFoundation/AVFoundation.h>
+
+@interface ProfileBroadcastsViewController () <UITableViewDataSource, UITableViewDelegate, AVAudioPlayerDelegate>
 
 @property (strong) AVPlayer *player;
 
 @end
 
-@implementation TimelineViewController
+@implementation ProfileBroadcastsViewController
 
 -(id)initWithStyle:(UITableViewStyle)style className:(NSString *)aClassName
 {
@@ -24,6 +23,7 @@
     if (self) {
         //customize For Parse
         self.className = @"audioObject";
+        self.pullToRefreshEnabled = NO;
         self.paginationEnabled = YES;
         self.objectsPerPage = 10;
         self.loadingViewEnabled = YES;
@@ -33,28 +33,13 @@
     return self;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Appearance
-    self.navigationItem.title = @"Home";
+    NSString *title = [NSString stringWithFormat:@"%@'s Broadcasts", self.user.username];
+    self.navigationItem.title = title;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
-    // The right way to load de;legate / data source
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
-    // ??
-    self.textKey = @"user";
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    
-    // REcord button setup.
-    UIBarButtonItem *recordButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(showRecordModally)];
-    self.navigationItem.rightBarButtonItem = recordButton;
-    
-    
 }
 
 
@@ -78,11 +63,9 @@
 
 -(PFQuery *)queryForTable
 {
-    PFQuery *userQuery = [PFQuery queryWithClassName:@"followRelationship"];
-    [userQuery whereKey:@"fromUser" equalTo:[PFUser currentUser]];
-    
     PFQuery *query = [PFQuery queryWithClassName:self.className];
-    [query whereKey:@"user" matchesKey:@"toUser" inQuery:userQuery];
+    
+    [query whereKey:@"user" equalTo:self.user];
     
     // Check the (automated) cache first
     if ([self.objects count] == 0) {
@@ -93,6 +76,11 @@
     [query orderByDescending:@"createdAt"];
     return query;
 }
+
+
+/*******************
+ Table View Delegate
+ *******************/
 
 // Overriden to have custom table view cells.
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
@@ -106,10 +94,8 @@
     }
     
     cell.textLabel.text = [object objectForKey:@"title"];
-    PFUser *user = [object objectForKey:@"user"];
-    [user fetchIfNeeded];
-    cell.detailTextLabel.text = user.username;
-    cell.imageView.image = [UIImage imageWithData:[[user objectForKey:@"userPhotoImage"] getData]];
+    [self.user fetchIfNeeded];
+    cell.imageView.image = [UIImage imageWithData:[[self.user objectForKey:@"userPhotoImage"] getData]];
     return cell;
 }
 
@@ -130,48 +116,15 @@
 
 
 
-
- // Override to customize the look of the cell that allows the user to load the next page of objects.
- // The default implementation is a UITableViewCellStyleDefault cell with simple labels.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *CellIdentifier = @"NextPage";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    // ??
-    cell.textLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dustBG.png"]];
-    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dustBG.png"]];
-    
-    cell.textLabel.textAlignment = UITextAlignmentCenter;
-    cell.textLabel.text = @"Load More";
-    
-    return cell;
-}
-
-
-
-
-
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
--(void)showRecordModally
-{
-    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordViewController new]];
-    [self.navigationController presentModalViewController:recordNavVC animated:YES];
 }
 
 @end

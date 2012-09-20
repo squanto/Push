@@ -60,6 +60,7 @@
 		9A9E41EF15FA81D60013E24D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41E515FA81D60013E24D /* Security.framework */; };
 		9A9E41F015FA81D60013E24D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41E615FA81D60013E24D /* StoreKit.framework */; };
 		9A9E41F115FA81D60013E24D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41E715FA81D60013E24D /* SystemConfiguration.framework */; };
+		9AABD842160BDD3600B10677 /* ProfileBroadcastsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AABD841160BDD3600B10677 /* ProfileBroadcastsViewController.m */; };
 		9AB612B11602715800ACA478 /* AudioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB612B01602715800ACA478 /* AudioCell.m */; };
 		9AEAE6871601346B009DD14F /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEAE6861601346B009DD14F /* SignupViewController.m */; };
 /* End PBXBuildFile section */
@@ -135,6 +136,8 @@
 		9A9E41E515FA81D60013E24D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9A9E41E615FA81D60013E24D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9A9E41E715FA81D60013E24D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9AABD840160BDD3600B10677 /* ProfileBroadcastsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileBroadcastsViewController.h; path = push/ProfileBroadcastsViewController.h; sourceTree = "<group>"; };
+		9AABD841160BDD3600B10677 /* ProfileBroadcastsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileBroadcastsViewController.m; path = push/ProfileBroadcastsViewController.m; sourceTree = "<group>"; };
 		9AB612AF1602715800ACA478 /* AudioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioCell.h; path = push/AudioCell.h; sourceTree = "<group>"; };
 		9AB612B01602715800ACA478 /* AudioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioCell.m; path = push/AudioCell.m; sourceTree = "<group>"; };
 		9AEAE6851601346B009DD14F /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 			children = (
 				9A88907A15FD2D88005552E8 /* ProfileViewController.h */,
 				9A88907B15FD2D88005552E8 /* ProfileViewController.m */,
+				9AABD840160BDD3600B10677 /* ProfileBroadcastsViewController.h */,
+				9AABD841160BDD3600B10677 /* ProfileBroadcastsViewController.m */,
 			);
 			name = profileTab;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				9AB612B11602715800ACA478 /* AudioCell.m in Sources */,
 				9A87B2CB160A532500B86843 /* PulseStore.m in Sources */,
 				9A87B2CE160A994700B86843 /* DiscoverTableViewController.m in Sources */,
+				9AABD842160BDD3600B10677 /* ProfileBroadcastsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
