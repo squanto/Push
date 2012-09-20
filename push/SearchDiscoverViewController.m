@@ -73,11 +73,6 @@
     return cell;
 }
 
-//- (PFObject *)objectAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    // Modify this to fix search results later on.
-//}
-
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     NSLog(@"Cancel Button PRessed");

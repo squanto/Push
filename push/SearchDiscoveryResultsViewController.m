@@ -8,6 +8,8 @@
 
 #import "SearchDiscoveryResultsViewController.h"
 #import "RecordViewController.h"
+#import "ProfileViewController.h"
+#import "PulseStore.h"
 #import <Parse/Parse.h>
 
 @interface SearchDiscoveryResultsViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -64,7 +66,8 @@
     }];
 }
 
--(int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+-(int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     NSLog(@"TABLE COUNT! %u", self.searchResults.count);
     return self.searchResults.count;
 }
@@ -76,7 +79,14 @@
     return cell;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Something touched:  %@", [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]);
+    NSString *username = [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text];
+    ProfileViewController *profileVC = [ProfileViewController new];
+    profileVC.user = [PulseStore getUserWithUsername:username];;
+    [self.navigationController pushViewController:profileVC animated:YES];
+}
 
 -(void)showRecordModally
 {

@@ -17,7 +17,6 @@
 		9A2F778B15FFCFCF004E0D1E /* noisy_grid@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F778915FFCFCF004E0D1E /* noisy_grid@2X.png */; };
 		9A2F778C15FFCFCF004E0D1E /* noisy_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F778A15FFCFCF004E0D1E /* noisy_grid.png */; };
 		9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */; };
-		9A2F779215FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */; };
 		9A87B2C1160A4E2500B86843 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41DE15FA81D60013E24D /* AudioToolbox.framework */; };
 		9A87B2CB160A532500B86843 /* PulseStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A87B2CA160A532500B86843 /* PulseStore.m */; };
 		9A87B2CE160A994700B86843 /* DiscoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A87B2CD160A994700B86843 /* DiscoverTableViewController.m */; };
@@ -28,15 +27,12 @@
 		9A88907715FD2D27005552E8 /* pacman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907615FD2D27005552E8 /* pacman@2x.png */; };
 		9A88907915FD2D36005552E8 /* pacman.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907815FD2D36005552E8 /* pacman.png */; };
 		9A88907D15FD2D88005552E8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88907B15FD2D88005552E8 /* ProfileViewController.m */; };
-		9A88907E15FD2D88005552E8 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907C15FD2D88005552E8 /* ProfileViewController.xib */; };
 		9A88908215FE6B28005552E8 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88908015FE6B28005552E8 /* TimelineViewController.m */; };
-		9A88908315FE6B28005552E8 /* TimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A88908115FE6B28005552E8 /* TimelineViewController.xib */; };
 		9A88908515FE6C89005552E8 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88908415FE6C89005552E8 /* globe.png */; };
 		9A88908715FE6C95005552E8 /* globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88908615FE6C95005552E8 /* globe@2x.png */; };
 		9A88908915FE6DEE005552E8 /* house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88908815FE6DEE005552E8 /* house@2x.png */; };
 		9A88908B15FE6DFD005552E8 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88908A15FE6DFD005552E8 /* house.png */; };
 		9A88908F15FE6E96005552E8 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88908D15FE6E96005552E8 /* DiscoverViewController.m */; };
-		9A88909015FE6E96005552E8 /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A88908E15FE6E96005552E8 /* DiscoverViewController.xib */; };
 		9A88909215FE6F65005552E8 /* letter_closed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88909115FE6F65005552E8 /* letter_closed@2x.png */; };
 		9A88909415FE6F6F005552E8 /* letter_closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88909315FE6F6F005552E8 /* letter_closed.png */; };
 		9A88909815FE6FC9005552E8 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88909615FE6FC9005552E8 /* ConnectViewController.m */; };
@@ -44,7 +40,6 @@
 		9A88909B15FE7114005552E8 /* speaker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88909A15FE7114005552E8 /* speaker@2x.png */; };
 		9A88909D15FE7124005552E8 /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88909C15FE7124005552E8 /* speaker.png */; };
 		9A8890A115FE914E005552E8 /* SearchDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88909F15FE914D005552E8 /* SearchDiscoverViewController.m */; };
-		9A8890A215FE914E005552E8 /* SearchDiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8890A015FE914E005552E8 /* SearchDiscoverViewController.xib */; };
 		9A8890A615FE915C005552E8 /* SearchConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8890A415FE915B005552E8 /* SearchConnectViewController.m */; };
 		9A8890A715FE915C005552E8 /* SearchConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8890A515FE915B005552E8 /* SearchConnectViewController.xib */; };
 		9A8890AC15FEA443005552E8 /* RecordMetaDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8890AA15FEA443005552E8 /* RecordMetaDataViewController.m */; };
@@ -84,7 +79,6 @@
 		9A2F778A15FFCFCF004E0D1E /* noisy_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noisy_grid.png; sourceTree = "<group>"; };
 		9A2F778E15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchDiscoveryResultsViewController.h; path = push/SearchDiscoveryResultsViewController.h; sourceTree = "<group>"; };
 		9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchDiscoveryResultsViewController.m; path = push/SearchDiscoveryResultsViewController.m; sourceTree = "<group>"; };
-		9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchDiscoveryResultsViewController.xib; path = push/SearchDiscoveryResultsViewController.xib; sourceTree = "<group>"; };
 		9A87B2C9160A532500B86843 /* PulseStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PulseStore.h; path = push/PulseStore.h; sourceTree = "<group>"; };
 		9A87B2CA160A532500B86843 /* PulseStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PulseStore.m; path = push/PulseStore.m; sourceTree = "<group>"; };
 		9A87B2CC160A994700B86843 /* DiscoverTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiscoverTableViewController.h; path = push/DiscoverTableViewController.h; sourceTree = "<group>"; };
@@ -97,17 +91,14 @@
 		9A88907815FD2D36005552E8 /* pacman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pacman.png; sourceTree = "<group>"; };
 		9A88907A15FD2D88005552E8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = push/ProfileViewController.h; sourceTree = "<group>"; };
 		9A88907B15FD2D88005552E8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = push/ProfileViewController.m; sourceTree = "<group>"; };
-		9A88907C15FD2D88005552E8 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = push/ProfileViewController.xib; sourceTree = "<group>"; };
 		9A88907F15FE6B28005552E8 /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimelineViewController.h; path = push/TimelineViewController.h; sourceTree = "<group>"; };
 		9A88908015FE6B28005552E8 /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimelineViewController.m; path = push/TimelineViewController.m; sourceTree = "<group>"; };
-		9A88908115FE6B28005552E8 /* TimelineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimelineViewController.xib; path = push/TimelineViewController.xib; sourceTree = "<group>"; };
 		9A88908415FE6C89005552E8 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
 		9A88908615FE6C95005552E8 /* globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe@2x.png"; sourceTree = "<group>"; };
 		9A88908815FE6DEE005552E8 /* house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house@2x.png"; sourceTree = "<group>"; };
 		9A88908A15FE6DFD005552E8 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		9A88908C15FE6E96005552E8 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiscoverViewController.h; path = push/DiscoverViewController.h; sourceTree = "<group>"; };
 		9A88908D15FE6E96005552E8 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiscoverViewController.m; path = push/DiscoverViewController.m; sourceTree = "<group>"; };
-		9A88908E15FE6E96005552E8 /* DiscoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DiscoverViewController.xib; path = push/DiscoverViewController.xib; sourceTree = "<group>"; };
 		9A88909115FE6F65005552E8 /* letter_closed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "letter_closed@2x.png"; sourceTree = "<group>"; };
 		9A88909315FE6F6F005552E8 /* letter_closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = letter_closed.png; sourceTree = "<group>"; };
 		9A88909515FE6FC9005552E8 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectViewController.h; path = push/ConnectViewController.h; sourceTree = "<group>"; };
@@ -117,7 +108,6 @@
 		9A88909C15FE7124005552E8 /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
 		9A88909E15FE914D005552E8 /* SearchDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchDiscoverViewController.h; path = push/SearchDiscoverViewController.h; sourceTree = "<group>"; };
 		9A88909F15FE914D005552E8 /* SearchDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchDiscoverViewController.m; path = push/SearchDiscoverViewController.m; sourceTree = "<group>"; };
-		9A8890A015FE914E005552E8 /* SearchDiscoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchDiscoverViewController.xib; path = push/SearchDiscoverViewController.xib; sourceTree = "<group>"; };
 		9A8890A315FE915B005552E8 /* SearchConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchConnectViewController.h; path = push/SearchConnectViewController.h; sourceTree = "<group>"; };
 		9A8890A415FE915B005552E8 /* SearchConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchConnectViewController.m; path = push/SearchConnectViewController.m; sourceTree = "<group>"; };
 		9A8890A515FE915B005552E8 /* SearchConnectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchConnectViewController.xib; path = push/SearchConnectViewController.xib; sourceTree = "<group>"; };
@@ -181,15 +171,12 @@
 			children = (
 				9A88908C15FE6E96005552E8 /* DiscoverViewController.h */,
 				9A88908D15FE6E96005552E8 /* DiscoverViewController.m */,
-				9A88908E15FE6E96005552E8 /* DiscoverViewController.xib */,
 				9A87B2CC160A994700B86843 /* DiscoverTableViewController.h */,
 				9A87B2CD160A994700B86843 /* DiscoverTableViewController.m */,
 				9A88909E15FE914D005552E8 /* SearchDiscoverViewController.h */,
 				9A88909F15FE914D005552E8 /* SearchDiscoverViewController.m */,
-				9A8890A015FE914E005552E8 /* SearchDiscoverViewController.xib */,
 				9A2F778E15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.h */,
 				9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */,
-				9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */,
 			);
 			name = discoveryTab;
 			sourceTree = "<group>";
@@ -212,7 +199,6 @@
 			children = (
 				9A88907A15FD2D88005552E8 /* ProfileViewController.h */,
 				9A88907B15FD2D88005552E8 /* ProfileViewController.m */,
-				9A88907C15FD2D88005552E8 /* ProfileViewController.xib */,
 			);
 			name = profileTab;
 			sourceTree = "<group>";
@@ -222,7 +208,6 @@
 			children = (
 				9A88907F15FE6B28005552E8 /* TimelineViewController.h */,
 				9A88908015FE6B28005552E8 /* TimelineViewController.m */,
-				9A88908115FE6B28005552E8 /* TimelineViewController.xib */,
 			);
 			name = timelineTab;
 			sourceTree = "<group>";
@@ -419,24 +404,19 @@
 				9A88907515FD2CB6005552E8 /* record@2x.png in Resources */,
 				9A88907715FD2D27005552E8 /* pacman@2x.png in Resources */,
 				9A88907915FD2D36005552E8 /* pacman.png in Resources */,
-				9A88907E15FD2D88005552E8 /* ProfileViewController.xib in Resources */,
-				9A88908315FE6B28005552E8 /* TimelineViewController.xib in Resources */,
 				9A88908515FE6C89005552E8 /* globe.png in Resources */,
 				9A88908715FE6C95005552E8 /* globe@2x.png in Resources */,
 				9A88908915FE6DEE005552E8 /* house@2x.png in Resources */,
 				9A88908B15FE6DFD005552E8 /* house.png in Resources */,
-				9A88909015FE6E96005552E8 /* DiscoverViewController.xib in Resources */,
 				9A88909215FE6F65005552E8 /* letter_closed@2x.png in Resources */,
 				9A88909415FE6F6F005552E8 /* letter_closed.png in Resources */,
 				9A88909915FE6FC9005552E8 /* ConnectViewController.xib in Resources */,
 				9A88909B15FE7114005552E8 /* speaker@2x.png in Resources */,
 				9A88909D15FE7124005552E8 /* speaker.png in Resources */,
-				9A8890A215FE914E005552E8 /* SearchDiscoverViewController.xib in Resources */,
 				9A8890A715FE915C005552E8 /* SearchConnectViewController.xib in Resources */,
 				9A8890AD15FEA443005552E8 /* RecordMetaDataViewController.xib in Resources */,
 				9A2F778B15FFCFCF004E0D1E /* noisy_grid@2X.png in Resources */,
 				9A2F778C15FFCFCF004E0D1E /* noisy_grid.png in Resources */,
-				9A2F779215FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,8 +497,8 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hugo melo (P4N3F8Y6B4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: hugo melo";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: hugo melo";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -527,6 +507,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "AAB1A552-D457-4DC1-96C5-58BBB1F02DE4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AAB1A552-D457-4DC1-96C5-58BBB1F02DE4";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -554,8 +536,8 @@
 		9A9E41DB15FA7C960013E24D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: hugo melo (P4N3F8Y6B4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hugo melo (P4N3F8Y6B4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: hugo melo";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: hugo melo";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -564,8 +546,8 @@
 				GCC_PREFIX_HEADER = "push/push-Prefix.pch";
 				INFOPLIST_FILE = "push/push-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C4EC4846-0D3A-44F3-B123-E02A6B1BACC9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C4EC4846-0D3A-44F3-B123-E02A6B1BACC9";
+				PROVISIONING_PROFILE = "AAB1A552-D457-4DC1-96C5-58BBB1F02DE4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AAB1A552-D457-4DC1-96C5-58BBB1F02DE4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

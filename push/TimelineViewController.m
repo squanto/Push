@@ -104,11 +104,10 @@
     }
     
     cell.textLabel.text = [object objectForKey:@"title"];
-    PFUser *userOfAudioBroadcast = [object objectForKey:@"user"];
-    [userOfAudioBroadcast refresh];
-    NSString *username = [userOfAudioBroadcast username];
-    cell.detailTextLabel.text = username;
-    
+    PFUser *user = [object objectForKey:@"user"];
+    [user fetchIfNeeded];
+    cell.detailTextLabel.text = user.username;
+    cell.imageView.image = [UIImage imageWithData:[[user objectForKey:@"userPhotoImage"] getData]];
     return cell;
 }
 

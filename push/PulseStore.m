@@ -62,4 +62,19 @@ static PFObject *audioTransitionObject;
     return user;
 }
 
++(NSArray *)getFollowedUsers:(PFUser *)user
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"followRelationship"];
+    [query whereKey:@"toUser" equalTo:user];
+    NSArray *results = [query findObjects];
+    return results;
+}
+
++(NSArray *)getFollowingUsers:(PFUser *)user
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"followRelationship"];
+    [query whereKey:@"fromUser" equalTo:user];
+    NSArray *results = [query findObjects];
+    return results;
+}
 @end

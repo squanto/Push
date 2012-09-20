@@ -16,5 +16,7 @@
 +(void)updateAudioObjectWithTitle:(NSString *)title;
 +(UIImage *)getProfilePictureForUser:(PFUser *)user;
 +(PFUser *)getUserWithUsername:(NSString *)username;
++(NSArray *)getFollowedUsers:(PFUser *)user;
++(NSArray *)getFollowingUsers:(PFUser *)user;
 
 @end

@@ -83,7 +83,6 @@
 -(void)objectsDidLoad:(NSError *)error
 {
     [super objectsDidLoad:error];
-    NSLog(@"Objects Loaded: %@", self.objects);
 }
 
 // called before a PFQuery is fired to get more objects
