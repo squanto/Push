@@ -77,6 +77,9 @@
 
 -(PFQuery *)queryForTable
 {
+    PFQuery *userQuery = [PFQuery queryWithClassName:@"followRelationship"];
+    [userQuery whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    
     PFQuery *query = [PFQuery queryWithClassName:self.className];
     
     // Check the (automated) cache first
@@ -101,7 +104,10 @@
     }
     
     cell.textLabel.text = [object objectForKey:@"title"];
-    cell.detailTextLabel.text = [object objectForKey:@"user"];
+    PFUser *userOfAudioBroadcast = [object objectForKey:@"user"];
+    [userOfAudioBroadcast refresh];
+    NSString *username = [userOfAudioBroadcast username];
+    cell.detailTextLabel.text = username;
     
     return cell;
 }

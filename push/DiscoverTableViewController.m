@@ -7,7 +7,9 @@
 //
 
 #import "DiscoverTableViewController.h"
+#import "ProfileViewController.h"
 #import <Parse/Parse.h>
+#import "PulseStore.h"
 
 @interface DiscoverTableViewController()  <UITableViewDataSource, UITableViewDelegate>
 
@@ -65,9 +67,9 @@
 {
     // Where the pushing action happens!!
     NSString *username = [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text];
-    NSLog(@"Chosen %@", username);
-    PFUser *chosenUser = 
-    // pulsestore getpfuser with username...,
+    ProfileViewController *profileVC = [ProfileViewController new];
+    profileVC.user = [PulseStore getUserWithUsername:username];;
+    [self.navigationController pushViewController:profileVC animated:YES];
 }
 
 

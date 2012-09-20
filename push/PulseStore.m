@@ -23,10 +23,9 @@ static PFObject *audioTransitionObject;
     
     [audioFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [audioObject setObject:audioFile forKey:@"audioFile"];
-        [audioObject setObject:[[PFUser currentUser] username] forKey:@"user"];
+        [audioObject setObject:[PFUser currentUser] forKey:@"user"];
         [audioObject setObject:[[NSDate date] description] forKey:@"title"];
         [audioObject saveInBackground];
-        NSLog(@"Sent To Parse!");
     }];
     metaDataVC.audioURL = audioURL;
     
@@ -56,7 +55,11 @@ static PFObject *audioTransitionObject;
 
 +(PFUser *)getUserWithUsername:(NSString *)username
 {
-    
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"username" equalTo:username];
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    PFUser *user = [[query findObjects] objectAtIndex:0];
+    return user;
 }
 
 @end
