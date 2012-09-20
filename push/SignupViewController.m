@@ -151,9 +151,9 @@
                     // These lines do bad things.
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [[PFUser currentUser] setObject:userPhoto forKey:@"userPhoto"];
+                        [[PFUser currentUser] setObject:imageFile forKey:@"userPhotoImage"];
+                        NSLog(@"Succes Reached FOr IMAGE USER !!?!?!");
                         [[PFUser currentUser] saveInBackground];
-                        NSLog(@"Current User %@", [PFUser currentUser]);
-                        NSLog(@"Great success!! User phot0 object and User photo file saved!");
                     });
                 } else {
                     NSLog(@"Error: %@, %@", error, [error userInfo]);

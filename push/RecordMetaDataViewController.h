@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
 
 @interface RecordMetaDataViewController : UIViewController
 
-@property (strong) PFObject *audioObject;
-@property (strong) NSString *audioObjectID;
 @property (strong) NSURL *audioURL;
 
 @end

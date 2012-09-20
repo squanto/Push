@@ -9,6 +9,7 @@
 #import "SplashViewController.h"
 #import "TabViewController.h"
 #import "SignupViewController.h"
+#import "PulseStore.h"
 
 @interface SplashViewController()
 
@@ -51,7 +52,6 @@
     [self.loginVC setSignUpController:[SignupViewController new]];
     self.loginVC.signUpController.fields = PFSignUpFieldsDefault;
     self.loginVC.signUpController.signUpView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pulseSplash.png"]];
-//    [self.navigationController presentModalViewController:self.loginVC animated:YES];
 }
 
 
@@ -60,8 +60,6 @@
     if (![PFUser currentUser]) {
         [self.navigationController presentModalViewController:self.loginVC animated:YES];
     } else {
-        NSLog(@"Successfully Signed In: %@", [[PFUser currentUser] email]);
-        NSLog(@"USERNAME: %@", [[PFUser currentUser] username]);
         [self presentModalViewController:[TabViewController new] animated:YES];
     }
 }
@@ -69,45 +67,34 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Resize logo if rotated. 
-    if ((interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-        self.loginVC.signUpController.signUpView.logo.frame = CGRectMake(20, 30, 100, 60);
-        self.loginVC.logInView.logo.frame = CGRectMake(20, 30, 70, 35);
-    } else {
-        self.loginVC.logInView.logo.frame = self.logoFrame;
-        self.loginVC.signUpController.signUpView.logo.frame = self.logoFrame;
-    }
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-// Sent to the delegate when a PFUser is logged in.
+/************
+ 
+ PULSE METHODS
+ 
+ ************/
+
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-    [[PFUser currentUser] setObject:[[PFTwitterUtils twitter] screenName] forKey:@"username"];
     [[PFUser currentUser] save];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-// Sent to the delegate when the log in attempt fails.
 - (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
     NSLog(@"Failed to log in...");
 }
 
-// Sent to the delegate when the log in screen is dismissed.
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 
-
-// Sent to the delegate to determine whether the log in request should be submitted to the server.
 - (BOOL)logInViewController:(PFLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password {
-    // Check if both fields are completed
-//    [[PFUser currentUser] setObject:[[PFTwitterUtils twitter] screenName] forKey:@"twitterName"];
     NSLog(@"Log in VC Called twitter?");
     if (username && password && username.length != 0 && password.length != 0) {
         return YES; // Begin login process

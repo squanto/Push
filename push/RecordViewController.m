@@ -9,7 +9,7 @@
 #import "RecordViewController.h"
 #import "RecordMetaDataViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import <Parse/Parse.h>
+#import "PulseStore.h"
 
 @interface RecordViewController ()<AVAudioRecorderDelegate>
 
@@ -81,7 +81,6 @@
 
 - (IBAction)recordTouchDown:(id)sender
 {
-    NSLog(@"REcording touch down!!");
     [self.recorder record];
 }
 
@@ -91,41 +90,16 @@
 {
     if (!self.recorder.recording) {
         [self.recorder record];
-        NSLog(@"RECORDING presesed !!");
     } else {
         [self.recorder stop];
     }
 }
 
 
-
-// Remove this button. 
-- (IBAction)sendButtonPressed
-{
-    
-}
-
 -(void)audioRecorderDidFinishRecording:(AVAudioRecorder*)recorder
                           successfully:(BOOL)flag {
 
-    // Give this a unique id every time.
-    // Allow a to user text field (via twitter handles).
-    RecordMetaDataViewController *metaDataVC = [RecordMetaDataViewController new];
-
-    PFObject *audioObject = [PFObject objectWithClassName:@"audioObject"];
-    PFFile *audioFile = [PFFile fileWithName:@"audio.wav" contentsAtPath:[self.audioURL path]];
-    
-    [audioFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        //sets audio file as a field of audio object.
-        [audioObject setObject:audioFile forKey:@"audioFile"];
-        [audioObject setObject:[[PFUser currentUser] username] forKey:@"user"];
-        [audioObject setObject:[[NSDate date] description] forKey:@"title"];
-        [audioObject saveInBackground];
-        NSLog(@"Sent To Parse!");
-    }];
-    metaDataVC.audioURL = self.audioURL;
-    metaDataVC.audioObject = audioObject;
-    metaDataVC.audioObjectID = [audioObject objectId];
+    RecordMetaDataViewController *metaDataVC = [PulseStore prepareMetaDataWithAudioURL:self.audioURL];
     [self.navigationController pushViewController:metaDataVC animated:YES];
 }
 

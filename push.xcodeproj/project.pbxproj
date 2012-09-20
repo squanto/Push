@@ -18,6 +18,9 @@
 		9A2F778C15FFCFCF004E0D1E /* noisy_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F778A15FFCFCF004E0D1E /* noisy_grid.png */; };
 		9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */; };
 		9A2F779215FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */; };
+		9A87B2C1160A4E2500B86843 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41DE15FA81D60013E24D /* AudioToolbox.framework */; };
+		9A87B2CB160A532500B86843 /* PulseStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A87B2CA160A532500B86843 /* PulseStore.m */; };
+		9A87B2CE160A994700B86843 /* DiscoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A87B2CD160A994700B86843 /* DiscoverTableViewController.m */; };
 		9A88906F15FD2C96005552E8 /* cog_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88906E15FD2C96005552E8 /* cog_02@2x.png */; };
 		9A88907115FD2C9F005552E8 /* cog_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907015FD2C9F005552E8 /* cog_02.png */; };
 		9A88907315FD2CA8005552E8 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A88907215FD2CA8005552E8 /* record.png */; };
@@ -53,7 +56,6 @@
 		9A9E41D215FA7C960013E24D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E41D115FA7C960013E24D /* main.m */; };
 		9A9E41D615FA7C960013E24D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E41D515FA7C960013E24D /* AppDelegate.m */; };
 		9A9E41DD15FA81810013E24D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41DC15FA81810013E24D /* Parse.framework */; };
-		9A9E41E815FA81D60013E24D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41DE15FA81D60013E24D /* AudioToolbox.framework */; };
 		9A9E41E915FA81D60013E24D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41DF15FA81D60013E24D /* AVFoundation.framework */; };
 		9A9E41EA15FA81D60013E24D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41E015FA81D60013E24D /* CFNetwork.framework */; };
 		9A9E41EB15FA81D60013E24D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41E115FA81D60013E24D /* libsqlite3.dylib */; };
@@ -83,6 +85,10 @@
 		9A2F778E15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchDiscoveryResultsViewController.h; path = push/SearchDiscoveryResultsViewController.h; sourceTree = "<group>"; };
 		9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchDiscoveryResultsViewController.m; path = push/SearchDiscoveryResultsViewController.m; sourceTree = "<group>"; };
 		9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchDiscoveryResultsViewController.xib; path = push/SearchDiscoveryResultsViewController.xib; sourceTree = "<group>"; };
+		9A87B2C9160A532500B86843 /* PulseStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PulseStore.h; path = push/PulseStore.h; sourceTree = "<group>"; };
+		9A87B2CA160A532500B86843 /* PulseStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PulseStore.m; path = push/PulseStore.m; sourceTree = "<group>"; };
+		9A87B2CC160A994700B86843 /* DiscoverTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiscoverTableViewController.h; path = push/DiscoverTableViewController.h; sourceTree = "<group>"; };
+		9A87B2CD160A994700B86843 /* DiscoverTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiscoverTableViewController.m; path = push/DiscoverTableViewController.m; sourceTree = "<group>"; };
 		9A88906E15FD2C96005552E8 /* cog_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog_02@2x.png"; sourceTree = "<group>"; };
 		9A88907015FD2C9F005552E8 /* cog_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog_02.png; sourceTree = "<group>"; };
 		9A88907215FD2CA8005552E8 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
@@ -150,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A9E41E815FA81D60013E24D /* AudioToolbox.framework in Frameworks */,
+				9A87B2C1160A4E2500B86843 /* AudioToolbox.framework in Frameworks */,
 				9A9E41E915FA81D60013E24D /* AVFoundation.framework in Frameworks */,
 				9A9E41EA15FA81D60013E24D /* CFNetwork.framework in Frameworks */,
 				9A9E41EB15FA81D60013E24D /* libsqlite3.dylib in Frameworks */,
@@ -170,18 +176,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A8890A815FE9165005552E8 /* search */ = {
+		9A87B2CF160AC57B00B86843 /* discoveryTab */ = {
 			isa = PBXGroup;
 			children = (
+				9A88908C15FE6E96005552E8 /* DiscoverViewController.h */,
+				9A88908D15FE6E96005552E8 /* DiscoverViewController.m */,
+				9A88908E15FE6E96005552E8 /* DiscoverViewController.xib */,
+				9A87B2CC160A994700B86843 /* DiscoverTableViewController.h */,
+				9A87B2CD160A994700B86843 /* DiscoverTableViewController.m */,
 				9A88909E15FE914D005552E8 /* SearchDiscoverViewController.h */,
 				9A88909F15FE914D005552E8 /* SearchDiscoverViewController.m */,
 				9A8890A015FE914E005552E8 /* SearchDiscoverViewController.xib */,
 				9A2F778E15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.h */,
 				9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */,
 				9A2F779015FFF44B004E0D1E /* SearchDiscoveryResultsViewController.xib */,
+			);
+			name = discoveryTab;
+			sourceTree = "<group>";
+		};
+		9A87B2D0160AC58C00B86843 /* connectTab */ = {
+			isa = PBXGroup;
+			children = (
+				9A88909515FE6FC9005552E8 /* ConnectViewController.h */,
+				9A88909615FE6FC9005552E8 /* ConnectViewController.m */,
+				9A88909715FE6FC9005552E8 /* ConnectViewController.xib */,
 				9A8890A315FE915B005552E8 /* SearchConnectViewController.h */,
 				9A8890A415FE915B005552E8 /* SearchConnectViewController.m */,
 				9A8890A515FE915B005552E8 /* SearchConnectViewController.xib */,
+			);
+			name = connectTab;
+			sourceTree = "<group>";
+		};
+		9A87B2D1160AC5D000B86843 /* profileTab */ = {
+			isa = PBXGroup;
+			children = (
+				9A88907A15FD2D88005552E8 /* ProfileViewController.h */,
+				9A88907B15FD2D88005552E8 /* ProfileViewController.m */,
+				9A88907C15FD2D88005552E8 /* ProfileViewController.xib */,
+			);
+			name = profileTab;
+			sourceTree = "<group>";
+		};
+		9A87B2D2160AC5D900B86843 /* timelineTab */ = {
+			isa = PBXGroup;
+			children = (
+				9A88907F15FE6B28005552E8 /* TimelineViewController.h */,
+				9A88908015FE6B28005552E8 /* TimelineViewController.m */,
+				9A88908115FE6B28005552E8 /* TimelineViewController.xib */,
+			);
+			name = timelineTab;
+			sourceTree = "<group>";
+		};
+		9A8890A815FE9165005552E8 /* search */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = search;
 			sourceTree = "<group>";
@@ -202,6 +250,8 @@
 		9A9E41B615FA7C960013E24D = {
 			isa = PBXGroup;
 			children = (
+				9A87B2C9160A532500B86843 /* PulseStore.h */,
+				9A87B2CA160A532500B86843 /* PulseStore.m */,
 				9AB612AF1602715800ACA478 /* AudioCell.h */,
 				9AB612B01602715800ACA478 /* AudioCell.m */,
 				9A8890AE15FEA448005552E8 /* record */,
@@ -299,18 +349,10 @@
 		9AB612DC16028AEE00ACA478 /* tabs */ = {
 			isa = PBXGroup;
 			children = (
-				9A88907F15FE6B28005552E8 /* TimelineViewController.h */,
-				9A88908015FE6B28005552E8 /* TimelineViewController.m */,
-				9A88908115FE6B28005552E8 /* TimelineViewController.xib */,
-				9A88909515FE6FC9005552E8 /* ConnectViewController.h */,
-				9A88909615FE6FC9005552E8 /* ConnectViewController.m */,
-				9A88909715FE6FC9005552E8 /* ConnectViewController.xib */,
-				9A88908C15FE6E96005552E8 /* DiscoverViewController.h */,
-				9A88908D15FE6E96005552E8 /* DiscoverViewController.m */,
-				9A88908E15FE6E96005552E8 /* DiscoverViewController.xib */,
-				9A88907A15FD2D88005552E8 /* ProfileViewController.h */,
-				9A88907B15FD2D88005552E8 /* ProfileViewController.m */,
-				9A88907C15FD2D88005552E8 /* ProfileViewController.xib */,
+				9A87B2D2160AC5D900B86843 /* timelineTab */,
+				9A87B2D0160AC58C00B86843 /* connectTab */,
+				9A87B2CF160AC57B00B86843 /* discoveryTab */,
+				9A87B2D1160AC5D000B86843 /* profileTab */,
 			);
 			name = tabs;
 			sourceTree = "<group>";
@@ -420,6 +462,8 @@
 				9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */,
 				9AEAE6871601346B009DD14F /* SignupViewController.m in Sources */,
 				9AB612B11602715800ACA478 /* AudioCell.m in Sources */,
+				9A87B2CB160A532500B86843 /* PulseStore.m in Sources */,
+				9A87B2CE160A994700B86843 /* DiscoverTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

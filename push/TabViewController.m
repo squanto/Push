@@ -46,19 +46,12 @@
         discoverNavVC.tabBarItem = globeButtonItem;
         
         // Profile
-        // Make this the one stop shop for checking your stuff and adding settings. 
         UIImage *profileImage = [UIImage imageNamed:@"pacman.png"];
-        UITabBarItem *profileItem = [[UITabBarItem alloc] initWithTitle:@"Me" image:profileImage tag:1];
-        // Make a navigation controller.
-        UINavigationController *profileNavVC = [[UINavigationController alloc] initWithRootViewController:[ProfileViewController new]];
+        UITabBarItem *profileItem = [[UITabBarItem alloc] initWithTitle:@"Me" image:profileImage tag:3];
+        ProfileViewController *profileVC = [ProfileViewController new];
+        profileVC.user = [PFUser currentUser];
+        UINavigationController *profileNavVC = [[UINavigationController alloc] initWithRootViewController:profileVC];
         profileNavVC.tabBarItem = profileItem;
-        
-        // Add this functionality o the profileVC
-        // UIImage *settingsButtonImage = [UIImage imageNamed:@"cog_02.png"];
-        //UITabBarItem *settingsItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:settingsButtonImage tag:2];
-        // Make a navigation controller.
-        //SettingsViewController *settingsVC = [SettingsViewController new];
-        //settingsVC.tabBarItem = settingsItem;
         
         self.viewControllers = [NSArray arrayWithObjects:timelineNavVC, connectNavVC, discoverNavVC, profileNavVC, nil];
     }
@@ -67,7 +60,6 @@
 
 -(void)showRecordModally
 {
-    NSLog(@"Record button Pressed");
     UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordViewController new]];
     [self.navigationController presentModalViewController:recordNavVC animated:YES];
 }

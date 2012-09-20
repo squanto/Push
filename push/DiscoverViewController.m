@@ -7,6 +7,7 @@
 //
 
 #import "DiscoverViewController.h"
+#import "DiscoverTableViewController.h"
 #import "RecordViewController.h"
 #import "SearchDiscoverViewController.h"
 
@@ -18,35 +19,47 @@
 
 @implementation DiscoverViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self =[super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        // customize.
     }
     return self;
+}
+
+-(void)viewDidLayoutSubviews
+{
+    // Set frame here
+    self.searchBar.frame = CGRectMake(0, 0, 320, 50);
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    DiscoverTableViewController *queryVC = [DiscoverTableViewController new];
+    [self addChildViewController:queryVC];
+    queryVC.view.frame = CGRectMake(0, 50, 320, 430);
+    [self.view addSubview:queryVC.view];
+    [queryVC didMoveToParentViewController:self];
+    
     UIBarButtonItem *recordButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(showRecordModally)];
     self.navigationItem.rightBarButtonItem = recordButton;
     self.navigationItem.title = @"Discover";
     
+    // View Customization
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
-    
-    // Table customizing.
-    CGRect tableFrame = CGRectMake(0, 0, 320, 480);
-    self.discoveryTable = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStyleGrouped];
-    self.discoveryTable.backgroundColor = self.view.backgroundColor;
-    [self.view addSubview:self.discoveryTable];
-    
-    
-    // Search Bar customization
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-    self.searchBar.placeholder = @"Friends, #hashtags";
-    self.searchBar.barStyle = UIBarStyleBlack;
+
+    // Search bar customization
+    self.searchBar = [UISearchBar new];
     self.searchBar.backgroundImage = [UIImage imageNamed:@"noisy_grid.png"];
+    self.searchBar.placeholder = @"Search for friends.";
+    self.searchBar.barStyle = UIBarStyleBlack;
     self.searchBar.translucent = YES;
     self.searchBar.delegate = self;
     [self.view addSubview:self.searchBar];
@@ -57,15 +70,10 @@
     NSString *textToSearch = searchBar.text;
     NSLog(@"Text To Search: %@", textToSearch);
     [self.searchBar resignFirstResponder];
-    
-    // Update the custom table view. Make asyncronous calls to parse from here.
-    // Present a new view controller via navigation here..
-    
 }
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-    NSLog(@"Began Editing!");
     [self.view endEditing:YES];
     UINavigationController *searchDiscoveryVC = [[UINavigationController alloc] initWithRootViewController: [[SearchDiscoverViewController alloc] initWithStyle:UITableViewStyleGrouped]];
     searchDiscoveryVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
@@ -73,12 +81,8 @@
     [self.navigationController presentModalViewController:searchDiscoveryVC animated:YES];
 }
 
-// A Very Useful snippet:
-//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//    NSLog(@"Touch Registered!s");
-//    [self.view endEditing:YES];
-//}
+
+
 
 
 - (void)viewDidUnload
@@ -96,11 +100,5 @@
     UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordViewController new]];
     [self.navigationController presentModalViewController:recordNavVC animated:YES];
 }
-
-// Add a discovery table view with different sections
-//  1. Random Cool People To Follow
-//  2. Featured Clips From People You Follow
-// Add Search functionality for people to follow.
-// 
 
 @end

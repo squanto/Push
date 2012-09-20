@@ -5,12 +5,10 @@
 //  Created by hugo on 9/10/12.
 //  Copyright (c) 2012 HugoMelo. All rights reserved.
 //
-
+#import <AVFoundation/AVFoundation.h>
 #import "TimelineViewController.h"
 #import "RecordViewController.h"
 #import "AudioCell.h"
-#import <AVFoundation/AVFoundation.h>
-
 
 @interface TimelineViewController ()<AVAudioPlayerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -59,18 +57,9 @@
 }
 
 
-// Parse handles this with imageKey and textKey
-//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//}
-
-
 /***************
  Parse Methods
  **************/
-
-
 
 // Called when Objects are loaded from PArse via PFQquery
 -(void)objectsDidLoad:(NSError *)error
@@ -154,7 +143,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // ??
     cell.textLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dustBG.png"]];
     cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dustBG.png"]];
