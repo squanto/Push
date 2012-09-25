@@ -9,37 +9,7 @@
 #import <Parse/Parse.h>
 #import "PulseStore.h"
 
-static PFObject *audioTransitionObject;
-
 @implementation PulseStore
-
-
-+(RecordMetaDataViewController *)prepareMetaDataWithAudioURL:(NSURL *)audioURL
-{
-    RecordMetaDataViewController *metaDataVC = [RecordMetaDataViewController new];
-    
-    PFObject *audioObject = [PFObject objectWithClassName:@"audioObject"];
-    PFFile *audioFile = [PFFile fileWithName:@"audio.wav" contentsAtPath:[audioURL path]];
-    
-    [audioFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [audioObject setObject:audioFile forKey:@"audioFile"];
-        [audioObject setObject:[PFUser currentUser] forKey:@"user"];
-        [audioObject setObject:[[NSDate date] description] forKey:@"title"];
-        [audioObject saveInBackground];
-    }];
-    metaDataVC.audioURL = audioURL;
-    
-    audioTransitionObject = audioObject;
-    
-    return metaDataVC;
-}
-
-+(void)updateAudioObjectWithTitle:(NSString *)title
-{
-    [audioTransitionObject setObject:title forKey:@"title"];
-    [audioTransitionObject saveInBackground];
-    audioTransitionObject = nil;
-}
 
 +(UIImage *)getProfilePictureForUser:(PFUser *)user
 {

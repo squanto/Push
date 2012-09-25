@@ -64,7 +64,7 @@
     // scroll view setup
     CGRect fullScreenRect = [[UIScreen mainScreen] applicationFrame];
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:fullScreenRect];
-    scrollView.contentSize = CGSizeMake(320, 960);
+    scrollView.contentSize = CGSizeMake(320, 450);
     self.view = scrollView;
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
@@ -72,14 +72,6 @@
     // Record Navigation
     self.recordButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(showRecordModally)];
     self.navigationItem.rightBarButtonItem = self.recordButton;
-    
-    // Navigation top trick.
-    if (self.user == [PFUser currentUser]) {
-        self.navigationItem.title = @"Me";
-    } else {
-        self.navigationItem.title = self.user.username;
-    }
-    self.navigationItem.title = @"Me";
     
     // Query for the user's profile picture
     self.profileImageView = [UIImageView new];
@@ -103,7 +95,18 @@
 
     // But I really really want to check these things EVERY time the view appears
     // Setting up the follow button
-    if (![self.user.username isEqualToString:[[PFUser currentUser] username]]) {
+    
+    // User - Specific
+    if ([self.user.username isEqualToString:[[PFUser currentUser] username]]) {
+        self.navigationItem.title = @"Me";
+        NSLog(@"I'm the current user!");
+        // Log out button setup
+        self.logOutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [self.logOutButton addTarget:self action:@selector(logOutButtonPressed) forControlEvents:UIControlEventTouchDown];
+        [self.logOutButton setTitle:@"log out" forState:UIControlStateNormal];
+        [self.view addSubview:self.logOutButton];
+    } else {
+        self.navigationItem.title = self.user.username;
         NSLog(@"profileVC username: %@, Current username: %@", self.user.username, [[PFUser currentUser] username]);
         self.followButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [self.followButton addTarget:self action:@selector(followButtonPressed) forControlEvents:UIControlEventTouchDown];
@@ -116,23 +119,13 @@
         }
         [self.view addSubview:self.followButton];
     }
-    
-    // User - Specific
-    if ([self.user.username isEqualToString:[[PFUser currentUser] username]]) {
-        // Log out button setup
-        self.logOutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [self.logOutButton addTarget:self action:@selector(logOutButtonPressed) forControlEvents:UIControlEventTouchDown];
-        [self.logOutButton setTitle:@"log out" forState:UIControlStateNormal];
-        [self.view addSubview:self.logOutButton];
-        
-        // 
-    }
 }
 
 -(BOOL)isUserFollowingUser
 {
     for (int i = 0; i < self.followedUsers.count; i++) {
         PFObject *userRelationship = [self.followedUsers objectAtIndex:i];
+        [userRelationship fetchIfNeeded];
         if ([[[userRelationship objectForKey:@"toUser"] objectId]  isEqual:self.user.objectId]) {
             return YES;
         }
@@ -162,15 +155,12 @@
 -(void)showFollowingUsers
 {
     // Present a modal table view
-    // Make these view proramatically.
     self.followingTableVC = [[UITableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     self.followingTableVC.navigationItem.title = [NSString stringWithFormat:@"Users %@ follows", self.user.username];
     self.followingTableVC.tableView.delegate = self;
     self.followingTableVC.tableView.dataSource = self;
     self.followingTableVC.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
-    
     self.followingTableVC.navigationItem.rightBarButtonItem = self.recordButton;
-    
     [self.navigationController pushViewController:self.followingTableVC animated:YES];
 }
 
@@ -182,19 +172,20 @@
     self.followedTableVC.tableView.delegate = self;
     self.followedTableVC.tableView.dataSource = self;
     self.followedTableVC.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
-    
     self.followedTableVC.navigationItem.rightBarButtonItem = self.recordButton;
-    
     [self.navigationController pushViewController:self.followedTableVC animated:YES];
 }
 
 // Toggle Follow Action
 -(void)followButtonPressed
 {
+    NSLog(@"Follow Button Pressed!");
     if (self.followButton.titleLabel.text == @"Follow") {
         PFObject *followRelationship = [PFObject objectWithClassName:@"followRelationship"];
         [followRelationship setObject:[PFUser currentUser] forKey:@"fromUser"];
         [followRelationship setObject:self.user forKey:@"toUser"];
+        [followRelationship setObject:[PFUser currentUser].objectId forKey:@"fromUserId"];
+        [followRelationship setObject:self.user.objectId forKey:@"toUserId"];
         [followRelationship saveInBackground];
         [self.followButton setTitle:@"Unfollow" forState:UIControlStateNormal];
     } else {
@@ -236,20 +227,19 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
+    // For multiple table views with the same delegate.
     if (tableView == self.followingTableVC.tableView) {
         [PFObject fetchAllIfNeeded:self.followingUsers];
-        PFUser *user = [[self.followingUsers objectAtIndex:indexPath.row] objectForKey:@"toUser"];
-        [user fetchIfNeeded];
-        cell.textLabel.text = user.username;
+        PFUser *toUser = [[self.followingUsers objectAtIndex:indexPath.row] objectForKey:@"toUser"];
+        [toUser fetchIfNeeded];
+        cell.textLabel.text = toUser.username;
     }
     if (tableView == self.followedTableVC.tableView) {
         [PFObject fetchAllIfNeeded:self.followedUsers];
         PFObject *userRelationships = [self.followedUsers objectAtIndex:indexPath.row];
-        PFUser *user = [userRelationships objectForKey:@"fromUser"];
-        // ????
-        [user fetchIfNeeded];
-        NSString *username = user.username;
-        cell.textLabel.text = username;
+        PFUser *fromUser = [userRelationships objectForKey:@"fromUser"];
+        [fromUser fetchIfNeeded];
+        cell.textLabel.text = fromUser.username;
     }
     
     return cell;

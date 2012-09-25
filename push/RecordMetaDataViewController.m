@@ -60,7 +60,9 @@
 
 -(void)broadcast
 {
-    [PulseStore updateAudioObjectWithTitle:self.titleField.text];
+    [self.audioObject fetchIfNeeded];
+    [self.audioObject setObject:self.titleField.text forKey:@"title"];
+    [self.audioObject saveInBackground];
     [self dismissModalViewControllerAnimated:YES];
 }
 

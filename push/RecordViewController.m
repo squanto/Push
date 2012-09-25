@@ -14,9 +14,9 @@
 @interface RecordViewController ()<AVAudioRecorderDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 
+@property (strong) PFObject *audioObject;
 @property (strong) AVAudioRecorder *recorder;
 
 @end
@@ -98,8 +98,21 @@
 
 -(void)audioRecorderDidFinishRecording:(AVAudioRecorder*)recorder
                           successfully:(BOOL)flag {
-
-    RecordMetaDataViewController *metaDataVC = [PulseStore prepareMetaDataWithAudioURL:self.audioURL];
+    
+    RecordMetaDataViewController *metaDataVC = [RecordMetaDataViewController new];
+    
+    PFObject *audioObject = [PFObject objectWithClassName:@"audioObject"];
+    PFFile *audioFile = [PFFile fileWithName:@"audio.wav" contentsAtPath:[self.audioURL path]];
+    
+    [audioFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [audioObject setObject:audioFile forKey:@"audioFile"];
+        [audioObject setObject:[PFUser currentUser] forKey:@"user"];
+        [audioObject setObject:[[NSDate date] description] forKey:@"title"];
+        [audioObject saveInBackground];
+    }];
+    metaDataVC.audioURL = self.audioURL;
+    metaDataVC.audioObject = audioObject;
+    
     [self.navigationController pushViewController:metaDataVC animated:YES];
 }
 

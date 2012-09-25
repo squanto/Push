@@ -12,8 +12,6 @@
 
 @interface PulseStore : NSObject <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
-+(RecordMetaDataViewController *)prepareMetaDataWithAudioURL:(NSURL *)audioURL;
-+(void)updateAudioObjectWithTitle:(NSString *)title;
 +(UIImage *)getProfilePictureForUser:(PFUser *)user;
 +(PFUser *)getUserWithUsername:(NSString *)username;
 +(NSArray *)getFollowedUsers:(PFUser *)user;

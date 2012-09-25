@@ -37,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     // Appearance
     self.navigationItem.title = @"Home";
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
@@ -66,6 +67,7 @@
 -(void)objectsDidLoad:(NSError *)error
 {
     [super objectsDidLoad:error];
+    NSLog(@"Objects Loaded! from timeline!");
 }
 
 
@@ -73,16 +75,18 @@
 -(void)objectsWillLoad
 {
     [super objectsWillLoad];
+    NSLog(@"Objects Will Load");
 }
 
 
 -(PFQuery *)queryForTable
 {
-    PFQuery *userQuery = [PFQuery queryWithClassName:@"followRelationship"];
-    [userQuery whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    PFQuery *relationshipQuery = [PFQuery queryWithClassName:@"followRelationship"];
+    [relationshipQuery whereKey:@"fromUserId" equalTo:[PFUser currentUser].objectId];
+    
     
     PFQuery *query = [PFQuery queryWithClassName:self.className];
-    [query whereKey:@"user" matchesKey:@"toUser" inQuery:userQuery];
+    [query whereKey:@"user" matchesKey:@"toUser" inQuery:relationshipQuery];
     
     // Check the (automated) cache first
     if ([self.objects count] == 0) {
@@ -91,13 +95,17 @@
     
     // I can add more constraints here!!!
     [query orderByDescending:@"createdAt"];
+    NSLog(@"Query made %@",query);
     return query;
 }
 
 // Overriden to have custom table view cells.
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
+-(UITableViewCell *)tableView:(UITableView *)tableView
+        cellForRowAtIndexPath:(NSIndexPath *)indexPath
+                       object:(PFObject *)object
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    NSLog(@"Table view started to get filled!");
     
     NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -116,6 +124,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"Selected Row At: %@", indexPath);
     if (indexPath.row == self.objects.count) {
         [self loadNextPage];
     } else {
@@ -129,29 +138,34 @@
 
 
 
+-(void)showRecordModally
+{
+    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordViewController new]];
+    [self.navigationController presentModalViewController:recordNavVC animated:YES];
+}
 
 
  // Override to customize the look of the cell that allows the user to load the next page of objects.
  // The default implementation is a UITableViewCellStyleDefault cell with simple labels.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *CellIdentifier = @"NextPage";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    // ??
-    cell.textLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dustBG.png"]];
-    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dustBG.png"]];
-    
-    cell.textLabel.textAlignment = UITextAlignmentCenter;
-    cell.textLabel.text = @"Load More";
-    
-    return cell;
-}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSString *CellIdentifier = @"NextPage";
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }
+//    
+//    // ??
+//    cell.textLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dustBG.png"]];
+//    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dustBG.png"]];
+//    
+//    cell.textLabel.textAlignment = UITextAlignmentCenter;
+//    cell.textLabel.text = @"Load More";
+//    
+//    return cell;
+//}
 
 
 
@@ -167,11 +181,4 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
--(void)showRecordModally
-{
-    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordViewController new]];
-    [self.navigationController presentModalViewController:recordNavVC animated:YES];
-}
-
 @end
