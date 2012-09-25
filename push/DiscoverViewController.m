@@ -8,7 +8,7 @@
 
 #import "DiscoverViewController.h"
 #import "DiscoverTableViewController.h"
-#import "RecordViewController.h"
+#import "RecordingViewController.h"
 #import "SearchDiscoverViewController.h"
 
 @interface DiscoverViewController ()<UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -97,7 +97,7 @@
 
 -(void)showRecordModally
 {
-    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordViewController new]];
+    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordingViewController new]];
     [self.navigationController presentModalViewController:recordNavVC animated:YES];
 }
 

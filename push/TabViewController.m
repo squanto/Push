@@ -8,7 +8,7 @@
 
 #import "TabViewController.h"
 #import <Parse/Parse.h>
-#import "RecordViewController.h"
+#import "RecordingViewController.h"
 #import "ProfileViewController.h"
 #import "TimelineViewController.h"
 #import "DiscoverViewController.h"
@@ -60,7 +60,7 @@
 
 -(void)showRecordModally
 {
-    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordViewController new]];
+    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordingViewController new]];
     [self.navigationController presentModalViewController:recordNavVC animated:YES];
 }
 

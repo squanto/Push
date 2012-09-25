@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SplashViewController.h"
+#import "LoginViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Parse/Parse.h>
 
@@ -29,7 +29,7 @@
     // So it plays audio (even on vibrate)
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[SplashViewController alloc] init]];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

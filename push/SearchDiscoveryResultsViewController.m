@@ -7,7 +7,7 @@
 //
 
 #import "SearchDiscoveryResultsViewController.h"
-#import "RecordViewController.h"
+#import "RecordingViewController.h"
 #import "ProfileViewController.h"
 #import "PulseStore.h"
 #import <Parse/Parse.h>
@@ -90,7 +90,7 @@
 
 -(void)showRecordModally
 {
-    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordViewController new]];
+    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordingViewController new]];
     [self.navigationController presentModalViewController:recordNavVC animated:YES];
 }
 

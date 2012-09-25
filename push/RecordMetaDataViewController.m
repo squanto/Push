@@ -7,7 +7,7 @@
 //
 
 #import "RecordMetaDataViewController.h"
-#import "RecordViewController.h"
+#import "RecordingViewController.h"
 #import "PulseStore.h"
 #import <AVFoundation/AVFoundation.h>
 
@@ -32,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.audioURL error:nil];
     self.titleField.delegate = self;
 }

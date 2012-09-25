@@ -38,8 +38,9 @@
     [super viewDidLoad];
     NSString *title = [NSString stringWithFormat:@"%@'s Broadcasts", self.user.username];
     self.navigationItem.title = title;
+    
+    // ??
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
 }
 
 

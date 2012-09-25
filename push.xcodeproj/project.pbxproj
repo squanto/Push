@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A11E0DE15FAC997009615DC /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0DD15FAC997009615DC /* SplashViewController.m */; };
 		9A11E0EA15FAD500009615DC /* dustBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0E915FAD500009615DC /* dustBG.png */; };
 		9A11E0EC15FAD53E009615DC /* pulseSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0EB15FAD53E009615DC /* pulseSplash.png */; };
 		9A11E0EE15FADF85009615DC /* shatteredBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0ED15FADF85009615DC /* shatteredBG.png */; };
 		9A11E0F215FB0AF2009615DC /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F015FB0AF2009615DC /* TabViewController.m */; };
-		9A11E0F715FB1763009615DC /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A11E0F515FB1763009615DC /* RecordViewController.m */; };
-		9A11E0F815FB1763009615DC /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A11E0F615FB1763009615DC /* RecordViewController.xib */; };
 		9A16072D1612546D002E8DD7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A16072C1612546D002E8DD7 /* Default-568h@2x.png */; };
 		9A1607301612555D002E8DD7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A16072F1612555D002E8DD7 /* Parse.framework */; };
+		9A1607331612672D002E8DD7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1607321612672D002E8DD7 /* LoginViewController.m */; };
+		9A16073916127639002E8DD7 /* RecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A16073816127638002E8DD7 /* RecordingViewController.m */; };
 		9A2F778B15FFCFCF004E0D1E /* noisy_grid@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F778915FFCFCF004E0D1E /* noisy_grid@2X.png */; };
 		9A2F778C15FFCFCF004E0D1E /* noisy_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F778A15FFCFCF004E0D1E /* noisy_grid.png */; };
 		9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */; };
@@ -67,18 +66,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9A11E0DC15FAC997009615DC /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
-		9A11E0DD15FAC997009615DC /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		9A11E0E915FAD500009615DC /* dustBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dustBG.png; sourceTree = "<group>"; };
 		9A11E0EB15FAD53E009615DC /* pulseSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pulseSplash.png; sourceTree = "<group>"; };
 		9A11E0ED15FADF85009615DC /* shatteredBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shatteredBG.png; sourceTree = "<group>"; };
 		9A11E0EF15FB0AF2009615DC /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
 		9A11E0F015FB0AF2009615DC /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
-		9A11E0F415FB1763009615DC /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordViewController.h; path = push/RecordViewController.h; sourceTree = "<group>"; };
-		9A11E0F515FB1763009615DC /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordViewController.m; path = push/RecordViewController.m; sourceTree = "<group>"; };
-		9A11E0F615FB1763009615DC /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecordViewController.xib; path = push/RecordViewController.xib; sourceTree = "<group>"; };
 		9A16072C1612546D002E8DD7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9A16072F1612555D002E8DD7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		9A1607311612672D002E8DD7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9A1607321612672D002E8DD7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9A16073716127638002E8DD7 /* RecordingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordingViewController.h; path = push/RecordingViewController.h; sourceTree = "<group>"; };
+		9A16073816127638002E8DD7 /* RecordingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordingViewController.m; path = push/RecordingViewController.m; sourceTree = "<group>"; };
 		9A2F778915FFCFCF004E0D1E /* noisy_grid@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noisy_grid@2X.png"; sourceTree = "<group>"; };
 		9A2F778A15FFCFCF004E0D1E /* noisy_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noisy_grid.png; sourceTree = "<group>"; };
 		9A2F778E15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchDiscoveryResultsViewController.h; path = push/SearchDiscoveryResultsViewController.h; sourceTree = "<group>"; };
@@ -229,9 +227,8 @@
 		9A8890AE15FEA448005552E8 /* record */ = {
 			isa = PBXGroup;
 			children = (
-				9A11E0F415FB1763009615DC /* RecordViewController.h */,
-				9A11E0F515FB1763009615DC /* RecordViewController.m */,
-				9A11E0F615FB1763009615DC /* RecordViewController.xib */,
+				9A16073716127638002E8DD7 /* RecordingViewController.h */,
+				9A16073816127638002E8DD7 /* RecordingViewController.m */,
 				9A8890A915FEA442005552E8 /* RecordMetaDataViewController.h */,
 				9A8890AA15FEA443005552E8 /* RecordMetaDataViewController.m */,
 				9A8890AB15FEA443005552E8 /* RecordMetaDataViewController.xib */,
@@ -331,8 +328,8 @@
 		9A9E41FA15FA9EB80013E24D /* login */ = {
 			isa = PBXGroup;
 			children = (
-				9A11E0DC15FAC997009615DC /* SplashViewController.h */,
-				9A11E0DD15FAC997009615DC /* SplashViewController.m */,
+				9A1607311612672D002E8DD7 /* LoginViewController.h */,
+				9A1607321612672D002E8DD7 /* LoginViewController.m */,
 				9AEAE6851601346B009DD14F /* SignupViewController.h */,
 				9AEAE6861601346B009DD14F /* SignupViewController.m */,
 			);
@@ -405,7 +402,6 @@
 				9A11E0EA15FAD500009615DC /* dustBG.png in Resources */,
 				9A11E0EC15FAD53E009615DC /* pulseSplash.png in Resources */,
 				9A11E0EE15FADF85009615DC /* shatteredBG.png in Resources */,
-				9A11E0F815FB1763009615DC /* RecordViewController.xib in Resources */,
 				9A88906F15FD2C96005552E8 /* cog_02@2x.png in Resources */,
 				9A88907115FD2C9F005552E8 /* cog_02.png in Resources */,
 				9A88907315FD2CA8005552E8 /* record.png in Resources */,
@@ -438,9 +434,7 @@
 			files = (
 				9A9E41D215FA7C960013E24D /* main.m in Sources */,
 				9A9E41D615FA7C960013E24D /* AppDelegate.m in Sources */,
-				9A11E0DE15FAC997009615DC /* SplashViewController.m in Sources */,
 				9A11E0F215FB0AF2009615DC /* TabViewController.m in Sources */,
-				9A11E0F715FB1763009615DC /* RecordViewController.m in Sources */,
 				9A88907D15FD2D88005552E8 /* ProfileViewController.m in Sources */,
 				9A88908215FE6B28005552E8 /* TimelineViewController.m in Sources */,
 				9A88908F15FE6E96005552E8 /* DiscoverViewController.m in Sources */,
@@ -454,6 +448,8 @@
 				9A87B2CB160A532500B86843 /* PulseStore.m in Sources */,
 				9A87B2CE160A994700B86843 /* DiscoverTableViewController.m in Sources */,
 				9AABD842160BDD3600B10677 /* ProfileBroadcastsViewController.m in Sources */,
+				9A1607331612672D002E8DD7 /* LoginViewController.m in Sources */,
+				9A16073916127639002E8DD7 /* RecordingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

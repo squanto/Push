@@ -1,29 +1,25 @@
 //
-//  RecordViewController.m
+//  RecordingViewController.m
 //  push
 //
 //  Created by hugo on 9/7/12.
 //  Copyright (c) 2012 HugoMelo. All rights reserved.
 //
 
-#import "RecordViewController.h"
+#import "RecordingViewController.h"
 #import "RecordMetaDataViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "PulseStore.h"
 
-@interface RecordViewController ()<AVAudioRecorderDelegate>
-
-@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UIButton *playButton;
+@interface RecordingViewController ()<AVAudioRecorderDelegate>
 
 @property (strong) PFObject *audioObject;
 @property (strong) AVAudioRecorder *recorder;
+@property (strong) UIButton *recordButton;
 
 @end
 
-@implementation RecordViewController
-@synthesize nameLabel;
-
+@implementation RecordingViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
+    
     // Navigation Things
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelNavVC)];
     self.navigationItem.leftBarButtonItem = cancelButton;
@@ -48,51 +46,48 @@
     
     self.audioURL = [documentDir URLByAppendingPathComponent:@"audio.wav"];
     
-    NSDictionary* options = @{
+    NSDictionary *settings = @{
     AVFormatIDKey : [NSNumber numberWithInt:kAudioFormatLinearPCM],
     AVSampleRateKey : [NSNumber numberWithDouble:48000],
     AVNumberOfChannelsKey : [NSNumber numberWithInt:2]
     };
     
-    self.recorder = [[AVAudioRecorder alloc] initWithURL:self.audioURL settings:options error:nil];
+    self.recorder = [[AVAudioRecorder alloc] initWithURL:self.audioURL settings:settings error:nil];
     self.recorder.delegate = self;
+    
+    self.recordButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.recordButton addTarget:self action:@selector(recordTouchDown) forControlEvents:UIControlEventTouchDown];
+    [self.recordButton addTarget:self action:@selector(recordTouchUp) forControlEvents:UIControlEventTouchUpInside];
+    [self.recordButton setTitle:@"Hold To Record" forState:UIControlStateNormal];
+    [self.view addSubview:self.recordButton];
 }
 
-- (void)viewDidUnload
+-(void)viewDidLayoutSubviews
 {
-    [self setNameLabel:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    // Lay out button!
+    self.recordButton.frame = CGRectMake(85, 100, 150, 150);
 }
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 
 -(void)cancelNavVC
 {
     [self dismissModalViewControllerAnimated:YES];
 }
 
-
-
-- (IBAction)recordTouchDown:(id)sender
+// start recording
+-(void)recordTouchDown
 {
-    [self.recorder record];
+    if([self.recorder prepareToRecord]) {
+        [self.recorder record];
+    }
+    NSLog(@"Now it's recording %c <==", self.recorder.recording);
 }
 
 
-
-- (IBAction)recordButtonPressed
+// stop recording
+-(void)recordTouchUp
 {
-    if (!self.recorder.recording) {
-        [self.recorder record];
-    } else {
-        [self.recorder stop];
-    }
+    [self.recorder stop];
+    NSLog(@"Stop Recording, %c", self.recorder.recording);
 }
 
 
@@ -117,5 +112,20 @@
 }
 
 
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

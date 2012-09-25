@@ -8,8 +8,8 @@
 
 #import "ProfileViewController.h"
 #import "ProfileBroadcastsViewController.h"
-#import "RecordViewController.h"
-#import "SplashViewController.h"
+#import "LoginViewController.h"
+#import "RecordingViewController.h"
 #import <Parse/Parse.h>
 #import "PulseStore.h"
 
@@ -180,7 +180,7 @@
 -(void)followButtonPressed
 {
     NSLog(@"Follow Button Pressed!");
-    if (self.followButton.titleLabel.text == @"Follow") {
+    if ([self.followButton.titleLabel.text isEqualToString:@"Follow"]) {
         PFObject *followRelationship = [PFObject objectWithClassName:@"followRelationship"];
         [followRelationship setObject:[PFUser currentUser] forKey:@"fromUser"];
         [followRelationship setObject:self.user forKey:@"toUser"];
@@ -210,7 +210,7 @@
 {
     NSLog(@"Log Out Button Pressed!");
     [PFUser logOut];
-    [self.navigationController presentViewController:[SplashViewController new] animated:YES completion:nil];
+    [self.navigationController presentViewController:[LoginViewController new] animated:YES completion:nil];
 }
 
 /************
@@ -267,7 +267,7 @@
 
 -(void)showRecordModally
 {
-    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordViewController new]];
+    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordingViewController new]];
     [self.navigationController presentModalViewController:recordNavVC animated:YES];
 }
 

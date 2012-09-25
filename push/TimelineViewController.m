@@ -7,7 +7,7 @@
 //
 #import <AVFoundation/AVFoundation.h>
 #import "TimelineViewController.h"
-#import "RecordViewController.h"
+#import "RecordingViewController.h"
 #import "AudioCell.h"
 
 @interface TimelineViewController ()<AVAudioPlayerDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -41,7 +41,7 @@
     // Appearance
     self.navigationItem.title = @"Home";
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
+    
     // The right way to load de;legate / data source
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -140,7 +140,7 @@
 
 -(void)showRecordModally
 {
-    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordViewController new]];
+    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordingViewController new]];
     [self.navigationController presentModalViewController:recordNavVC animated:YES];
 }
 

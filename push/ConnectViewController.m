@@ -7,7 +7,7 @@
 //
 
 #import "ConnectViewController.h"
-#import "RecordViewController.h"
+#import "RecordingViewController.h"
 
 @interface ConnectViewController ()
 
@@ -48,7 +48,7 @@
 
 -(void)showRecordModally
 {
-    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordViewController new]];
+    UINavigationController *recordNavVC = [[UINavigationController alloc] initWithRootViewController:[RecordingViewController new]];
     [self.navigationController presentModalViewController:recordNavVC animated:YES];
 }
 
