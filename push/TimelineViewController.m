@@ -81,11 +81,12 @@
 
 -(PFQuery *)queryForTable
 {
+    PFQuery *query = [PFQuery queryWithClassName:self.className];
+    
+    // Filter for users that you follow
     PFQuery *relationshipQuery = [PFQuery queryWithClassName:@"followRelationship"];
     [relationshipQuery whereKey:@"fromUserId" equalTo:[PFUser currentUser].objectId];
     
-    
-    PFQuery *query = [PFQuery queryWithClassName:self.className];
     [query whereKey:@"user" matchesKey:@"toUser" inQuery:relationshipQuery];
     
     // Check the (automated) cache first
@@ -95,7 +96,6 @@
     
     // I can add more constraints here!!!
     [query orderByDescending:@"createdAt"];
-    NSLog(@"Query made %@",query);
     return query;
 }
 
@@ -105,7 +105,6 @@
                        object:(PFObject *)object
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-    NSLog(@"Table view started to get filled!");
     
     NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];

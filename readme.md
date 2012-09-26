@@ -110,18 +110,6 @@ Line 162, Signup view controller.
 - Add hash tags / titles to search by for audio recordings.
 	- Automatically uses timestamp created at. Can use custom name and hashtags.
 
-Less one to one and more broadcasting. Modify.
-	- Add titles to recordings.
-
-
-Add (page control) sign up page when the program first loads. the first time the user logs in.
-http://www.edumobile.org/iphone/iphone-programming-tutorials/pagecontrol-example-in-iphone/
-
-Add a relations table. On one side, you have 
-
-
-Add the rails app that connects with Parse.
-
 
 
 # Similiar Products in the Market
@@ -174,43 +162,3 @@ http://www.cocoacontrols.com/platforms/ios/controls/mbprogresshud
 
 
 - http://www.iosdevnotes.com/tag/uipagecontrol/, add 
-
-# Progress Map
-
-- Make every navigation controller be able to (modally) present the recordVC. (check)
-	1. Home Screen.
-	2. Connect Screen
-	3. Discover (Search via hashtag. Speech to text?)
-	4. Profile View (modified table view). 
-
-- Be able to see a table view of all your recordings. (Parse auto-pull-to-refresh-and-query).
-
-- Discovery Tab Navigation: Make the discovery search bar modally present a new view controller. (check)
-
-- Be able to search for, discover, and follow new users. 
-
-- Use quick dialog to make a new login / signup view controller. Clear users and restart with that. 
-### Signup
-Make this custom (Don't use parse auto login). Make this a table view of different cells (like adding a new contact). When you click on the photo, it modally presents options (to import from twitter, choose a photo, take a photo, import one from twitter, or cancel).
-1. Username (with @)
-2. full name
-3. Email
-4. Password
-5. Photo 
-
-http://escoz.com/open-source/quickdialog
-
-OR
-
-Connecting Twitter / facebook.
-http://developer.apple.com/library/ios/#documentation/Twitter/Reference/TwitterFrameworkReference/_index.html
-
-OR 
-- Customize the PFSignup controller to mirror blip, and ignore twitter + facebook (make it a setting to be able to integrate all of these). (Check!)
-
-- Make a custom table view controller (and custom cells). 
-Actually, roll back all of those changes, add parse, and find a way to add a photo picker as an additional field in the signup view controller. 
-- Today. Custom table views.! PFqueryTableViewControlers!
-
-- Add email verification and a welcome email. 
-- Submit To the App Store

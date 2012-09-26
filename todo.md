@@ -1,7 +1,11 @@
 # Todo
 
+- Add (page control) sign up page when the program first loads. the first time the user logs in.
+	- http://www.edumobile.org/iphone/iphone-programming-tutorials/pagecontrol-example-in-iphone/
+- Make a backbone app that connects with parse. 
+
+
 ## Home View
-- Filter PFQueryTableViewController by users you follow
 - Add audio view, a view of the audio with responses. 
 	- Has a link to the user (to their profile view)
 	- Can play the audio
@@ -44,3 +48,10 @@
 - Connect with Twitter
 - Find a better background texture
 - Make an icon for it.
+
+
+# Later
+- Add hash tags / friend tagging.
+- Be able to delete your account
+- Be able to 'find friends' though twitter and facebook
+- Be able to 
