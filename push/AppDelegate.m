@@ -27,7 +27,6 @@
                                                     UIRemoteNotificationTypeSound];
     
     // So it plays audio (even on vibrate)
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
     self.window.backgroundColor = [UIColor whiteColor];

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
-#import "RecordMetaDataViewController.h"
 
 @interface PulseStore : NSObject <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 

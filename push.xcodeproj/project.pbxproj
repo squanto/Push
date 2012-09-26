@@ -15,6 +15,7 @@
 		9A1607301612555D002E8DD7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A16072F1612555D002E8DD7 /* Parse.framework */; };
 		9A1607331612672D002E8DD7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1607321612672D002E8DD7 /* LoginViewController.m */; };
 		9A16073916127639002E8DD7 /* RecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A16073816127638002E8DD7 /* RecordingViewController.m */; };
+		9A16073C16127DC3002E8DD7 /* AddMetaDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A16073B16127DC3002E8DD7 /* AddMetaDataViewController.m */; };
 		9A2F778B15FFCFCF004E0D1E /* noisy_grid@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F778915FFCFCF004E0D1E /* noisy_grid@2X.png */; };
 		9A2F778C15FFCFCF004E0D1E /* noisy_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2F778A15FFCFCF004E0D1E /* noisy_grid.png */; };
 		9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F778F15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m */; };
@@ -43,8 +44,6 @@
 		9A8890A115FE914E005552E8 /* SearchDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A88909F15FE914D005552E8 /* SearchDiscoverViewController.m */; };
 		9A8890A615FE915C005552E8 /* SearchConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8890A415FE915B005552E8 /* SearchConnectViewController.m */; };
 		9A8890A715FE915C005552E8 /* SearchConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8890A515FE915B005552E8 /* SearchConnectViewController.xib */; };
-		9A8890AC15FEA443005552E8 /* RecordMetaDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8890AA15FEA443005552E8 /* RecordMetaDataViewController.m */; };
-		9A8890AD15FEA443005552E8 /* RecordMetaDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8890AB15FEA443005552E8 /* RecordMetaDataViewController.xib */; };
 		9A9E41C615FA7C960013E24D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C515FA7C960013E24D /* UIKit.framework */; };
 		9A9E41C815FA7C960013E24D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C715FA7C960013E24D /* Foundation.framework */; };
 		9A9E41CA15FA7C960013E24D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E41C915FA7C960013E24D /* CoreGraphics.framework */; };
@@ -77,6 +76,8 @@
 		9A1607321612672D002E8DD7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9A16073716127638002E8DD7 /* RecordingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordingViewController.h; path = push/RecordingViewController.h; sourceTree = "<group>"; };
 		9A16073816127638002E8DD7 /* RecordingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordingViewController.m; path = push/RecordingViewController.m; sourceTree = "<group>"; };
+		9A16073A16127DC3002E8DD7 /* AddMetaDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddMetaDataViewController.h; path = push/AddMetaDataViewController.h; sourceTree = "<group>"; };
+		9A16073B16127DC3002E8DD7 /* AddMetaDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddMetaDataViewController.m; path = push/AddMetaDataViewController.m; sourceTree = "<group>"; };
 		9A2F778915FFCFCF004E0D1E /* noisy_grid@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noisy_grid@2X.png"; sourceTree = "<group>"; };
 		9A2F778A15FFCFCF004E0D1E /* noisy_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noisy_grid.png; sourceTree = "<group>"; };
 		9A2F778E15FFF44B004E0D1E /* SearchDiscoveryResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchDiscoveryResultsViewController.h; path = push/SearchDiscoveryResultsViewController.h; sourceTree = "<group>"; };
@@ -113,9 +114,6 @@
 		9A8890A315FE915B005552E8 /* SearchConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchConnectViewController.h; path = push/SearchConnectViewController.h; sourceTree = "<group>"; };
 		9A8890A415FE915B005552E8 /* SearchConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchConnectViewController.m; path = push/SearchConnectViewController.m; sourceTree = "<group>"; };
 		9A8890A515FE915B005552E8 /* SearchConnectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchConnectViewController.xib; path = push/SearchConnectViewController.xib; sourceTree = "<group>"; };
-		9A8890A915FEA442005552E8 /* RecordMetaDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordMetaDataViewController.h; path = push/RecordMetaDataViewController.h; sourceTree = "<group>"; };
-		9A8890AA15FEA443005552E8 /* RecordMetaDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordMetaDataViewController.m; path = push/RecordMetaDataViewController.m; sourceTree = "<group>"; };
-		9A8890AB15FEA443005552E8 /* RecordMetaDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecordMetaDataViewController.xib; path = push/RecordMetaDataViewController.xib; sourceTree = "<group>"; };
 		9A9E41C115FA7C960013E24D /* push.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = push.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9E41C515FA7C960013E24D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A9E41C715FA7C960013E24D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -229,9 +227,8 @@
 			children = (
 				9A16073716127638002E8DD7 /* RecordingViewController.h */,
 				9A16073816127638002E8DD7 /* RecordingViewController.m */,
-				9A8890A915FEA442005552E8 /* RecordMetaDataViewController.h */,
-				9A8890AA15FEA443005552E8 /* RecordMetaDataViewController.m */,
-				9A8890AB15FEA443005552E8 /* RecordMetaDataViewController.xib */,
+				9A16073A16127DC3002E8DD7 /* AddMetaDataViewController.h */,
+				9A16073B16127DC3002E8DD7 /* AddMetaDataViewController.m */,
 			);
 			name = record;
 			sourceTree = "<group>";
@@ -418,7 +415,6 @@
 				9A88909B15FE7114005552E8 /* speaker@2x.png in Resources */,
 				9A88909D15FE7124005552E8 /* speaker.png in Resources */,
 				9A8890A715FE915C005552E8 /* SearchConnectViewController.xib in Resources */,
-				9A8890AD15FEA443005552E8 /* RecordMetaDataViewController.xib in Resources */,
 				9A2F778B15FFCFCF004E0D1E /* noisy_grid@2X.png in Resources */,
 				9A2F778C15FFCFCF004E0D1E /* noisy_grid.png in Resources */,
 				9A16072D1612546D002E8DD7 /* Default-568h@2x.png in Resources */,
@@ -441,7 +437,6 @@
 				9A88909815FE6FC9005552E8 /* ConnectViewController.m in Sources */,
 				9A8890A115FE914E005552E8 /* SearchDiscoverViewController.m in Sources */,
 				9A8890A615FE915C005552E8 /* SearchConnectViewController.m in Sources */,
-				9A8890AC15FEA443005552E8 /* RecordMetaDataViewController.m in Sources */,
 				9A2F779115FFF44B004E0D1E /* SearchDiscoveryResultsViewController.m in Sources */,
 				9AEAE6871601346B009DD14F /* SignupViewController.m in Sources */,
 				9AB612B11602715800ACA478 /* AudioCell.m in Sources */,
@@ -450,6 +445,7 @@
 				9AABD842160BDD3600B10677 /* ProfileBroadcastsViewController.m in Sources */,
 				9A1607331612672D002E8DD7 /* LoginViewController.m in Sources */,
 				9A16073916127639002E8DD7 /* RecordingViewController.m in Sources */,
+				9A16073C16127DC3002E8DD7 /* AddMetaDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

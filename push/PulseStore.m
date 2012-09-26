@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 HugoMelo. All rights reserved.
 //
 
-#import <Parse/Parse.h>
 #import "PulseStore.h"
 
 @implementation PulseStore

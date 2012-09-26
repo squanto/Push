@@ -144,34 +144,6 @@
     [self.navigationController presentModalViewController:recordNavVC animated:YES];
 }
 
-
- // Override to customize the look of the cell that allows the user to load the next page of objects.
- // The default implementation is a UITableViewCellStyleDefault cell with simple labels.
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSString *CellIdentifier = @"NextPage";
-//    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//    }
-//    
-//    // ??
-//    cell.textLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dustBG.png"]];
-//    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dustBG.png"]];
-//    
-//    cell.textLabel.textAlignment = UITextAlignmentCenter;
-//    cell.textLabel.text = @"Load More";
-//    
-//    return cell;
-//}
-
-
-
-
-
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];

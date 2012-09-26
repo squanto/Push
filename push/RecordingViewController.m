@@ -7,9 +7,8 @@
 //
 
 #import "RecordingViewController.h"
-#import "RecordMetaDataViewController.h"
+#import "AddMetaDataViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "PulseStore.h"
 
 @interface RecordingViewController ()<AVAudioRecorderDelegate>
 
@@ -42,17 +41,19 @@
     
     
     // Recording things
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     NSURL* documentDir = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     
     self.audioURL = [documentDir URLByAppendingPathComponent:@"audio.wav"];
     
     NSDictionary *settings = @{
-    AVFormatIDKey : [NSNumber numberWithInt:kAudioFormatLinearPCM],
-    AVSampleRateKey : [NSNumber numberWithDouble:48000],
-    AVNumberOfChannelsKey : [NSNumber numberWithInt:2]
+        AVFormatIDKey : [NSNumber numberWithInt:kAudioFormatLinearPCM],
+        AVSampleRateKey : [NSNumber numberWithDouble:48000],
+        AVNumberOfChannelsKey : [NSNumber numberWithInt:2]
     };
     
-    self.recorder = [[AVAudioRecorder alloc] initWithURL:self.audioURL settings:settings error:nil];
+    NSError *error = nil;
+    self.recorder = [[AVAudioRecorder alloc] initWithURL:self.audioURL settings:settings error:&error];
     self.recorder.delegate = self;
     
     self.recordButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -60,6 +61,12 @@
     [self.recordButton addTarget:self action:@selector(recordTouchUp) forControlEvents:UIControlEventTouchUpInside];
     [self.recordButton setTitle:@"Hold To Record" forState:UIControlStateNormal];
     [self.view addSubview:self.recordButton];
+    
+    if (error) {
+        NSLog(@"error: %@", [error localizedDescription]);
+    } else {
+        [self.recorder prepareToRecord];
+    }
 }
 
 -(void)viewDidLayoutSubviews
@@ -76,38 +83,26 @@
 // start recording
 -(void)recordTouchDown
 {
+    NSLog(@"Record touch down!");
     if([self.recorder prepareToRecord]) {
         [self.recorder record];
     }
-    NSLog(@"Now it's recording %c <==", self.recorder.recording);
 }
 
 
 // stop recording
 -(void)recordTouchUp
 {
+    NSLog(@"Record touch up!");
     [self.recorder stop];
-    NSLog(@"Stop Recording, %c", self.recorder.recording);
 }
 
 
 -(void)audioRecorderDidFinishRecording:(AVAudioRecorder*)recorder
                           successfully:(BOOL)flag {
     
-    RecordMetaDataViewController *metaDataVC = [RecordMetaDataViewController new];
-    
-    PFObject *audioObject = [PFObject objectWithClassName:@"audioObject"];
-    PFFile *audioFile = [PFFile fileWithName:@"audio.wav" contentsAtPath:[self.audioURL path]];
-    
-    [audioFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [audioObject setObject:audioFile forKey:@"audioFile"];
-        [audioObject setObject:[PFUser currentUser] forKey:@"user"];
-        [audioObject setObject:[[NSDate date] description] forKey:@"title"];
-        [audioObject saveInBackground];
-    }];
+    AddMetaDataViewController *metaDataVC = [AddMetaDataViewController new];
     metaDataVC.audioURL = self.audioURL;
-    metaDataVC.audioObject = audioObject;
-    
     [self.navigationController pushViewController:metaDataVC animated:YES];
 }
 
