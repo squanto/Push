@@ -53,5 +53,5 @@
 # Later
 - Add hash tags / friend tagging.
 - Be able to delete your account
-- Be able to 'find friends' though twitter and facebook
-- Be able to 
+  - Find and delete all the users data and relationship to other users.
+- Be able to 'find friends' though twitter and facebook 
