@@ -8,7 +8,13 @@
 #import <AVFoundation/AVFoundation.h>
 #import "TimelineViewController.h"
 #import "RecordingViewController.h"
-#import "AudioCell.h"
+#import "ProfileCell.h"
+
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 
 @interface TimelineViewController ()<AVAudioPlayerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -40,13 +46,16 @@
     
     // Appearance
     self.navigationItem.title = @"Home";
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"noisy_grid.png"]];
+    self.tableView.backgroundColor = UIColorFromRGB(0xe9edf0);
+    
     
     // The right way to load de;legate / data source
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+    self.tableView.rowHeight = 80.0;
     // ??
+    
     self.textKey = @"user";
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -106,23 +115,72 @@
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
     
-    NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+    NSString *cellIdentifier = @"cell";
+    ProfileCell *cell = (ProfileCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    // on tableview, register nib.
+    if (!cell) {
+        // If you didn't get a valid cell reference back, unload a cell from the nib
+        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"ProfileCell" owner:nil options:nil];
+        for (id obj in nibArray) {
+            if ([obj isMemberOfClass:[ProfileCell class]]) {
+                // Assign cell to obj
+                cell = (ProfileCell *)obj;
+                break;
+            }
+        }
     }
     
-    cell.textLabel.text = [object objectForKey:@"title"];
+//    @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+//    @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+//    @property (strong, nonatomic) IBOutlet UIButton *playButton;
+
+    // Adding borders.
+    CALayer *bottomBorder = [CALayer layer];
+    bottomBorder.borderColor = [UIColor lightGrayColor].CGColor;
+    bottomBorder.borderWidth = 0.5;
+    bottomBorder.frame = CGRectMake(0, cell.layer.frame.size.height, cell.layer.frame.size.width, 2);
+    [cell.contentView.layer addSublayer:bottomBorder];
+    
+    CALayer *topBorder = [CALayer layer];
+    topBorder.borderColor = [UIColor lightGrayColor].CGColor;
+    topBorder.borderWidth = 0.5;
+    topBorder.frame = CGRectMake(0, 0, cell.layer.frame.size.width, 2);
+    [cell.contentView.layer addSublayer:topBorder];
+    
+    
+    cell.audioFile = [object objectForKey:@"audioFile"];
+    cell.titleLabel.text = [object objectForKey:@"title"];
     PFUser *user = [object objectForKey:@"user"];
     [user fetchIfNeeded];
-    cell.detailTextLabel.text = user.username;
-    cell.imageView.image = [UIImage imageWithData:[[user objectForKey:@"userPhotoImage"] getData]];
+    cell.userLabel.text = [user objectForKey:@"username"];
+    
+    // Message button hack
+    UIImage *playBg = [[UIImage imageNamed:@"buttonBg.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 5, 20, 5)];
+    [cell.playButton setBackgroundImage:playBg forState:UIControlStateNormal];
+    
+//    cell.imageView.image = [UIImage imageWithData:[[user objectForKey:@"userPhotoImage"] getData]];
+
+    
+    // Images coming in have to be the same dimensions.
+    // Parse is the loader class (??)
+    UIImage *profileImage = [UIImage imageWithData:[[user objectForKey:@"userPhotoImage"] getData]];
+    // hmm..., uiscreen main screen scale
+    UIImage *cellProfileImage = [UIImage imageWithCGImage:[profileImage CGImage] scale:    [[UIScreen mainScreen] scale] orientation:UIImageOrientationUp];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:cellProfileImage];
+    [imageView setFrame:CGRectMake(13, 13, 43, 43)];
+    imageView.layer.cornerRadius = 21.0;
+    imageView.layer.masksToBounds = YES;
+    [cell.contentView addSubview:imageView];
+    
     return cell;
 }
 
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    NSString *username = [(ProfileCell*)[tableView cellForRowAtIndexPath:indexPath] userLabel].text;
+    NSLog(@"User selected: %@", username);
     NSLog(@"Selected Row At: %@", indexPath);
     if (indexPath.row == self.objects.count) {
         [self loadNextPage];

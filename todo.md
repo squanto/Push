@@ -1,18 +1,14 @@
-# Todo
-
-- Add (page control) sign up page when the program first loads. the first time the user logs in.
-	- http://www.edumobile.org/iphone/iphone-programming-tutorials/pagecontrol-example-in-iphone/
-- Make a backbone app that connects with parse. 
-
-
 ## Home View
+- Modify the table view to show a custom audio cell
+	- User profile image (which links to their profile)
+	- Add Time difference label (now, 1min ago, etc.)
+	- Play Button
 - Add audio view, a view of the audio with responses. 
 	- Has a link to the user (to their profile view)
 	- Can play the audio
 	- Can respond with other audio
 
 ## Connect View Controller
-
 - (Modally) Make a Table view of custom(?) cells. It lists users you connect one on one.
 	- When you click the compose button, it takes you to a special record view controller of all the users you follow (start off with picking one to one).
 	- When you click a user, it takes you to the conversation view of that user (Navigation controller style)
@@ -24,34 +20,33 @@
 - It has an id, a from user, a to user, and an audio object
 
 ## Discover View
-- Show a table view of the global list of users
-	- Be able to click to go to a user's profile
+- Show many modular custom cells, with popular users, or popular groups (topics) ..(hmm…).
 
 ## Profile View
-- Make the profile view a scroll view.
-- Make the profile view init with the id of a user
-- Add a follow button
-	- Make the follow button only show when you're not that user
-	- Make the follow button toggle
-- Add a my broadcasts button / table view cell that pushes a modal view controller of a pf query table view controller, listing out all of my broadcasts
-- Add a following button, listing out all of the users I follow. If I click on one of the users in this modal view, it pushes (navigation style) to that user's profile view.
-- Add a followers button that modally pushes to a pf query table view of the users that follow. When you click on one of the cells, it takes you to that user's profile.
+- Completely re-lay out the profile view
+- Customize the look of the profile view.
+- Fix the follow button. It starts of saying unfollow. Maybe add two buttons?
+- Copy Twitter's new profile view for users.
+- Have a settings button
+	- Modally presents a view with buttons. 
+	- Settings button
+		- Log out option
+		- Delete account option
+	- Edit Profile Button
+		- Change profile image option
+		- Add a quick bio option
+	- Cancel Button
 
-- On everything that lists the users, be able to asyncronously call to fill out their images. 
-
-## Optional 
-- Make a Parse Store.
-- Be able to asyncronously call from the home view controller to fill out the cells with the profile picture of the the user.
 - Add a custom UITableViewCell with CAAnimations of buttons
-- Fix the splash login screen
-- Fix the splash login screen logo
-- Connect with Twitter
+- Connect with Twitter (Automatic sign-in with twitter, like lift).
 - Find a better background texture
-- Make an icon for it.
+- Make an app icon for it.
+- Make the upload in background thing work again.
+- Save user settings to NSUserDefaults
 
-
-# Later
-- Add hash tags / friend tagging.
 - Be able to delete your account
   - Find and delete all the users data and relationship to other users.
-- Be able to 'find friends' though twitter and facebook 
+- Add hash tags / friend tagging.
+- When you first sign up, be able to 'connect' twitter to find friends. 
+- Have a page-control feature when you first sign up that walks you through basic functionality of the app
+

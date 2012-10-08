@@ -253,6 +253,8 @@
     }
     if (tableView == self.followedTableVC.tableView) {
         return self.followedUsers.count;
+    } else {
+        return 0;
     }
 }
 
